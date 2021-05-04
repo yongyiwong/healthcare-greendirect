@@ -1,0 +1,1167 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/site-map/site-map.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/site-map</a> site-map.service.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3875x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3875x</span>
+<span class="cline-any cline-yes">3875x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">93x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1721x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">100x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1054x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">326x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable, NotFoundException } from '@nestjs/common';
+import * as _ from 'lodash';
+import { format } from 'date-fns';
+import { Repository } from 'typeorm';
+import { ConfigService } from '@sierralabs/nest-utils';
+import { InjectRepository } from '@nestjs/typeorm';
+&nbsp;
+import {
+  createSitemap,
+  EnumChangefreq,
+  ISitemapItemOptionsLoose,
+  buildSitemapIndex,
+  Sitemap,
+} from 'sitemap';
+import { Location } from '../entities/location.entity';
+import { Product } from '../entities/product.entity';
+import { Doctor } from '../entities/doctor.entity';
+import { ProductGroup } from '../entities/product-group.entity';
+import { Order } from '../entities/order.entity';
+import { User } from '../entities/user.entity';
+import { BrandService } from '../brand/brand.service';
+import { DealService } from '../deal/deal.service';
+&nbsp;
+interface SMIOptions extends Partial&lt;ISitemapItemOptionsLoose&gt; {
+  prefix?: string;
+}
+&nbsp;
+@Injectable()
+export class SiteMapService {
+  private clientBaseUrl: string;
+&nbsp;
+  readonly sitemaps: { [sm: string]: (i18n?: string) =&gt; Promise&lt;Sitemap&gt; } = {
+    default: (i18n?: string) =&gt; this.getStaticPagesMap(i18n),
+    locations: (i18n?: string) =&gt; this.getLocationPagesMap(i18n),
+    products: (i18n?: string) =&gt; this.getProductPagesMap(i18n),
+    // K@m35h commented
+    brands: (i18n?: string) =&gt; this.getBrandPagesMap(i18n),
+    productSkus: (i18n?: string) =&gt; this.getProductGroupPagesMap(i18n),
+    brandProducts: (i18n?: string) =&gt; this.getBrandProductPagesMap(i18n),
+    deals: (i18n?: string) =&gt; this.getDealPagesMap(i18n),
+    doctors: (i18n?: string) =&gt; this.getDoctorPagesMap(i18n),
+  };
+&nbsp;
+  constructor(
+    protected readonly configService: ConfigService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    protected readonly dealService: DealService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    protected readonly brandService: BrandService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    @InjectRepository(Location)
+    protected readonly locationRepository: Repository<span class="branch-1 cbranch-no" title="branch not covered" >&lt;Location&gt;,</span>
+    @InjectRepository(Product)
+    protected readonly productRepository: Repository<span class="branch-1 cbranch-no" title="branch not covered" >&lt;Product&gt;,</span>
+    @InjectRepository(Doctor)
+    protected readonly doctorRepository: Repository<span class="branch-1 cbranch-no" title="branch not covered" >&lt;Doctor&gt;,</span>
+    @InjectRepository(ProductGroup)
+    protected readonly productGroupRepository: Repository<span class="branch-1 cbranch-no" title="branch not covered" >&lt;ProductGroup&gt;,</span>
+    @InjectRepository(Order)
+    protected readonly orderRepository: Repository<span class="branch-1 cbranch-no" title="branch not covered" >&lt;Order&gt;,</span>
+    @InjectRepository(User) protected readonly userRepository: Repository<span class="branch-1 cbranch-no" title="branch not covered" >&lt;User&gt;,</span>
+  ) {
+    const url = this.configService.get('email.clientBaseUrl');
+    this.clientBaseUrl = url.indexOf('http') !== 0 ? <span class="branch-0 cbranch-no" title="branch not covered" >'https://' + url </span>: url;
+  }
+&nbsp;
+  /**
+   * Sitemap Outline:
+   * * SiteIndexMap for list of sitemap xml.gz URLs
+   * * Private methods for retrieving URL arrays from each module
+   * * Helper method for composing the xml sitemap of one module (receives array of URLs)
+   *
+   * SiteMapIndex -&gt; SM.GZ -&gt; SM.XML -&gt; SiteMapItem -&gt; URLs
+   */
+&nbsp;
+  async getSitemapIndex(): Promise&lt;string&gt; {
+    try {
+      const langPrefixes = ['', 'es'];
+      return this.composeSiteMapIndex(
+        Object.keys(this.sitemaps),
+        'xml',
+        langPrefixes,
+      );
+    } catch (error) {
+      /*
+       ? should we throw or just return an empty response?
+        errors might be logged negatively by crawler */
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  async getSitemap(
+    moduleKey: string,
+    format: 'xml' | 'gzip' = 'xml',
+    i18n = '',
+  ): Promise&lt;string | Buffer&gt; {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!_.has(this.sitemaps, moduleKey)) {
+<span class="cstat-no" title="statement not covered" >      throw new NotFoundException();</span>
+    }
+    const sitemap: Sitemap = await this.sitemaps[moduleKey](i18n);
+    return format === 'gzip' ? <span class="branch-0 cbranch-no" title="branch not covered" >sitemap.toGzip() </span>: sitemap.toXML();
+  }
+&nbsp;
+  private composeSiteMapIndex(
+    sitemapKeys: string[],
+    linksFormat: 'xml' | 'gzip' = <span class="branch-0 cbranch-no" title="branch not covered" >'xml',</span>
+    prefixes = <span class="branch-0 cbranch-no" title="branch not covered" >[''],</span>
+  ): string {
+    // IMPORTANT: a SiteMapIndex will use .xml extension only, but the loc contents can
+    // be xml or xml.gz as preferred.
+    const ext = '.xml' + (linksFormat === 'gzip' ? <span class="branch-0 cbranch-no" title="branch not covered" >'.gz' </span>: '');
+&nbsp;
+    const gzipUrls = _.flatten(
+      prefixes.map(prefix =&gt; {
+        const prefixTmp = prefix ? `${prefix}/` : '';
+        return sitemapKeys.map(sitemapKey =&gt;
+          [
+            this.clientBaseUrl,
+            'api',
+            'site-map',
+            `${prefixTmp}sitemap-${sitemapKey + ext}`,
+          ].join('/'),
+        );
+      }),
+    );
+&nbsp;
+    return buildSitemapIndex({
+      lastmod: format(new Date(), 'YYYY-MM-DD'),
+      urls: gzipUrls,
+    });
+  }
+&nbsp;
+  private composeSiteMap(urls, opts?: SMIOptions): Sitemap {
+    return createSitemap({
+      hostname: `${this.clientBaseUrl}`,
+      cacheTime: 0,
+      urls: urls.map(url =&gt; this.composeSitemapItem(url, opts)),
+    });
+  }
+&nbsp;
+  private composeSitemapItem(url, opts?: SMIOptions) {
+    const { lastmod, prefix } = opts || <span class="branch-1 cbranch-no" title="branch not covered" >{ lastmod: '', prefix: '' };</span>
+    return {
+      url: prefix + url,
+      ...opts,
+      lastmod: (lastmod || '').toString(),
+    };
+  }
+&nbsp;
+  /**
+   * Add each data sources that retrieve URLS per sitemap group
+   * List all modules' arrays of their URLs below with their own method below this comment
+   * The endpoints will then be added to  single sitemapindex to bypass the 50MB/50K Url limit.
+   */
+  private async getStaticPagesMap(i18n = <span class="branch-0 cbranch-no" title="branch not covered" >'')</span>: Promise&lt;Sitemap&gt; {
+    const urls = [
+      '',
+      '/brand',
+      '/contact-us',
+      '/deal',
+      '/doctor/search',
+      '/forgot-password',
+      '/help',
+      '/help/faq',
+      '/help/privacy-policy',
+      '/help/service-term',
+      '/location/search',
+      '/login/reset-password',
+      '/sign-in',
+      '/sign-up-business',
+      '/sign-up',
+    ];
+    const opts: SMIOptions = {
+      changefreq: EnumChangefreq.WEEKLY,
+      priority: 0.8,
+      prefix: i18n,
+    };
+&nbsp;
+    return this.composeSiteMap(urls, opts);
+  }
+&nbsp;
+  private async getLocationPagesMap(i18n = <span class="branch-0 cbranch-no" title="branch not covered" >'')</span>: Promise&lt;Sitemap&gt; {
+    try {
+      const locations = await this.locationRepository.find({
+        where: { deleted: false },
+        order: { modified: 'DESC' },
+      });
+      const urls = _.flatten(
+        locations.map(location =&gt; [
+          `/location/${location.id}`,
+          `/location/${location.id}/menu`,
+          `/location/${location.id}/coupons`,
+          `/location/${location.id}/reviews`,
+        ]),
+      );
+      const latestLocation = _.first(locations);
+      const opts: SMIOptions = {
+        changefreq: EnumChangefreq.WEEKLY,
+        lastmod: !!latestLocation ? latestLocation.modified.toString() : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+        prefix: i18n,
+      };
+      return this.composeSiteMap(urls, opts);
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  private async getProductPagesMap(i18n = <span class="branch-0 cbranch-no" title="branch not covered" >'')</span>: Promise&lt;Sitemap&gt; {
+    try {
+      const products = await this.productRepository
+        .createQueryBuilder('product')
+        .innerJoinAndSelect(
+          'product.location',
+          'location',
+          'location.deleted = false',
+        )
+        .andWhere('product.isInStock = true')
+        .andWhere('product.deleted = false')
+        .orderBy('product.modified', 'DESC')
+        .getMany();
+&nbsp;
+      const urls = products.map(
+        product =&gt; `/location/${product.location.id}/product/${product.id}`,
+      );
+&nbsp;
+      const latestProduct = _.first(products);
+      const opts: SMIOptions = {
+        changefreq: EnumChangefreq.WEEKLY,
+        lastmod: !!latestProduct ? latestProduct.modified.toString() : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+        prefix: i18n,
+      };
+      return this.composeSiteMap(urls, opts);
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  // K@m35h commented
+  private async getBrandPagesMap(i18n = <span class="branch-0 cbranch-no" title="branch not covered" >'')</span>: Promise&lt;Sitemap&gt; {
+    try {
+      const brands = await this.brandService.findWithFilter({
+        order: {
+          modified: 'DESC',
+        } as any,
+      });
+&nbsp;
+      const urls = _.flatten(
+        brands[0].map(brand =&gt; [
+          `/brand/${brand.id}`,
+          `/brand/${brand.id}/menu`,
+          `/brand/${brand.id}/locations`,
+        ]),
+      );
+      const latestBrand = _.first(brands[0]);
+      const opts: SMIOptions = {
+        changefreq: EnumChangefreq.WEEKLY,
+        lastmod: !!latestBrand ? latestBrand.modified.toString() : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+        prefix: i18n,
+      };
+      return this.composeSiteMap(urls, opts);
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  private async getProductGroupPagesMap(i18n = <span class="branch-0 cbranch-no" title="branch not covered" >'')</span>: Promise&lt;Sitemap&gt; {
+    try {
+      const productGroups = await this.productGroupRepository
+        .createQueryBuilder('productGroup')
+        .innerJoin(
+          'productGroup.products',
+          'products',
+          'products.deleted = false AND products.isInStock = true',
+        )
+        .innerJoinAndSelect(
+          'productGroup.brand',
+          'brand',
+          'brand.deleted = false',
+        )
+        .andWhere('productGroup.deleted = false')
+        .orderBy('productGroup.modified', 'DESC')
+        .getMany();
+      const urls = productGroups.map(
+        productGroup =&gt;
+          `/brand/${productGroup.brand.id}/product-sku/${productGroup.id}`,
+      );
+      const latestProductGroup = _.first(productGroups);
+      const opts: SMIOptions = {
+        changefreq: EnumChangefreq.WEEKLY,
+        lastmod: !!latestProductGroup
+          ? latestProductGroup.modified.toString()
+          : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+        prefix: i18n,
+      };
+      return this.composeSiteMap(urls, opts);
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  private async getBrandProductPagesMap(i18n = <span class="branch-0 cbranch-no" title="branch not covered" >'')</span>: Promise&lt;Sitemap&gt; {
+    try {
+      const products = await this.productRepository
+        .createQueryBuilder('product')
+        .innerJoinAndSelect(
+          'product.productGroup',
+          'productGroup',
+          'productGroup.deleted = false',
+        )
+        .innerJoinAndSelect(
+          'productGroup.brand',
+          'brand',
+          'brand.deleted = false',
+        )
+        .where('productGroup.brand IS NOT NULL')
+        .andWhere('product.isInStock = true')
+        .andWhere('product.deleted = false')
+        .orderBy('product.modified', 'DESC')
+        .getMany();
+&nbsp;
+      const urls = products.map(
+        product =&gt;
+          `/brand/${product.productGroup.brand.id}/product-sku/${product.productGroup.id}/product/${product.id}`,
+      );
+      const latestProduct = _.first(products);
+      const opts: SMIOptions = {
+        changefreq: EnumChangefreq.WEEKLY,
+        lastmod: !!latestProduct ? latestProduct.modified.toString() : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+        prefix: i18n,
+      };
+      return this.composeSiteMap(urls, opts);
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  private async getDealPagesMap(i18n = <span class="branch-0 cbranch-no" title="branch not covered" >'')</span>: Promise&lt;Sitemap&gt; {
+    try {
+      const deals = await this.dealService.findWithFilter({
+        order: {
+          modified: 'DESC',
+        } as any,
+      });
+&nbsp;
+      const urls = deals[0].map(deal =&gt; `/deal/${deal.id}`);
+      const latestDeal = _.first(deals[0]);
+      const opts: SMIOptions = {
+        changefreq: EnumChangefreq.WEEKLY,
+        lastmod: !!latestDeal ? latestDeal.modified.toString() : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+        prefix: i18n,
+      };
+&nbsp;
+      return this.composeSiteMap(urls, opts);
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  private async getDoctorPagesMap(i18n = <span class="branch-0 cbranch-no" title="branch not covered" >'')</span>: Promise&lt;Sitemap&gt; {
+    try {
+      const doctors = await this.doctorRepository.find({
+        where: { deleted: false },
+        order: { modified: 'DESC' },
+      });
+      const urls = doctors.map(doctor =&gt; `/doctor/${doctor.id}`);
+      const latestDoctor = _.first(doctors);
+      const opts: SMIOptions = {
+        changefreq: EnumChangefreq.WEEKLY,
+        lastmod: !!latestDoctor ? latestDoctor.modified.toString() : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+        prefix: i18n,
+      };
+      return this.composeSiteMap(urls, opts);
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

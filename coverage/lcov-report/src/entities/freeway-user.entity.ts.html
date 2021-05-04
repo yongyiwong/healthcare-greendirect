@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/entities/freeway-user.entity.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/entities</a> freeway-user.entity.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
+import { ApiModelProperty } from '@nestjs/swagger';
+&nbsp;
+import { FreewayUserAddress } from './freeway-user-address.entity';
+import { FreewayUserIdentification } from './freeway-user-identification.entity';
+import { FreewayUserPhone } from './freeway-user-phone.entity';
+&nbsp;
+@Entity()
+export class FreewayUser {
+  @ApiModelProperty()
+  @PrimaryColumn()
+  public posId: number;
+&nbsp;
+  /** refers to the Freeway organization POS ID, not GD organization.id */
+  @Column({ name: 'org_id', nullable: true })
+  public orgId: number;
+&nbsp;
+  @Column('text', { name: 'first_name', nullable: true })
+  public firstName: string;
+&nbsp;
+  @Column('text', { name: 'middle_name', nullable: true })
+  public middleName: string;
+&nbsp;
+  @Column('text', { name: 'last_name', nullable: true })
+  public lastName: string;
+&nbsp;
+  @Column('text', { nullable: true })
+  public email: string;
+&nbsp;
+  @Column('text', { nullable: true })
+  public gender: string;
+&nbsp;
+  @Column('date', { name: 'birthday', nullable: true })
+  public birthday: string;
+&nbsp;
+  @Column({ nullable: true })
+  public active: boolean;
+&nbsp;
+  @Column({ default: false })
+  public unsubscribed: boolean;
+&nbsp;
+  @Column({ default: false })
+  public hasBwell: boolean;
+&nbsp;
+  @Column({ name: 'primary_facility_id', nullable: true })
+  public primaryFacility: number;
+&nbsp;
+  @Column('text', { name: 'physician_name', nullable: true })
+  public physicianName: string;
+&nbsp;
+  @Column('text', { name: 'physician_license', nullable: true })
+  public physicianLicense: string;
+&nbsp;
+  @Column('text', { name: 'physician_address', nullable: true })
+  public physicianAddress: string;
+&nbsp;
+  @Column('text', { nullable: true })
+  public diagnosis: string;
+&nbsp;
+  @Column('text', { nullable: true })
+  public type: string;
+&nbsp;
+  @Column('text', { name: 'preferred_contact', nullable: true })
+  public preferredContact: string;
+&nbsp;
+  @Column({ name: 'tax_exempt', nullable: true })
+  public taxExempt: boolean;
+&nbsp;
+  @Column({ name: 'order_count_week', nullable: true })
+  public orderCountWeek: number;
+&nbsp;
+  @Column({ name: 'order_count_month', nullable: true })
+  public orderCountMonth: number;
+&nbsp;
+  @Column({ name: 'order_count_90_days', nullable: true })
+  public orderCountNinety: number;
+&nbsp;
+  @Column({ name: 'total_points', nullable: true })
+  public totalPoints: number;
+&nbsp;
+  @Column({ name: 'total_orders', nullable: true })
+  public totalOrders: number;
+&nbsp;
+  @Column('text', { name: 'total_spent', nullable: true })
+  public totalSpent: string;
+&nbsp;
+  @Column('text', { name: 'favorite_flower_item_name', nullable: true })
+  public favoriteFlower: string;
+&nbsp;
+  @Column('text', { name: 'favorite_edible_item_name', nullable: true })
+  public favoriteEdible: string;
+&nbsp;
+  @Column('text', { name: 'favorite_concentrate_item_name', nullable: true })
+  public favoriteConcentrate: string;
+&nbsp;
+  @Column('text', { name: 'favorite_topical_item_name', nullable: true })
+  public favoriteTopical: string;
+&nbsp;
+  @Column({ name: 'favorite_flower_item_id', nullable: true })
+  public favoriteFlowerId: number;
+&nbsp;
+  @Column({ name: 'favorite_edible_item_id', nullable: true })
+  public favoriteEdibleId: number;
+&nbsp;
+  @Column({ name: 'favorite_concentrate_item_id', nullable: true })
+  public favoriteConcentrateId: number;
+&nbsp;
+  @Column({ name: 'favorite_topical_item_id', nullable: true })
+  public favoriteTopicalId: number;
+&nbsp;
+  @Column({ nullable: true })
+  public created: Date<span class="branch-1 cbranch-no" title="branch not covered" >;</span>
+&nbsp;
+  @Column({ nullable: true })
+  public modified: Date<span class="branch-1 cbranch-no" title="branch not covered" >;</span>
+&nbsp;
+  @OneToMany(
+    type =&gt; FreewayUserAddress,
+    freewayUserAddress =&gt; freewayUserAddress.freewayUser,
+  )
+  public addresses: FreewayUserAddress[];
+&nbsp;
+  @OneToMany(
+    type =&gt; FreewayUserIdentification,
+    freewayUserIdentification =&gt; freewayUserIdentification.freewayUser,
+  )
+  public ids: FreewayUserIdentification[];
+&nbsp;
+  @OneToMany(
+    type =&gt; FreewayUserPhone,
+    freewayUserPhone =&gt; freewayUserPhone.freewayUser,
+  )
+  public phoneNumbers: FreewayUserPhone[];
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

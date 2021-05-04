@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/reports/appstore/appstore.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/reports/appstore</a> appstore.service.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as path from 'path';
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import {
+  Client as AppStoreConnectClient,
+  DownloadSalesReportFrequency,
+  GetAppDownloadsOptions,
+  Client,
+} from '@egodigital/appstore-connect';
+import { differenceInMonths, format, getMonth, getYear } from 'date-fns';
+import { range, sum } from 'lodash';
+import { ConfigService } from '@sierralabs/nest-utils';
+import { Repository } from 'typeorm';
+&nbsp;
+import { GDExpectedException } from '../../gd-expected.exception';
+import { ReportsExceptions } from '../reports.exceptions';
+import { AnnualMonthlyTotalDto } from '../dto/annual-monthly-total.dto';
+import {
+  isProductionEnv,
+  Environments,
+  readFromFileAsync,
+} from '../../app.service';
+import { AppDownload } from '../../entities/app-download.entity';
+import { Platform } from '../app-platform.enum';
+&nbsp;
+export interface AppStoreConnectConfig {
+  appSKU: string;
+  apiKey: string;
+  issuerId: string;
+  vendorNumber: string;
+}
+&nbsp;
+@Injectable()
+export class AppStoreService {
+  config = null;
+&nbsp;
+  constructor(
+    private readonly configService: ConfigService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    @InjectRepository(AppDownload)
+    private readonly appDownloadRepository: Repository<span class="branch-1 cbranch-no" title="branch not covered" >&lt;AppDownload&gt;,</span>
+  ) {
+    this.config = configService.get('analytics.appstore');
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >listDownloads</span>(year: number): Promise&lt;AnnualMonthlyTotalDto&gt; {
+    const { apiKey, issuerId } = <span class="cstat-no" title="statement not covered" >this.config;</span>
+    const privateKey = <span class="cstat-no" title="statement not covered" >await this.getPrivateKey();</span>
+    // Needs to be regenerated everytime due to 20-min lifetime of jwt
+    const client: Client = <span class="cstat-no" title="statement not covered" >new AppStoreConnectClient({</span>
+      apiKey,
+      issuerId,
+      privateKey,
+    });
+&nbsp;
+    const { vendorNumber, appSKU } = <span class="cstat-no" title="statement not covered" >this.config;</span>
+    const opts: GetAppDownloadsOptions = <span class="cstat-no" title="statement not covered" >{</span>
+      vendorId: vendorNumber,
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    GDExpectedException.try(ReportsExceptions.reportYearInvalid, year);</span>
+    // check that have a client to use
+<span class="cstat-no" title="statement not covered" >    GDExpectedException.try(ReportsExceptions.appstoreReportMisconfigured, {</span>
+      client,
+      config: this.config,
+      privateKey,
+    });
+&nbsp;
+    let yearTotal;
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      yearTotal = await client.getAppDownloads({</span>
+        ...opts,
+        frequency: DownloadSalesReportFrequency.Yearly,
+        date: `${year}`,
+      } as GetAppDownloadsOptions);
+    } catch (e) {
+      // Fail third-party call silently and return an empty DTO below.
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const appDownloads = <span class="cstat-no" title="statement not covered" >await this.appDownloadRepository</span>
+        .createQueryBuilder('appDownload')
+        .where('appDownload.year =:year', { year })
+        .andWhere('appDownload.platform = :platform', {
+          platform: Platform.IOS,
+        })
+        .getMany();
+&nbsp;
+      const months = <span class="cstat-no" title="statement not covered" >range(0, 12);</span> // 0 - 11
+      const monthlyTotal = <span class="cstat-no" title="statement not covered" >months.map(<span class="fstat-no" title="function not covered" >month</span> =&gt; {</span>
+        const monthlyDownload = <span class="cstat-no" title="statement not covered" >appDownloads.find(</span>
+<span class="fstat-no" title="function not covered" >          appDownload</span> =&gt; <span class="cstat-no" title="statement not covered" >appDownload.month === month + 1,</span>
+        );
+<span class="cstat-no" title="statement not covered" >        return (monthlyDownload &amp;&amp; monthlyDownload.downloads) || 0;</span>
+      });
+&nbsp;
+      const total =
+<span class="cstat-no" title="statement not covered" >        (yearTotal &amp;&amp;</span>
+          yearTotal.apps[appSKU] &amp;&amp;
+          yearTotal.apps[appSKU].downloads) ||
+        sum(monthlyTotal) ||
+        0;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        [year]: {
+          total,
+          monthlyTotal,
+        },
+      };
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  /**
+   * Select appropriate key for prod or dev from config/keys/
+   * DEV is allowed only if you know the config.json values (should not be git-committed).
+   */
+  private async <span class="fstat-no" title="function not covered" >getPrivateKey</span>() {
+    let privateKey = <span class="cstat-no" title="statement not covered" >'';</span>
+    const hasRequiredConfiguration =
+<span class="cstat-no" title="statement not covered" >      this.config.apiKey &amp;&amp;</span>
+      this.config.issuerId &amp;&amp;
+      this.config.vendorNumber &amp;&amp;
+      this.config.appSKU;
+&nbsp;
+    // Select which key file to load. Staging and Prod share the same prod keys
+    // Uses DEV only IF the required config.json is provided
+    const { DEV, PRODUCTION } = <span class="cstat-no" title="statement not covered" >Environments;</span>
+    const configEnv = <span class="cstat-no" title="statement not covered" >isProductionEnv()</span>
+      ? PRODUCTION
+      : hasRequiredConfiguration
+      ? DEV
+      : '';
+<span class="cstat-no" title="statement not covered" >    if (configEnv) {</span>
+<span class="cstat-no" title="statement not covered" >      privateKey = await readFromFileAsync(</span>
+        path.join(
+          process.cwd(),
+          `/config/keys/appstore_authkey.${configEnv}.p8`,
+        ),
+      );
+    }
+<span class="cstat-no" title="statement not covered" >    return privateKey;</span>
+  }
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >archiveDownloads</span>(): Promise&lt;void&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const { apiKey, issuerId } = <span class="cstat-no" title="statement not covered" >this.config;</span>
+      const privateKey = <span class="cstat-no" title="statement not covered" >await this.getPrivateKey();</span>
+      // Needs to be regenerated everytime due to 20-min lifetime of jwt
+      const client: Client = <span class="cstat-no" title="statement not covered" >new AppStoreConnectClient({</span>
+        apiKey,
+        issuerId,
+        privateKey,
+      });
+      const { vendorNumber, appSKU } = <span class="cstat-no" title="statement not covered" >this.config;</span>
+      const opts: GetAppDownloadsOptions = <span class="cstat-no" title="statement not covered" >{</span>
+        vendorId: vendorNumber,
+      };
+&nbsp;
+      // check that have a client to use
+<span class="cstat-no" title="statement not covered" >      GDExpectedException.try(ReportsExceptions.appstoreReportMisconfigured, {</span>
+        client,
+        config: this.config,
+        privateKey,
+      });
+&nbsp;
+      const latestDate = <span class="cstat-no" title="statement not covered" >await this.getLatestDownloadDate();</span>
+      const now = <span class="cstat-no" title="statement not covered" >new Date();</span>
+      const latestCurrentDateDiff = <span class="cstat-no" title="statement not covered" >latestDate</span>
+        ? Math.abs(differenceInMonths(latestDate, now))
+        : 12 + 1; // Default: before 12 months of the current month
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      GDExpectedException.try(</span>
+        ReportsExceptions.appstoreMonthlyReportNotReady,
+        latestCurrentDateDiff,
+      );
+&nbsp;
+      // If the previous month is available, do not archive current month
+<span class="cstat-no" title="statement not covered" >      if (latestCurrentDateDiff === 1) {</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+&nbsp;
+      // Get analytics data form AppstoreConnect
+      const downloadCountPromises = <span class="cstat-no" title="statement not covered" >range(1, latestCurrentDateDiff).map(</span>
+<span class="fstat-no" title="function not covered" >        index</span> =&gt; {
+          const pastDate = <span class="cstat-no" title="statement not covered" >new Date(</span>
+            now.getFullYear(),
+            now.getMonth() - index,
+            1,
+          );
+<span class="cstat-no" title="statement not covered" >          return client.getAppDownloads({</span>
+            ...opts,
+            frequency: DownloadSalesReportFrequency.Monthly,
+            date: format(
+              new Date(getYear(pastDate), getMonth(pastDate), 1),
+              'YYYY-MM',
+            ),
+          } as GetAppDownloadsOptions);
+        },
+      );
+      const downloadCounts = <span class="cstat-no" title="statement not covered" >await Promise.all(downloadCountPromises);</span>
+&nbsp;
+      // Save analytics count to GD database
+      const appDownloads = <span class="cstat-no" title="statement not covered" >downloadCounts.map(<span class="fstat-no" title="function not covered" >({</span> apps = <span class="branch-0 cbranch-no" title="branch not covered" >null </span>}, index) =&gt; {</span>
+        const past = <span class="cstat-no" title="statement not covered" >new Date(</span>
+          now.getFullYear(),
+          now.getMonth() - (index + 1),
+          1,
+        );
+<span class="cstat-no" title="statement not covered" >        return {</span>
+          platform: Platform.IOS,
+          downloads: (apps[appSKU] &amp;&amp; apps[appSKU].downloads) || 0,
+          year: getYear(past),
+          month: getMonth(past) + 1,
+        };
+      });
+<span class="cstat-no" title="statement not covered" >      await this.appDownloadRepository.save(appDownloads);</span>
+    } catch (error) {
+      const { appstoreTOSAgreementRequired, reportGone } = <span class="cstat-no" title="statement not covered" >ReportsExceptions;</span>
+<span class="cstat-no" title="statement not covered" >      GDExpectedException.try(reportGone, error);</span>
+<span class="cstat-no" title="statement not covered" >      GDExpectedException.try(appstoreTOSAgreementRequired, error);</span>
+&nbsp;
+      // still throw unexpected errors
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  private async <span class="fstat-no" title="function not covered" >getLatestDownloadDate</span>(): Promise&lt;Date&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const result: { maxDate: Date } = <span class="cstat-no" title="statement not covered" >await this.appDownloadRepository</span>
+        .createQueryBuilder('appDownload')
+        .select(
+          `MAX(
+            CONCAT(appDownload.year, '-', appDownload.month, '-', 01)::Date
+          ) as "maxDate"`,
+        )
+        .where('appDownload.platform = :platform', { platform: Platform.IOS })
+        .getRawOne();
+<span class="cstat-no" title="statement not covered" >      return result.maxDate ? new Date(result.maxDate) : null;</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

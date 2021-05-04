@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/billing/stripe/stripe.exceptions.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/billing/stripe</a> stripe.exceptions.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { HttpStatus } from '@nestjs/common';
+&nbsp;
+import { isEmpty } from 'lodash';
+import Stripe from 'stripe';
+&nbsp;
+import { ExpectedExceptionMap } from '../../app.interface';
+import { Organization } from '../../entities/organization.entity';
+&nbsp;
+export const StripeExceptions: ExpectedExceptionMap = {
+  customerIdRequired: {
+    message: 'Stripe Customer ID is required',
+    httpStatus: HttpStatus.BAD_REQUEST,
+    failCondition: <span class="fstat-no" title="function not covered" >(c</span>ustomerId: string) =&gt; <span class="cstat-no" title="statement not covered" >!customerId,</span>
+  },
+  invoiceItemRequired: {
+    message: 'Atleast one invoice item is required.',
+    httpStatus: HttpStatus.BAD_REQUEST,
+    failCondition: <span class="fstat-no" title="function not covered" >(i</span>nvoiceItems: Stripe.InvoiceItem[]) =&gt;
+<span class="cstat-no" title="statement not covered" >      isEmpty(invoiceItems),</span>
+  },
+  invoiceItemIdRequired: {
+    message: 'Stripe Invoice Item ID is required',
+    httpStatus: HttpStatus.BAD_REQUEST,
+    failCondition: <span class="fstat-no" title="function not covered" >(i</span>nvoiceItemId: string) =&gt; <span class="cstat-no" title="statement not covered" >!invoiceItemId,</span>
+  },
+  noDefaultCardErrorFromStripe: {
+    message:
+      'Error: Company has no default billing card. Please set up Billing first.',
+    messageFn(organization: Organization) {
+<span class="cstat-no" title="statement not covered" >      return this.message.replace('Company', organization.name);</span>
+    },
+    httpStatus: HttpStatus.NOT_FOUND,
+    failCondition: <span class="fstat-no" title="function not covered" >error</span> =&gt;
+<span class="cstat-no" title="statement not covered" >      /^Cannot charge a customer that has no active card/.test(error.message),</span>
+  },
+  minimumAmountChargeRequired: {
+    message:
+      'Error: The broadcast receivers are too few. More than one receiver is required.',
+    messageFn(count: number) {
+<span class="cstat-no" title="statement not covered" >      return this.message.replace('too few', `only ${count}`);</span>
+    },
+    httpStatus: HttpStatus.BAD_REQUEST,
+    failCondition: <span class="fstat-no" title="function not covered" >error</span> =&gt;
+<span class="cstat-no" title="statement not covered" >      /^Amount must be at least $0.50 usd/.test(error.message),</span>
+  },
+  invoiceCannotBeCharged: {
+    message: `Stripe cannot charge this invoice. Customer must have a card, or the invoice's total amount should be $0.50 USD or higher.`,
+    httpStatus: HttpStatus.BAD_REQUEST,
+    failCondition: <span class="fstat-no" title="function not covered" >(c</span>harge: string | Stripe.Charge) =&gt; <span class="cstat-no" title="statement not covered" >!charge,</span>
+  },
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

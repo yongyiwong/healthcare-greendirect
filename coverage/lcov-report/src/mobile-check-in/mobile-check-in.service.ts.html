@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/mobile-check-in/mobile-check-in.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/mobile-check-in</a> mobile-check-in.service.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as log from 'fancy-log';
+import { DeleteResult, Repository, UpdateResult } from 'typeorm';
+&nbsp;
+import { forwardRef, Inject, Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { ConfigService } from '@sierralabs/nest-utils';
+&nbsp;
+import { Environments, isProductionEnv } from '../app.service';
+import { MobileCheckIn } from '../entities/mobile-check-in.entity';
+import { User } from '../entities/user.entity';
+import { GDExpectedException } from '../gd-expected.exception';
+import { LocationExceptions } from '../location/location.exceptions';
+import { LocationService } from '../location/location.service';
+import {
+  NotificationService,
+  TextMessageNotification,
+} from '../notification/notification.service';
+import { MjfreewayOrderService } from '../synchronize/mjfreeway/mjfreeway-order.service';
+&nbsp;
+@Injectable()
+export class MobileCheckInService {
+  constructor(
+    @InjectRepository(MobileCheckIn)
+    protected mobileCheckInRepository: Repository<span class="branch-1 cbranch-no" title="branch not covered" >&lt;MobileCheckIn&gt;,</span>
+    private readonly notificationService: NotificationService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    protected readonly configService: ConfigService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    private readonly mobileCheckinService: MobileCheckInService,
+    private readonly mjfreewayOrderService: MjfreewayOrderService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    @Inject(forwardRef(() =&gt; LocationService))
+    private readonly locationService: <span class="branch-1 cbranch-no" title="branch not covered" >LocationService<span class="branch-0 cbranch-no" title="branch not covered" >,</span></span>
+  ) {}
+&nbsp;
+  async findWithFilter(
+    locationId?: number,
+    mobileNumber?: string,
+    order?: string,
+    includeClaimed = false,
+  ): Promise&lt;[MobileCheckIn[], number]&gt; {
+    try {
+      const tableName = 'mobileCheckIn';
+      const query = this.mobileCheckInRepository
+        .createQueryBuilder(tableName)
+        .leftJoinAndSelect(`${tableName}.location`, 'location');
+&nbsp;
+      if (locationId) {
+        query.andWhere('location.id = :locationId', { locationId });
+      }
+&nbsp;
+      if (mobileNumber) {
+        query.andWhere(`${tableName}.mobileNumber ILIKE :mobileNumber`, {
+          mobileNumber,
+        });
+      }
+&nbsp;
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (!includeClaimed) {
+        // if includeClaimed is not specified, by default retrieve unclaimed only
+        query.andWhere(`${tableName}.isClaimed = false`);
+      }
+&nbsp;
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (order) {
+        const key = <span class="cstat-no" title="statement not covered" >Object.keys(order)[0];</span>
+<span class="cstat-no" title="statement not covered" >        order[tableName + '.' + key] = order[key];</span>
+<span class="cstat-no" title="statement not covered" >        delete order[key];</span>
+<span class="cstat-no" title="statement not covered" >        query.orderBy(order);</span>
+      } else {
+        query.orderBy(`${tableName}.id`, 'DESC');
+      }
+&nbsp;
+      return query.getManyAndCount();
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  async findById(id: number): Promise&lt;MobileCheckIn&gt; {
+    try {
+      const tableName = 'mobileCheckIn';
+      const query = this.mobileCheckInRepository
+        .createQueryBuilder(tableName)
+        .leftJoinAndSelect(`${tableName}.location`, 'location')
+        .where(`${tableName}.id = :id`, { id });
+&nbsp;
+      return query.getOne();
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  async getLatestCheckIn(mobileNumber: string): Promise&lt;MobileCheckIn&gt; {
+    try {
+      GDExpectedException.try(
+        LocationExceptions.mobileNumberRequired,
+        mobileNumber,
+      );
+&nbsp;
+      const tableName = 'mobileCheckIn';
+      const query = this.mobileCheckInRepository
+        .createQueryBuilder(tableName)
+        .leftJoinAndSelect(`${tableName}.location`, 'location')
+        .where(`TRIM(${tableName}.mobileNumber) = TRIM(:mobileNumber)`, {
+          mobileNumber,
+        })
+        .orderBy(`${tableName}.modified`, 'DESC');
+      return query.getOne();
+    } catch (error) {
+      throw error;
+    }
+  }
+&nbsp;
+  async create(mobileCheckIn: MobileCheckIn): Promise&lt;MobileCheckIn&gt; {
+    try {
+      delete mobileCheckIn.id;
+      return this.mobileCheckInRepository.save(mobileCheckIn);
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  async upsert(mobileCheckIn: MobileCheckIn): Promise&lt;MobileCheckIn&gt; {
+    try {
+      const { mobileNumber } = mobileCheckIn;
+      const existingMobileCheckIn: MobileCheckIn = await this.getLatestCheckIn(
+        mobileNumber,
+      );
+&nbsp;
+      /* NOTE: Repository.save() won't be possible to use here. When a user has an existing check in,
+      and has checked in again at the same location, there would be no changes EXCEPT the `modified`
+      column. Repository.save() won't trigger the Update if there are no changes in the record, which
+      won't update the `modified` column. */
+&nbsp;
+      if (existingMobileCheckIn) {
+        delete mobileCheckIn.created;
+        await this.mobileCheckInRepository.update(
+          { id: existingMobileCheckIn.id },
+          mobileCheckIn,
+        );
+      } else {
+        await this.create(mobileCheckIn);
+      }
+&nbsp;
+      return this.getLatestCheckIn(mobileNumber);
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  async update(mobileCheckIn: MobileCheckIn): Promise&lt;MobileCheckIn&gt; {
+    try {
+      delete mobileCheckIn.created;
+      return this.mobileCheckInRepository.save(mobileCheckIn);
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  // WARNING: This is a physical delete. Replace with update() if soft-delete is needed.
+  // Deletion of mobile check-in are not yet used.
+  async delete(id: number): Promise&lt;DeleteResult&gt; {
+    try {
+      return this.mobileCheckInRepository.delete(id);
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  async checkIn(locationId: number, mobileNumber: string) {
+    const checkIn = {
+      ...new MobileCheckIn(),
+      mobileNumber,
+      location: { id: locationId },
+      isClaimed: false,
+    } as MobileCheckIn;
+&nbsp;
+    const newMobileCheckin = await this.upsert(checkIn);
+    return newMobileCheckin;
+  }
+&nbsp;
+  async sendSmsConfirmation(
+    mobileCheckIn: MobileCheckIn,
+    isNewUser: boolean,
+  ): Promise&lt;any&gt; {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (isProductionEnv()) {
+<span class="cstat-no" title="statement not covered" >      try {</span>
+        const access = <span class="cstat-no" title="statement not covered" >isNewUser ? 'sign-up for an account on' : 'sign-in to';</span>
+        const clientBaseUrl: string = <span class="cstat-no" title="statement not covered" >this.configService.get(</span>
+          'email.clientBaseUrl',
+        );
+        const link = <span class="cstat-no" title="statement not covered" >isNewUser</span>
+          ? `${clientBaseUrl}/sign-up?checkin=${mobileCheckIn.location.id}-${mobileCheckIn.id}`
+          : `${clientBaseUrl}/sign-in`;
+        const textMessage: TextMessageNotification = <span class="cstat-no" title="statement not covered" >{</span>
+          message: `Thanks for checking into ${mobileCheckIn.location.name}, please ${access} GreenDirect to see your rewards. ${link}`,
+          phoneNumber: mobileCheckIn.mobileNumber,
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return this.notificationService.sendTextMessage(textMessage);</span>
+      } catch (error) {
+<span class="cstat-no" title="statement not covered" >        throw error;</span>
+      }
+    }
+    return;
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >claimReward</span>(
+    user: User,
+    mobileNumber: string,
+    isFirstTime = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span>
+  ): Promise&lt;boolean&gt; {
+    const checkins = <span class="cstat-no" title="statement not covered" >await this.mobileCheckinService.findWithFilter(</span>
+      null,
+      mobileNumber,
+    );
+    const count = <span class="cstat-no" title="statement not covered" >checkins[1];</span>
+<span class="cstat-no" title="statement not covered" >    if (!count) {</span>
+      // ? throw exception? 'No unclaimed rewards.'
+<span class="cstat-no" title="statement not covered" >      return false;</span>
+    }
+&nbsp;
+    let order = <span class="cstat-no" title="statement not covered" >null;</span>
+    const unclaimedCheckins = <span class="cstat-no" title="statement not covered" >count ? checkins[0] : [];</span>
+    // Create 1 MJFreeway order for each unclaimed checkin
+<span class="cstat-no" title="statement not covered" >    for (const checkin of unclaimedCheckins) {</span>
+      const posInfo = <span class="cstat-no" title="statement not covered" >await this.locationService.getLocationPosInfo(</span>
+        checkin.location.id,
+      );
+<span class="cstat-no" title="statement not covered" >      try {</span>
+<span class="cstat-no" title="statement not covered" >        if (isProductionEnv({ allow: [Environments.STAGING] })) {</span>
+<span class="cstat-no" title="statement not covered" >          order = await this.mjfreewayOrderService.submitSpecialOrderForRewards(</span>
+            user,
+            checkin,
+            posInfo,
+            isFirstTime,
+          );
+<span class="cstat-no" title="statement not covered" >          if (!order) {</span>
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+          }
+        } else {
+<span class="cstat-no" title="statement not covered" >          log.warn('Claim Reward call to MJF API skipped in non-prod.');</span>
+<span class="cstat-no" title="statement not covered" >          order = {};</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        await this.markCheckinClaimed(order, checkin);</span>
+      } catch (err) {
+<span class="cstat-no" title="statement not covered" >        log.error(`Checkin #${checkin.id} claim reward failed: ${err}`);</span>
+      }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >markCheckinClaimed</span>(
+    order: any,
+    checkin: MobileCheckIn,
+  ): Promise&lt;UpdateResult&gt; {
+    const changes = <span class="cstat-no" title="statement not covered" >{ isClaimed: !!order };</span>
+<span class="cstat-no" title="statement not covered" >    return this.mobileCheckInRepository</span>
+      .createQueryBuilder()
+      .update(MobileCheckIn)
+      .set(changes)
+      .where(`id = :id`, { id: checkin.id })
+      .execute();
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

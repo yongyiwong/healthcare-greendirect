@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/form-business-listing/form-business-listing.controller.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/form-business-listing</a> form-business-listing.controller.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {
+  Body,
+  Controller,
+  Post,
+  Get,
+  Query,
+  Param,
+  ParseIntPipe,
+  UsePipes,
+} from '@nestjs/common';
+import { ApiImplicitQuery, ApiUseTags } from '@nestjs/swagger';
+import { RequiredPipe, ParseBooleanPipe } from '@sierralabs/nest-utils';
+&nbsp;
+import { FormBusinessListing } from '../entities/form-business-listing.entity';
+import { User } from '../entities/user.entity';
+import { NotificationService } from '../notification/notification.service';
+import { UserService } from '../user/user.service';
+import { FormBusinessListingExceptions } from './form-business-listing.exceptions';
+import { FormBusinessListingService } from './form-business-listing.service';
+import { StateService } from '../state/state.service';
+import { FormBusinessListingDto } from './form-business-listing.dto';
+import { RoleEnum } from '../roles/roles.enum';
+import { Roles, OwnerInterceptor } from '@sierralabs/nest-identity';
+import { SearchValidationPipe } from '../common/pipes/search-validation.pipe';
+import { GDExpectedException } from '../gd-expected.exception';
+&nbsp;
+const { Admin } = RoleEnum;
+@ApiUseTags('Form Business Listing')
+@Controller('form-business-listing')
+export class FormBusinessListingController {
+  constructor(
+    private readonly formBusinessListingService: FormBusinessListingService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    private readonly userService: UserService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    private readonly notificationService: NotificationService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    private readonly stateService: StateService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+  ) {}
+&nbsp;
+  @Roles(Admin)
+  @Get()
+  @ApiImplicitQuery({ name: 'search', required: false })
+  @ApiImplicitQuery({ name: 'page', required: false })
+  @ApiImplicitQuery({ name: 'limit', required: false })
+  @ApiImplicitQuery({ name: 'order', required: false })
+  @ApiImplicitQuery({ name: 'includeDeleted', required: false })
+  @UsePipes(new SearchValidationPipe(FormBusinessListing))
+  public async <span class="fstat-no" title="function not covered" >search</span>(
+    @Query('search') search?: string,
+    @Query('page') page?: number,
+    @Query('limit') limit?: number,
+    @Query('order') order?: string,
+    @Query('includeDeleted', new ParseBooleanPipe()) includeDeleted?: boolean,
+  ): Promise<span class="branch-1 cbranch-no" title="branch not covered" >&lt;[FormBusinessListing[], number]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.formBusinessListingService.getFormBusinessListings(</span>
+      search,
+      page,
+      limit,
+      order,
+      includeDeleted,
+    );
+  }
+&nbsp;
+  @Roles(Admin)
+  @Get(':id([0-9]+)')
+  public async <span class="fstat-no" title="function not covered" >getOne</span>(
+    @Param('id', new ParseIntPipe()) id: number,
+  ): Promise<span class="branch-1 cbranch-no" title="branch not covered" >&lt;FormBusinessListing&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.formBusinessListingService.findBusinessById(id);</span>
+  }
+&nbsp;
+  @Post()
+  public async <span class="fstat-no" title="function not covered" >create</span>(
+    @Body(new RequiredPipe()) formBusinessListing: FormBusinessListingDto<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+  ): Promise<span class="branch-1 cbranch-no" title="branch not covered" >&lt;boolean&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      // Retrieve user details
+<span class="cstat-no" title="statement not covered" >      if (formBusinessListing.user &amp;&amp; formBusinessListing.user.id) {</span>
+<span class="cstat-no" title="statement not covered" >        formBusinessListing.user =</span>
+          formBusinessListing.user &amp;&amp; formBusinessListing.user.id
+            ? ((await this.userService.findById(
+                formBusinessListing.user.id,
+              )) as User)
+            : null;
+        /**
+         * Manually set meta-data, since OwnerInterceptor does not work
+         * for public (non-loggedin) forms.
+         */
+<span class="cstat-no" title="statement not covered" >        formBusinessListing.createdBy = formBusinessListing.user.id;</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        delete formBusinessListing.user;</span>
+      }
+      const locale =
+<span class="cstat-no" title="statement not covered" >        (formBusinessListing.user &amp;&amp; formBusinessListing.user.locale) || null;</span>
+      // Retrieve State details
+<span class="cstat-no" title="statement not covered" >      formBusinessListing.state = await this.stateService.findById(</span>
+        formBusinessListing.stateId,
+      );
+      const savedRecord = <span class="cstat-no" title="statement not covered" >await this.formBusinessListingService.create(</span>
+        formBusinessListing as FormBusinessListing,
+      );
+      const emailNotification = <span class="cstat-no" title="statement not covered" >this.formBusinessListingService.composeFormBusinessListingEmail(</span>
+        savedRecord,
+        locale,
+      );
+<span class="cstat-no" title="statement not covered" >      return this.notificationService.sendEmailMessage(</span>
+        emailNotification,
+        locale,
+      );
+    } catch (error) {
+      const { sendingFailed } = <span class="cstat-no" title="statement not covered" >FormBusinessListingExceptions;</span>
+<span class="cstat-no" title="statement not covered" >      throw new GDExpectedException(sendingFailed);</span>
+    }
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

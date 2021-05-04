@@ -1,0 +1,32 @@
+p [ATTENTION]
+
+p A contact sent you a message regarding a new business listing at #{formBusinessListing.created}.
+
+br
+
+p(style="margin-bottom: 0") Contact Name: #{formBusinessListing.fullName}
+p(style="margin-top: 0; margin-bottom: 0") Contact Email: #{formBusinessListing.email}
+p(style="margin-top: 0; margin-bottom: 0") Phone Number: #{formBusinessListing.phoneNumber}
+p(style="margin-top: 0; margin-bottom: 0") Address Line 1: #{formBusinessListing.addressLine1}
+p(style="margin-top: 0; margin-bottom: 0") Address Line 2: #{formBusinessListing.addressLine2}
+p(style="margin-top: 0; margin-bottom: 0") City: #{formBusinessListing.city}
+p(style="margin-top: 0; margin-bottom: 0") State:&nbsp;
+  if formBusinessListing.state
+    span #{formBusinessListing.state.abbreviation} - #{formBusinessListing.state.name}
+p(style="margin-top: 0; margin-bottom: 0") Postal Code: #{formBusinessListing.postalCode}
+
+p Registered account details:&nbsp;
+  if formBusinessListing.user && formBusinessListing.user.id
+    span #{formBusinessListing.user.firstName} #{formBusinessListing.user.lastName} (ID: #{formBusinessListing.user.id})
+  else
+    span (Not registered)
+
+p(style="margin-top: 0; margin-bottom: 0") Business Name: #{formBusinessListing.businessName}
+p(style="margin-top: 0; margin-bottom: 0") Business Type: #{businessType}
+p(style="margin-top: 0; margin-bottom: 0") Business Website: #{formBusinessListing.website}
+
+p -----------------------------------------
+
+br
+br
+p GreenDirect

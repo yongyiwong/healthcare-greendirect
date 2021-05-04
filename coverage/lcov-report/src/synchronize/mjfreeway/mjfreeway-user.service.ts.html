@@ -1,0 +1,2499 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/synchronize/mjfreeway/mjfreeway-user.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/synchronize/mjfreeway</a> mjfreeway-user.service.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777
+778
+779
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795
+796
+797
+798
+799
+800
+801
+802
+803
+804
+805
+806
+807
+808
+809
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as bcrypt from 'bcrypt';
+import * as _ from 'lodash';
+import { EntityManager, Repository } from 'typeorm';
+import { isNumber } from 'util';
+&nbsp;
+import {HttpService, Injectable, LoggerService} from '@nestjs/common';
+import { InjectEntityManager, InjectRepository } from '@nestjs/typeorm';
+import { ConfigService } from '@sierralabs/nest-utils';
+&nbsp;
+import { Environments } from '../../app.service';
+import { FreewayUserAddress } from '../../entities/freeway-user-address.entity';
+import { FreewayUserIdentification } from '../../entities/freeway-user-identification.entity';
+import {
+  FreewayUserLog,
+  FreewayUserLogStatus,
+} from '../../entities/freeway-user-log.entity';
+import { FreewayUserPhone } from '../../entities/freeway-user-phone.entity';
+import { FreewayUser } from '../../entities/freeway-user.entity';
+import { Location } from '../../entities/location.entity';
+import { Organization } from '../../entities/organization.entity';
+import { Role } from '../../entities/role.entity';
+import { UserIdentification } from '../../entities/user-identification.entity';
+import { UserRole } from '../../entities/user-role.entity';
+import { User } from '../../entities/user.entity';
+import { IdentificationParams } from '../../order/dto/order-search.dto';
+import { RoleEnum } from '../../roles/roles.enum';
+import { RolesService } from '../../roles/roles.service';
+import { SignInLinkService } from '../../sign-in-link/sign-in-link.service';
+import { UserRoleService } from '../../user-role/user-role.service';
+import { UserIdentificationType } from '../../user/freeway-user/freeway-user.dto';
+import { REGEX_TLD_EMAIL, UserService } from '../../user/user.service';
+import { PosInfo } from './mjfreeway-order.service';
+import { httpConfig } from '../../common/http.config';
+import {AxiosRequestConfig} from 'axios';
+import {GreenDirectLogger} from '../../greendirect-logger';
+&nbsp;
+const BASE_URL = 'https://partner-gateway.mjplatform.com/v1';
+&nbsp;
+export interface PromiseRegistration {
+  promise: {
+    resolve: (value?) =&gt; void;
+    reject: (reason?) =&gt; void;
+  };
+  lastRequest: Date;
+}
+&nbsp;
+export interface BwellUser {
+  freewayId: number;
+  email: string;
+  firstName: string;
+  lastName: string;
+  password: string;
+  mobileNumber: string;
+}
+&nbsp;
+export class MjfreewayUserLog {
+  private freewayUserUpdateRegistrations = [];
+  private freewayUserLog: FreewayUserLog[];
+&nbsp;
+  constructor(private readonly entityManager: EntityManager) {
+    this.freewayUserUpdateRegistrations = [];
+    this.freewayUserLog = [];
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  registerFreewayUserUpdate</span>(promiseRegistration: PromiseRegistration) {
+<span class="cstat-no" title="statement not covered" >    this.freewayUserUpdateRegistrations.push(promiseRegistration);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  notifyFreewayUserRegistrations</span>() {
+<span class="cstat-no" title="statement not covered" >    for (const promiseRegistration of this.freewayUserUpdateRegistrations) {</span>
+      const freewayUserLog = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >      for (const userLog of this.freewayUserLog) {</span>
+<span class="cstat-no" title="statement not covered" >        if (userLog.modified &gt; promiseRegistration.lastRequest) {</span>
+<span class="cstat-no" title="statement not covered" >          freewayUserLog.push(userLog);</span>
+        }
+      }
+<span class="cstat-no" title="statement not covered" >      if (freewayUserLog.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        promiseRegistration.promise.resolve(freewayUserLog);</span>
+        const index = <span class="cstat-no" title="statement not covered" >this.freewayUserUpdateRegistrations.indexOf(</span>
+          promiseRegistration,
+        );
+<span class="cstat-no" title="statement not covered" >        this.freewayUserUpdateRegistrations.splice(index, 1);</span>
+      }
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  pushFreewayUserLog</span>(updatedFreewayUserLog: FreewayUserLog) {
+    const index = <span class="cstat-no" title="statement not covered" >_.findIndex(this.freewayUserLog, {</span>
+      id: updatedFreewayUserLog.id,
+    });
+<span class="cstat-no" title="statement not covered" >    if (index === -1) {</span>
+<span class="cstat-no" title="statement not covered" >      this.freewayUserLog.push(updatedFreewayUserLog);</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      this.freewayUserLog[index] = updatedFreewayUserLog;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    this.notifyFreewayUserRegistrations();</span>
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >createFreewayUserLog</span>(
+    userId: number,
+    organization: Organization,
+  ): Promise&lt;FreewayUserLog&gt; {
+    let freewayUserLog = <span class="cstat-no" title="statement not covered" >new FreewayUserLog();</span>
+<span class="cstat-no" title="statement not covered" >    freewayUserLog.organization = new Organization();</span>
+<span class="cstat-no" title="statement not covered" >    freewayUserLog.organization.id = organization.id;</span>
+<span class="cstat-no" title="statement not covered" >    freewayUserLog.user = new User();</span>
+<span class="cstat-no" title="statement not covered" >    freewayUserLog.user.id = userId;</span>
+<span class="cstat-no" title="statement not covered" >    freewayUserLog.status = FreewayUserLogStatus.started;</span>
+<span class="cstat-no" title="statement not covered" >    freewayUserLog.message = `Synchronizing organization '${organization.name}'; id: ${organization.id}`;</span>
+<span class="cstat-no" title="statement not covered" >    freewayUserLog = await this.entityManager.save(</span>
+      FreewayUserLog,
+      freewayUserLog,
+    );
+<span class="cstat-no" title="statement not covered" >    this.pushFreewayUserLog(freewayUserLog);</span>
+<span class="cstat-no" title="statement not covered" >    return freewayUserLog;</span>
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >updateFreewayUserLog</span>(
+    userLog: FreewayUserLog,
+    status,
+    message,
+  ): Promise&lt;any&gt; {
+<span class="cstat-no" title="statement not covered" >    userLog.status = status;</span>
+<span class="cstat-no" title="statement not covered" >    userLog.message = message;</span>
+<span class="cstat-no" title="statement not covered" >    userLog = await this.entityManager.save(userLog);</span>
+<span class="cstat-no" title="statement not covered" >    this.pushFreewayUserLog(userLog);</span>
+<span class="cstat-no" title="statement not covered" >    return userLog;</span>
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >updateUserLogCount</span>(userLog: FreewayUserLog, count: number) {
+<span class="cstat-no" title="statement not covered" >    userLog.userCount = count;</span>
+<span class="cstat-no" title="statement not covered" >    userLog = await this.entityManager.save(userLog);</span>
+<span class="cstat-no" title="statement not covered" >    this.pushFreewayUserLog(userLog);</span>
+  }
+}
+&nbsp;
+@Injectable()
+export class MjfreewayUserService {
+  private freewayUserLogs: MjfreewayUserLog;
+  private logger: LoggerService = new GreenDirectLogger('MjfreewayUserService');
+&nbsp;
+  constructor(
+    private readonly configService: ConfigService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    private readonly httpService: HttpService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    private readonly userService: UserService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    private readonly rolesService: RolesService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    private readonly userRoleService: UserRoleService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    private readonly signInLinkService: SignInLinkService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    @InjectEntityManager() private readonly entityManager: EntityManager<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    @InjectRepository(FreewayUserIdentification)
+    private readonly freewayUserIdentificationRepository: Repository<span class="branch-1 cbranch-no" title="branch not covered" >&lt;FreewayUserIdentification&gt;,</span>
+  ) {
+    this.freewayUserLogs = new MjfreewayUserLog(entityManager);
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >synchronizeUsers</span>() {
+<span class="cstat-no" title="statement not covered" >    this.logger.log('synchronizeUsers');</span>
+    const organizations = <span class="cstat-no" title="statement not covered" >await this.getOrganizations();</span>
+<span class="cstat-no" title="statement not covered" >    for (const organization of organizations) {</span>
+<span class="cstat-no" title="statement not covered" >      this.logger.log(`synchronizeUsers looping on org ${organization.id}`);</span>
+      const userLog = <span class="cstat-no" title="statement not covered" >await this.freewayUserLogs.createFreewayUserLog(</span>
+        1,
+        organization,
+      );
+<span class="cstat-no" title="statement not covered" >      if (!organization.posConfig || !organization.posConfig.apiKey) {</span>
+<span class="cstat-no" title="statement not covered" >        await this.freewayUserLogs.updateFreewayUserLog(</span>
+          userLog,
+          FreewayUserLogStatus.failed,
+          'No POS configuration specified',
+        );
+<span class="cstat-no" title="statement not covered" >        continue;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      await this.synchronizeFreewayUsers(userLog, organization);</span>
+    }
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >synchronizeFreewayUsers</span>(
+    userLog: FreewayUserLog,
+    organization: Organization,
+  ) {
+    let userCount = <span class="cstat-no" title="statement not covered" >0;</span>
+    let page = <span class="cstat-no" title="statement not covered" >1;</span>
+    let freewayUsers;
+    const startTime = <span class="cstat-no" title="statement not covered" >new Date().getTime();</span>
+<span class="cstat-no" title="statement not covered" >    do {</span>
+      const importFreewayUsers = <span class="cstat-no" title="statement not covered" >[];</span>
+      const importFreewayAddresses = <span class="cstat-no" title="statement not covered" >[];</span>
+      const importFreewayIdentifications = <span class="cstat-no" title="statement not covered" >[];</span>
+      const importFreewayPhoneNumbers = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >      freewayUsers = await this.getFreewayUsers(organization, page);</span>
+<span class="cstat-no" title="statement not covered" >      await this.freewayUserLogs.updateFreewayUserLog(</span>
+        userLog,
+        FreewayUserLogStatus.updatingFreewayUsers,
+        `Processing update with ${freewayUsers.total} users`,
+      );
+<span class="cstat-no" title="statement not covered" >      freewayUsers.data.forEach(<span class="fstat-no" title="function not covered" >async f</span>wUser =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span></span>
+<span class="cstat-no" title="statement not covered" >        importFreewayUsers.push(</span>
+          this.mapFreewayUserForImport(fwUser, organization.posId),
+        );
+<span class="cstat-no" title="statement not covered" >        fwUser.addresses.forEach(<span class="fstat-no" title="function not covered" >address</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          importFreewayAddresses.push(this.mapFreewayAddressForImport(address));</span>
+        });
+<span class="cstat-no" title="statement not covered" >        fwUser.ids.forEach(<span class="fstat-no" title="function not covered" >id</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          importFreewayIdentifications.push(</span>
+            this.mapFreewayIdentificationForImport(id),
+          );
+        });
+<span class="cstat-no" title="statement not covered" >        fwUser.phone_numbers.forEach(<span class="fstat-no" title="function not covered" >phoneNumber</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          importFreewayPhoneNumbers.push(</span>
+            this.mapFreewayPhoneNumberForImport(phoneNumber),
+          );
+        });
+<span class="cstat-no" title="statement not covered" >        userCount++;</span>
+      });
+      // only import if the import array is not empty
+<span class="cstat-no" title="statement not covered" >      if (importFreewayUsers.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        await this.importFreewayUsers(importFreewayUsers);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (importFreewayAddresses.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        await this.importFreewayAddresses(importFreewayAddresses);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (importFreewayIdentifications.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        await this.importFreewayIdentifications(importFreewayIdentifications);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (importFreewayPhoneNumbers.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        await this.importFreewayPhoneNumbers(importFreewayPhoneNumbers);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      await this.freewayUserLogs.updateUserLogCount(userLog, userCount);</span>
+<span class="cstat-no" title="statement not covered" >      page++;</span>
+    } while (freewayUsers.current_page &lt; freewayUsers.last_page);
+    const timeLapse = <span class="cstat-no" title="statement not covered" >(new Date().getTime() - startTime) / 1000;</span>
+<span class="cstat-no" title="statement not covered" >    return this.freewayUserLogs.updateFreewayUserLog(</span>
+      userLog,
+      FreewayUserLogStatus.completed,
+      `Completed processing in ${timeLapse.toFixed(2)}sec`,
+    );
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >getFreewayUsers</span>(
+    organization: Organization,
+    page: number,
+  ): Promise&lt;any&gt; {
+<span class="cstat-no" title="statement not covered" >    return new Promise(<span class="fstat-no" title="function not covered" >async (r</span>esolve, reject) =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span></span>
+      const apiPath = <span class="cstat-no" title="statement not covered" >`${BASE_URL}/consumers?page=${page}&amp;per_page=1000`;</span>
+<span class="cstat-no" title="statement not covered" >      this.httpService.get(apiPath, this.getHttpConfig(organization)).subscribe(</span>
+<span class="fstat-no" title="function not covered" >        async r</span>esponse =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span>
+<span class="cstat-no" title="statement not covered" >          resolve(response.data);</span>
+        },
+<span class="fstat-no" title="function not covered" >        async e</span>rror =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span>
+<span class="cstat-no" title="statement not covered" >          reject(error);</span>
+        },
+      );
+    });
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >getOrganizations</span>(): Promise&lt;Organization[]&gt; {
+<span class="cstat-no" title="statement not covered" >    return this.entityManager</span>
+      .createQueryBuilder(Organization, 'organization')
+      .select()
+      .where('organization.deleted = false')
+      .andWhere('organization.pos = :pos', { pos: 'mjfreeway' })
+      .getMany();
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  getHttpConfig</span>(organization: Organization): AxiosRequestConfig {
+    const posConfig = <span class="cstat-no" title="statement not covered" >organization.posConfig;</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      baseURL: BASE_URL,
+      headers: {
+        ...httpConfig.headers,
+        'Content-Type': 'application/json',
+        'x-mjf-api-key': posConfig.apiKey,
+        'x-mjf-organization-id': organization.posId,
+        'x-mjf-user-id': posConfig.userId,
+      },
+    };
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  mapFreewayUserForImport</span>(freewayUser: any, orgId: number): FreewayUser {
+    const importUser = <span class="cstat-no" title="statement not covered" >new FreewayUser();</span>
+<span class="cstat-no" title="statement not covered" >    importUser.posId = freewayUser.id;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.orgId = orgId;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.firstName = freewayUser.first_name;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.middleName = freewayUser.middle_name;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.lastName = freewayUser.last_name;</span>
+<span class="cstat-no" title="statement not covered" >    if (freewayUser.email_address) {</span>
+<span class="cstat-no" title="statement not covered" >      importUser.email = freewayUser.email_address.toLowerCase();</span>
+    }
+<span class="cstat-no" title="statement not covered" >    importUser.gender = freewayUser.gender;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.birthday = freewayUser.birth_date;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.active = !!freewayUser.active;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.primaryFacility = freewayUser.primary_facility_id;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.physicianName = freewayUser.physician_name;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.physicianLicense = freewayUser.physician_license;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.physicianAddress = freewayUser.physician_address;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.diagnosis = freewayUser.diagnosis;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.type = freewayUser.type;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.preferredContact = freewayUser.preferred_contact;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.taxExempt = !!freewayUser.tax_exempt;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.orderCountWeek = freewayUser.order_count_week;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.orderCountMonth = freewayUser.order_count_month;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.orderCountNinety = freewayUser.order_count_90_days;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.totalPoints = freewayUser.total_points;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.totalOrders = freewayUser.total_orders;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.totalSpent = freewayUser.total_spent;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.favoriteFlower = freewayUser.favorite_flower_item_name;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.favoriteEdible = freewayUser.favorite_edible_item_name;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.favoriteConcentrate = freewayUser.favorite_concentrate_item_name;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.favoriteTopical = freewayUser.favorite_topical_item_name;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.favoriteFlowerId = freewayUser.favorite_flower_item_master_id;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.favoriteEdibleId = freewayUser.favorite_edible_item_master_id;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.favoriteConcentrateId =</span>
+      freewayUser.favorite_concentrate_item_master_id;
+<span class="cstat-no" title="statement not covered" >    importUser.favoriteTopicalId = freewayUser.favorite_topical_item_master_id;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.created = freewayUser.created_at;</span>
+<span class="cstat-no" title="statement not covered" >    importUser.modified = freewayUser.updated_at;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return importUser;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  mapFreewayAddressForImport</span>(freewayAddress: any): FreewayUserAddress {
+    const importAddress = <span class="cstat-no" title="statement not covered" >new FreewayUserAddress();</span>
+<span class="cstat-no" title="statement not covered" >    importAddress.posId = freewayAddress.id;</span>
+<span class="cstat-no" title="statement not covered" >    importAddress.freewayUser = freewayAddress.consumer_id;</span>
+<span class="cstat-no" title="statement not covered" >    importAddress.orgId = freewayAddress.organization_id;</span>
+<span class="cstat-no" title="statement not covered" >    importAddress.streetAddress1 = freewayAddress.street_address_1;</span>
+<span class="cstat-no" title="statement not covered" >    importAddress.streetAddress2 = freewayAddress.street_address_2;</span>
+<span class="cstat-no" title="statement not covered" >    importAddress.city = freewayAddress.city;</span>
+<span class="cstat-no" title="statement not covered" >    importAddress.providenceCode = freewayAddress.province_code;</span>
+<span class="cstat-no" title="statement not covered" >    importAddress.postalCode = freewayAddress.postal_code;</span>
+<span class="cstat-no" title="statement not covered" >    importAddress.countryCode = freewayAddress.country_code;</span>
+<span class="cstat-no" title="statement not covered" >    importAddress.primary = !!freewayAddress.primary;</span>
+<span class="cstat-no" title="statement not covered" >    importAddress.active = !!freewayAddress.active;</span>
+<span class="cstat-no" title="statement not covered" >    importAddress.created = freewayAddress.created_at;</span>
+<span class="cstat-no" title="statement not covered" >    importAddress.modified = freewayAddress.updated_at;</span>
+<span class="cstat-no" title="statement not covered" >    importAddress.deleted = freewayAddress.deleted_at;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return importAddress;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  mapFreewayIdentificationForImport</span>(freewayID: any): FreewayUserIdentification {
+    const importID = <span class="cstat-no" title="statement not covered" >new FreewayUserIdentification();</span>
+<span class="cstat-no" title="statement not covered" >    importID.posId = freewayID.id;</span>
+<span class="cstat-no" title="statement not covered" >    importID.freewayUser = freewayID.consumer_id;</span>
+<span class="cstat-no" title="statement not covered" >    importID.orgId = freewayID.organization_id;</span>
+<span class="cstat-no" title="statement not covered" >    importID.type = freewayID.type;</span>
+<span class="cstat-no" title="statement not covered" >    importID.state = freewayID.state;</span>
+<span class="cstat-no" title="statement not covered" >    importID.idNumber = freewayID.identification_number;</span>
+<span class="cstat-no" title="statement not covered" >    importID.active = !!freewayID.active;</span>
+<span class="cstat-no" title="statement not covered" >    importID.fileId = freewayID.file_id;</span>
+<span class="cstat-no" title="statement not covered" >    importID.isRenewal = !!freewayID.is_renewal;</span>
+<span class="cstat-no" title="statement not covered" >    importID.effective = freewayID.effective_at;</span>
+<span class="cstat-no" title="statement not covered" >    importID.expires = freewayID.expired_at;</span>
+<span class="cstat-no" title="statement not covered" >    importID.created = freewayID.created_at;</span>
+<span class="cstat-no" title="statement not covered" >    importID.modified = freewayID.updated_at;</span>
+<span class="cstat-no" title="statement not covered" >    importID.deleted = freewayID.deleted_at;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return importID;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  mapFreewayPhoneNumberForImport</span>(freewayPhone: any): FreewayUserPhone {
+    const importNumber = <span class="cstat-no" title="statement not covered" >new FreewayUserPhone();</span>
+<span class="cstat-no" title="statement not covered" >    importNumber.posId = freewayPhone.id;</span>
+<span class="cstat-no" title="statement not covered" >    importNumber.freewayUser = freewayPhone.consumer_id;</span>
+<span class="cstat-no" title="statement not covered" >    importNumber.orgId = freewayPhone.organization_id;</span>
+<span class="cstat-no" title="statement not covered" >    importNumber.type = freewayPhone.type;</span>
+<span class="cstat-no" title="statement not covered" >    importNumber.number = freewayPhone.number;</span>
+<span class="cstat-no" title="statement not covered" >    importNumber.active = !!freewayPhone.active;</span>
+<span class="cstat-no" title="statement not covered" >    importNumber.sms = !!freewayPhone.sms;</span>
+<span class="cstat-no" title="statement not covered" >    importNumber.created = freewayPhone.created_at;</span>
+<span class="cstat-no" title="statement not covered" >    importNumber.modified = freewayPhone.updated_at;</span>
+<span class="cstat-no" title="statement not covered" >    importNumber.deleted = freewayPhone.deleted_at;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return importNumber;</span>
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >importFreewayUsers</span>(freewayUsers: FreewayUser[]) {
+<span class="cstat-no" title="statement not covered" >    await this.entityManager</span>
+      .createQueryBuilder(FreewayUser, 'freeway_user')
+      .insert()
+      .values(freewayUsers)
+      .onConflict(
+        `("pos_id") DO UPDATE SET
+      "org_id" = excluded."org_id",
+      "first_name" = excluded."first_name",
+      "middle_name" = excluded."middle_name",
+      "last_name" = excluded."last_name",
+      "email" = excluded."email",
+      "gender" = excluded."gender",
+      "birthday" = excluded."birthday",
+      "active" = excluded."active",
+      "primary_facility_id" = excluded."primary_facility_id",
+      "physician_name" = excluded."physician_name",
+      "physician_license" = excluded."physician_license",
+      "physician_address" = excluded."physician_address",
+      "diagnosis" = excluded."diagnosis",
+      "type" = excluded."type",
+      "preferred_contact" = excluded."preferred_contact",
+      "order_count_week" = excluded."order_count_week",
+      "order_count_month" = excluded."order_count_month",
+      "order_count_90_days" = excluded."order_count_90_days",
+      "total_points" = excluded."total_points",
+      "total_orders" = excluded."total_orders",
+      "total_spent" = excluded."total_spent",
+      "favorite_flower_item_name" = excluded."favorite_flower_item_name",
+      "favorite_edible_item_name" = excluded."favorite_edible_item_name",
+      "favorite_concentrate_item_name" = excluded."favorite_concentrate_item_name",
+      "favorite_topical_item_name" = excluded."favorite_topical_item_name",
+      "favorite_flower_item_id" = excluded."favorite_flower_item_id",
+      "favorite_edible_item_id" = excluded."favorite_edible_item_id",
+      "favorite_concentrate_item_id" = excluded."favorite_concentrate_item_id",
+      "favorite_topical_item_id" = excluded."favorite_topical_item_id",
+      "created" = excluded."created",
+      "modified" = excluded."modified"`,
+      )
+      .execute();
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >importFreewayAddresses</span>(freewayAddresses: FreewayUserAddress[]) {
+<span class="cstat-no" title="statement not covered" >    await this.entityManager</span>
+      .createQueryBuilder(FreewayUserAddress, 'freeway_user_address')
+      .insert()
+      .values(freewayAddresses)
+      .onConflict(
+        `("pos_id") DO UPDATE SET
+      "freeway_user_id" = excluded."freeway_user_id",
+      "org_id" = excluded."org_id",
+      "street_address_1" = excluded."street_address_1",
+      "street_address_2" = excluded."street_address_2",
+      "city" = excluded."city",
+      "providence_code" = excluded."providence_code",
+      "postal_code" = excluded."postal_code",
+      "country_code" = excluded."country_code",
+      "primary" = excluded."primary",
+      "active" = excluded."active",
+      "created" = excluded."created",
+      "modified" = excluded."modified",
+      "deleted" = excluded."deleted"`,
+      )
+      .execute();
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >importFreewayIdentifications</span>(freewayIDs: FreewayUserIdentification[]) {
+<span class="cstat-no" title="statement not covered" >    await this.entityManager</span>
+      .createQueryBuilder(
+        FreewayUserIdentification,
+        'freeway_user_identification',
+      )
+      .insert()
+      .values(freewayIDs)
+      .onConflict(
+        `("pos_id") DO UPDATE SET
+      "freeway_user_id" = excluded."freeway_user_id",
+      "org_id" = excluded."org_id",
+      "type" = excluded."type",
+      "id_number" = excluded."id_number",
+      "state" = excluded."state",
+      "active" = excluded."active",
+      "file_id" = excluded."file_id",
+      "is_renewal" = excluded."is_renewal",
+      "effective" = excluded."effective",
+      "expires" = excluded."expires",
+      "created" = excluded."created",
+      "modified" = excluded."modified",
+      "deleted" = excluded."deleted"`,
+      )
+      .execute();
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >importFreewayPhoneNumbers</span>(freewayPhoneNumbers: FreewayUserPhone[]) {
+<span class="cstat-no" title="statement not covered" >    await this.entityManager</span>
+      .createQueryBuilder(FreewayUserPhone, 'freeway_user_phone')
+      .insert()
+      .values(freewayPhoneNumbers)
+      .onConflict(
+        `("pos_id") DO UPDATE SET
+      "freeway_user_id" = excluded."freeway_user_id",
+      "org_id" = excluded."org_id",
+      "type" = excluded."type",
+      "number" = excluded."number",
+      "active" = excluded."active",
+      "sms" = excluded."sms",
+      "created" = excluded."created",
+      "modified" = excluded."modified",
+      "deleted" = excluded."deleted"`,
+      )
+      .execute();
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >importBwellUsers</span>(bwellUsers: BwellUser[]) {
+<span class="cstat-no" title="statement not covered" >    for (let index = 674; index &lt; bwellUsers.length; index++) {</span>
+      const bwellUser = <span class="cstat-no" title="statement not covered" >bwellUsers[index];</span>
+      const existingUser = <span class="cstat-no" title="statement not covered" >await this.entityManager.findOne(User, {</span>
+        where: { email: bwellUser.email },
+      });
+<span class="cstat-no" title="statement not covered" >      if (existingUser) {</span>
+        // tslint:disable-next-line
+<span class="cstat-no" title="statement not covered" >        this.logger.log(`user ${bwellUser.email} already exists.`);</span>
+<span class="cstat-no" title="statement not covered" >        continue;</span>
+      }
+      const rounds = <span class="cstat-no" title="statement not covered" >await this.configService.get('password.rounds');</span>
+      let newUser = <span class="cstat-no" title="statement not covered" >new User();</span>
+<span class="cstat-no" title="statement not covered" >      newUser.email = bwellUser.email;</span>
+<span class="cstat-no" title="statement not covered" >      newUser.firstName = bwellUser.firstName;</span>
+<span class="cstat-no" title="statement not covered" >      newUser.lastName = bwellUser.lastName;</span>
+<span class="cstat-no" title="statement not covered" >      newUser.mobileNumber = bwellUser.mobileNumber;</span>
+<span class="cstat-no" title="statement not covered" >      if (isNumber(bwellUser.freewayId)) {</span>
+<span class="cstat-no" title="statement not covered" >        newUser.posId = bwellUser.freewayId;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      newUser.verified = true;</span>
+<span class="cstat-no" title="statement not covered" >      newUser.password = await bcrypt.hash(bwellUser.password, rounds);</span>
+<span class="cstat-no" title="statement not covered" >      newUser = await this.entityManager.save(newUser);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      this.logger.log(</span>
+        `${index} of ${bwellUsers.length} created user id ${newUser.id} for ${newUser.email}`,
+      );
+      // if (index &gt; 2) {
+      //   return;
+      // }
+    }
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >onBoardNewUsersToGD</span>(): Promise&lt;User[]&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const newlyAddedUsers = <span class="cstat-no" title="statement not covered" >await this.createGDAccounts();</span>
+<span class="cstat-no" title="statement not covered" >      await this.subscribeUsersToMarketing(newlyAddedUsers);</span>
+<span class="cstat-no" title="statement not covered" >      if (process.env.NODE_ENV === Environments.PRODUCTION) {</span>
+<span class="cstat-no" title="statement not covered" >        await this.signInLinkService.generateSignInLinks(newlyAddedUsers);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      return newlyAddedUsers;</span>
+    } catch (error) {
+      // send notification email?
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  /**
+   * Creates new GD accounts to mjFreeway users that has no GD accounts yet.
+   * Determined if the mjFreeway user's email does not exist on GD user table.
+   */
+  async <span class="fstat-no" title="function not covered" >createGDAccounts</span>(): Promise&lt;User[]&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      this.logger.log('createGDAccounts');</span>
+&nbsp;
+      const freewayUsers: FreewayUser[] = <span class="cstat-no" title="statement not covered" >await this.getUsersNotYetInGD();</span>
+      const newlyAddedUsersPromises: Promise&lt;User&gt;[] = <span class="cstat-no" title="statement not covered" >freewayUsers</span>
+        .filter(<span class="fstat-no" title="function not covered" >(f</span>reewayUser: FreewayUser) =&gt; {
+          // Don't create accounts for users with invalid email and phone number.
+          const isEmailValid =
+<span class="cstat-no" title="statement not covered" >            freewayUser &amp;&amp;</span>
+            freewayUser.email &amp;&amp;
+            REGEX_TLD_EMAIL.test(freewayUser.email);
+          const isPhoneNumberValid =
+<span class="cstat-no" title="statement not covered" >            !_.isEmpty(freewayUser.phoneNumbers) &amp;&amp;</span>
+            !!this.getFirstValidFreewayPhoneNumber(freewayUser.phoneNumbers);
+<span class="cstat-no" title="statement not covered" >          return isEmailValid &amp;&amp; isPhoneNumberValid;</span>
+        })
+        .map(<span class="fstat-no" title="function not covered" >(f</span>reewayUser: FreewayUser) =&gt;
+<span class="cstat-no" title="statement not covered" >          this.userService.create({</span>
+            posId: freewayUser.posId,
+            firstName: freewayUser.firstName,
+            lastName: freewayUser.lastName,
+            email: freewayUser.email,
+            password: '',
+            mobileNumber: this.userService.formatPhoneNumber(
+              this.getFirstValidFreewayPhoneNumber(freewayUser.phoneNumbers)
+                .number,
+            ),
+            verified: true,
+          } as User),
+        );
+&nbsp;
+      const newlyAddedUsers: User[] = <span class="cstat-no" title="statement not covered" >await Promise.all(</span>
+        newlyAddedUsersPromises,
+      );
+&nbsp;
+      // Assign new users to `patient` role.
+      const assignToRolePromises = <span class="cstat-no" title="statement not covered" >newlyAddedUsers.map(<span class="fstat-no" title="function not covered" >(u</span>ser: User) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >        this.assignToRole(user.id, RoleEnum.Patient),</span>
+      );
+<span class="cstat-no" title="statement not covered" >      await Promise.all(assignToRolePromises);</span>
+<span class="cstat-no" title="statement not covered" >      return newlyAddedUsers;</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >assignToRole</span>(userId: number, roleEnum: RoleEnum): Promise&lt;UserRole&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const [user, role] = <span class="cstat-no" title="statement not covered" >await Promise.all([</span>
+        this.userService.findById(userId),
+        this.rolesService.findByName(roleEnum),
+      ]);
+      const userRole: UserRole = <span class="cstat-no" title="statement not covered" >{ user: user as User, role: role as Role };</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return this.userRoleService.upsert(userRole);</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >getUsersNotYetInGD</span>(): Promise&lt;FreewayUser[]&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const tableName = <span class="cstat-no" title="statement not covered" >'freeway_user';</span>
+      const query = <span class="cstat-no" title="statement not covered" >this.entityManager</span>
+        .createQueryBuilder(FreewayUser, tableName)
+        .select()
+        .where(<span class="fstat-no" title="function not covered" >qb</span> =&gt; {
+          // gets only one (with the min posId) mjfreeway user when there are several rows with the same email.
+          const subQuery = <span class="cstat-no" title="statement not covered" >qb</span>
+            .subQuery()
+            .select(`MIN(${tableName}.posId)`)
+            .from(FreewayUser, tableName)
+            .groupBy(`${tableName}.email`)
+            .getQuery();
+<span class="cstat-no" title="statement not covered" >          return `${tableName}.posId IN ${subQuery}`;</span>
+        })
+        .andWhere(`${tableName}.email IS NOT NULL`)
+        .andWhere(`${tableName}.active = true`)
+        .andWhere(<span class="fstat-no" title="function not covered" >qb</span> =&gt; {
+          // check if the mjFreeway user's email does not exist in GD users.
+          const subQuery = <span class="cstat-no" title="statement not covered" >qb</span>
+            .subQuery()
+            .select()
+            .from(User, 'user')
+            .where(`user.email ILIKE ${tableName}.email`)
+            .getQuery();
+<span class="cstat-no" title="statement not covered" >          return 'NOT EXISTS ' + subQuery;</span>
+        })
+        .leftJoinAndSelect(`${tableName}.phoneNumbers`, 'phoneNumber')
+        .orderBy(`${tableName}.posId`, 'ASC');
+<span class="cstat-no" title="statement not covered" >      return query.getMany();</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  /**
+   * Gets the first valid FreewayUserPhone number.
+   */
+  private <span class="fstat-no" title="function not covered" >getFirstValidFreewayPhoneNumber</span>(
+    freewayUserPhones: FreewayUserPhone[],
+  ): FreewayUserPhone {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      if (_.isEmpty(freewayUserPhones)) {</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      return freewayUserPhones.find(</span>
+<span class="fstat-no" title="function not covered" >        (f</span>reewayUserPhone: FreewayUserPhone) =&gt;
+<span class="cstat-no" title="statement not covered" >          freewayUserPhone.number &amp;&amp;</span>
+          this.userService.isValidPhoneNumber(freewayUserPhone.number),
+      );
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >subscribeUsersToMarketing</span>(users: User[]): Promise&lt;void&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      this.logger.log('subscribeUsersToMarketing');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (_.isEmpty(users)) {</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+&nbsp;
+      const subscribedUsersPromises: Promise&lt;User&gt;[] = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >      for (const user of users) {</span>
+        const organizations = <span class="cstat-no" title="statement not covered" >await this.userService.findUserOrgsByEmail(</span>
+          user.email,
+        );
+&nbsp;
+        // subscribe to General List for SMS Blast (do not provide organizationId)
+<span class="cstat-no" title="statement not covered" >        subscribedUsersPromises.push(</span>
+          this.userService.subscribeUserToMarketing(user),
+        );
+<span class="cstat-no" title="statement not covered" >        for (const organization of organizations) {</span>
+          // subscribe to associated organization  for SMS Blast
+<span class="cstat-no" title="statement not covered" >          subscribedUsersPromises.push(</span>
+            this.userService.subscribeUserToMarketing(user, organization.id),
+          );
+        }
+      }
+<span class="cstat-no" title="statement not covered" >      await Promise.all(subscribedUsersPromises);</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  // TODO Why not just take a phone number as an argument? -lbradley
+  async <span class="fstat-no" title="function not covered" >findConsumerByPhone</span>(user: User, orgId: number): Promise&lt;FreewayUser&gt; {
+    const phoneNumber = <span class="cstat-no" title="statement not covered" >user.mobileNumber;</span>
+    const result = <span class="cstat-no" title="statement not covered" >await this.entityManager.query(</span>
+      `
+      SELECT freeway_user_id FROM freeway_user_phone
+      WHERE right(regexp_replace("number", '\\D','','g'), 10) =
+      right(regexp_replace($1, '\\D','','g'), 10)
+      AND org_id = $2`,
+      [phoneNumber, orgId],
+    );
+<span class="cstat-no" title="statement not covered" >    if (result.length &lt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return this.findConsumerByPosId(result[0].freeway_user_id);</span>
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >findConsumerByPosId</span>(posId: number): Promise&lt;FreewayUser&gt; {
+<span class="cstat-no" title="statement not covered" >    return this.entityManager</span>
+      .createQueryBuilder(FreewayUser, 'freeway_user')
+      .select()
+      .where('pos_id = :posId', { posId })
+      .getOne();
+  }
+&nbsp;
+  /**
+   * Find FreewayUser by FreewayUserIdentification.posId
+   */
+  async <span class="fstat-no" title="function not covered" >findConsumerByIdentification</span>(posId: number): Promise&lt;FreewayUser&gt; {
+    const freewayId = <span class="cstat-no" title="statement not covered" >await this.freewayUserIdentificationRepository</span>
+      .createQueryBuilder('userIdentification')
+      .innerJoinAndSelect(
+        'userIdentification.freewayUser',
+        'freewayUser',
+        'freewayUser.active = true',
+      )
+      .where('userIdentification.posId = :posId', { posId })
+      .getOne();
+<span class="cstat-no" title="statement not covered" >    return freewayId.freewayUser;</span>
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >getIdentification</span>(
+    orgId: number,
+    patientNumber?: string,
+    mobileNumber?: string,
+    email?: string,
+  ): Promise&lt;FreewayUserIdentification&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const query = <span class="cstat-no" title="statement not covered" >this.freewayUserIdentificationRepository</span>
+        .createQueryBuilder('userIdentification')
+        .innerJoinAndSelect(
+          'userIdentification.freewayUser',
+          'freewayUser',
+          'freewayUser.active = true',
+        )
+        .where('userIdentification.type = :type', {
+          type: UserIdentificationType.MED,
+        })
+        .andWhere('userIdentification.active IS NOT NULL')
+        .andWhere('userIdentification.orgId = :orgId', { orgId });
+      let whereClause = <span class="cstat-no" title="statement not covered" >'';</span>
+<span class="cstat-no" title="statement not covered" >      if (patientNumber) {</span>
+<span class="cstat-no" title="statement not covered" >        whereClause =</span>
+          /** Remove non digit characters to check only numeric values */
+          `trim(leading '0' from right(regexp_replace(userIdentification.idNumber, '\\D','','g'), 8)) =
+            trim(leading '0' from right(regexp_replace(:patientNumber, '\\D','','g'), 8))`;
+      }
+<span class="cstat-no" title="statement not covered" >      if (mobileNumber) {</span>
+<span class="cstat-no" title="statement not covered" >        query.leftJoin(</span>
+          'freewayUser.phoneNumbers',
+          'phoneNumbers',
+          'phoneNumbers.active = true',
+        );
+        /** Remove non digit characters to check only numeric values */
+<span class="cstat-no" title="statement not covered" >        whereClause += `${whereClause.length &gt; 0 ? ' OR ' : ''}</span>
+          right(regexp_replace(phoneNumbers.number, '\\D','','g'),10) =
+          right(regexp_replace(:mobileNumber, '\\D','','g'), 10)`;
+      }
+<span class="cstat-no" title="statement not covered" >      if (email) {</span>
+<span class="cstat-no" title="statement not covered" >        whereClause += `${</span>
+          whereClause.length &gt; 0 ? ' OR ' : ''
+        } freewayUser.email ILIKE :email`;
+      }
+<span class="cstat-no" title="statement not covered" >      if (!whereClause) {</span>
+<span class="cstat-no" title="statement not covered" >        return null;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      return query</span>
+        .andWhere(whereClause, { patientNumber, mobileNumber, email })
+        .getOne();
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  /**
+   * Check if user is a medical user and create a UserIdentification
+   * @param posInfo
+   * @param email
+   */
+  public async <span class="fstat-no" title="function not covered" >matchUserIdentification</span>(
+    posInfo: PosInfo,
+    identificationParams: IdentificationParams,
+  ): Promise&lt;any&gt; {
+    const { patientNumber, mobileNumber, email } = <span class="cstat-no" title="statement not covered" >identificationParams;</span>
+    const mjIdentification = <span class="cstat-no" title="statement not covered" >await this.getIdentification(</span>
+      posInfo.organizationPosId,
+      patientNumber,
+      mobileNumber,
+      email,
+    );
+<span class="cstat-no" title="statement not covered" >    if (!mjIdentification) {</span>
+<span class="cstat-no" title="statement not covered" >      return null;</span>
+    }
+    const userIdentification = <span class="cstat-no" title="statement not covered" >new UserIdentification();</span>
+<span class="cstat-no" title="statement not covered" >    userIdentification.user = new User();</span>
+<span class="cstat-no" title="statement not covered" >    userIdentification.user.id = posInfo.userId;</span>
+<span class="cstat-no" title="statement not covered" >    userIdentification.location = new Location();</span>
+<span class="cstat-no" title="statement not covered" >    userIdentification.location.id = posInfo.locationId;</span>
+<span class="cstat-no" title="statement not covered" >    userIdentification.email = mjIdentification.freewayUser.email;</span>
+<span class="cstat-no" title="statement not covered" >    userIdentification.posId = mjIdentification.posId;</span>
+<span class="cstat-no" title="statement not covered" >    userIdentification.type = mjIdentification.type;</span>
+<span class="cstat-no" title="statement not covered" >    userIdentification.number = mjIdentification.idNumber;</span>
+<span class="cstat-no" title="statement not covered" >    userIdentification.state = mjIdentification.state;</span>
+<span class="cstat-no" title="statement not covered" >    userIdentification.isActive = !!mjIdentification.active;</span>
+<span class="cstat-no" title="statement not covered" >    userIdentification.expires = mjIdentification.expires;</span>
+<span class="cstat-no" title="statement not covered" >    userIdentification.createdBy = posInfo.userId;</span>
+<span class="cstat-no" title="statement not covered" >    userIdentification.modifiedBy = posInfo.userId;</span>
+<span class="cstat-no" title="statement not covered" >    return userIdentification;</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

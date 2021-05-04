@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/deal/deal.controller.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/deal</a> deal.controller.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {
+  Controller,
+  Get,
+  UsePipes,
+  Query,
+  Param,
+  ParseIntPipe,
+  Put,
+  UseInterceptors,
+  Body,
+  Delete,
+  Req,
+  Post,
+  Res,
+  Next,
+} from '@nestjs/common';
+import {
+  ApiImplicitBody,
+  ApiBearerAuth,
+  ApiUseTags,
+  ApiImplicitQuery,
+  ApiOperation,
+} from '@nestjs/swagger';
+import {
+  ParseBooleanPipe,
+  RequiredPipe,
+  ParseEntityPipe,
+  ConfigService,
+} from '@sierralabs/nest-utils';
+import { UpdateResult } from 'typeorm';
+import { Roles, OwnerInterceptor } from '@sierralabs/nest-identity';
+import { SearchValidationPipe } from '../common/pipes/search-validation.pipe';
+import * as log from 'fancy-log';
+&nbsp;
+import { Deal } from '../entities/deal.entity';
+import { DealService } from './deal.service';
+import { RoleEnum } from '../roles/roles.enum';
+import { DealPresignDto } from './deal-presign.dto';
+import {
+  NotificationService,
+  NotificationMethod,
+} from '../notification/notification.service';
+import { UserService } from '../user';
+import { User } from '../entities/user.entity';
+import { DealCategory } from './deal-category.enum';
+&nbsp;
+const { Admin, SiteAdmin } = RoleEnum;
+&nbsp;
+@ApiBearerAuth()
+@ApiUseTags('Deals')
+@Controller('deals')
+export class DealController {
+  constructor(
+    private readonly dealService: DealService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    private readonly userService: UserService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    protected readonly configService: ConfigService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    protected readonly notificationService: NotificationService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+  ) {}
+&nbsp;
+  @Get()
+  @UsePipes(new SearchValidationPipe(Deal))
+  @ApiImplicitQuery({ name: 'search', required: false })
+  @ApiImplicitQuery({ name: 'page', required: false })
+  @ApiImplicitQuery({ name: 'limit', required: false })
+  @ApiImplicitQuery({ name: 'order', required: false })
+  @ApiImplicitQuery({ name: 'category', required: false })
+  @ApiImplicitQuery({ name: 'startDate', required: false })
+  @ApiImplicitQuery({ name: 'endDate', required: false })
+  @ApiImplicitQuery({ name: 'locationId', required: false })
+  @ApiImplicitQuery({ name: 'includeDeleted', required: false })
+  @ApiImplicitQuery({ name: 'includeUnassigned', required: false })
+  @ApiImplicitQuery({ name: 'includeInactiveDeals', required: false })
+  @ApiImplicitQuery({ name: 'excludeEnded', required: false })
+  @ApiImplicitQuery({ name: 'shuffleBaseValue', required: false })
+  public async <span class="fstat-no" title="function not covered" >getDeals</span>(
+    @Query('search') search?: string,
+    @Query('page') page?: number,
+    @Query('limit') limit?: number,
+    @Query('order') order?: string,
+    @Query('category') category?: DealCategory<span class="branch-0 cbranch-no" title="branch not covered" >,</span>
+    @Query('startDate') startDate?: number,
+    @Query('endDate') endDate?: number,
+    @Query('locationId') locationId?: number,
+    @Query('includeDeleted', new ParseBooleanPipe())
+    includeDeleted: boolean = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span>
+    @Query('includeUnassigned', new ParseBooleanPipe())
+    includeUnassigned: boolean = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span>
+    @Query('includeInactiveDeals', new ParseBooleanPipe())
+    includeInactiveDeals: boolean = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span>
+    @Query('excludeEnded', new ParseBooleanPipe())
+    excludeEnded: boolean = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span>
+    @Query('shuffleBaseValue') shuffleBaseValue?: number,
+  ) {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      return this.dealService.findWithFilter({</span>
+        search,
+        page,
+        limit,
+        order,
+        category,
+        startDate,
+        endDate,
+        locationId,
+        includeDeleted,
+        includeUnassigned,
+        includeInactiveDeals,
+        excludeEnded,
+        shuffleBaseValue,
+      });
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  @Get(':id([0-9]+)')
+  @ApiImplicitQuery({ name: 'locationId', required: false })
+  public async <span class="fstat-no" title="function not covered" >getOne</span>(
+    @Param('id', new ParseIntPipe()) id: number,
+    @Query('locationId') locationId?: number,
+  ): Promise<span class="branch-1 cbranch-no" title="branch not covered" >&lt;Deal&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.dealService.findById(id, locationId);</span>
+  }
+&nbsp;
+  @Roles(Admin, SiteAdmin)
+  @Post()
+  @UseInterceptors(new OwnerInterceptor(['createdBy', 'modifiedBy']))
+  public async <span class="fstat-no" title="function not covered" >create</span>(@Body(new RequiredPipe()) deal: Deal<span class="branch-1 cbranch-no" title="branch not covered" >): Promise<span class="branch-1 cbranch-no" title="branch not covered" >&lt;Deal&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >    await this.dealService.checkCreateDeal(deal);</span>
+<span class="cstat-no" title="statement not covered" >    delete deal.dealLocations;</span>
+<span class="cstat-no" title="statement not covered" >    return this.dealService.createDeal(deal);</span>
+  }
+&nbsp;
+  @Roles(Admin, SiteAdmin)
+  @Put(':id([0-9]+)')
+  @UseInterceptors(new OwnerInterceptor(['modifiedBy']))
+  public async <span class="fstat-no" title="function not covered" >update</span>(
+    @Param('id', new ParseIntPipe()) id: number,
+    @Body(
+      new RequiredPipe(),
+      new ParseEntityPipe({ validate: { skipMissingProperties: true } }),
+    )
+    deal: Deal<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+  ): Promise<span class="branch-1 cbranch-no" title="branch not covered" >&lt;Deal&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    deal.id = id;</span>
+<span class="cstat-no" title="statement not covered" >    await this.dealService.checkUpdateDeal(deal);</span>
+<span class="cstat-no" title="statement not covered" >    return this.dealService.updateDeal(deal);</span>
+  }
+&nbsp;
+  @Roles(Admin, SiteAdmin)
+  @Delete(':id([0-9]+)')
+  public async <span class="fstat-no" title="function not covered" >remove</span>(
+    @Param('id') id: number,
+    @Req() request,
+  ): Promise<span class="branch-1 cbranch-no" title="branch not covered" >&lt;UpdateResult&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.dealService.removeDeal(id, request.user.id);</span>
+  }
+&nbsp;
+  @ApiImplicitBody({
+    name: 'body',
+    required: true,
+    type: class {
+      notificationMethod: string;
+<span class="fstat-no" title="function not covered" >      new</span>() {}
+    },
+  })
+  @Roles('$authenticated')
+  @Post(':id([0-9]+)')
+  public async <span class="fstat-no" title="function not covered" >claimDeal</span>(
+    @Param('id', new ParseIntPipe()) id: number,
+    @Body('notificationMethod') notifMethod: NotificationMethod<span class="branch-0 cbranch-no" title="branch not covered" >,</span>
+    @Req() request,
+  ): Promise<span class="branch-1 cbranch-no" title="branch not covered" >&lt;boolean&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const user = <span class="cstat-no" title="statement not covered" >request.user as User;</span>
+      const claimedUserDeal = <span class="cstat-no" title="statement not covered" >await this.dealService.claimDeal(</span>
+        id,
+        user.id,
+        notifMethod,
+      );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (!claimedUserDeal) {</span>
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+      }
+&nbsp;
+      const locale = <span class="cstat-no" title="statement not covered" >user.locale;</span>
+<span class="cstat-no" title="statement not covered" >      if (notifMethod === NotificationMethod.SMS) {</span>
+        const smsNotification = <span class="cstat-no" title="statement not covered" >this.dealService.composeClaimedDealSMS(</span>
+          claimedUserDeal.deal,
+          user.mobileNumber,
+        );
+<span class="cstat-no" title="statement not covered" >        await this.notificationService.sendTextMessage(smsNotification);</span>
+      } else {
+        const emailNotification = <span class="cstat-no" title="statement not covered" >await this.dealService.composeDealClaimedEmail(</span>
+          claimedUserDeal.id,
+          locale,
+        );
+<span class="cstat-no" title="statement not covered" >        await this.notificationService.sendEmailMessage(</span>
+          emailNotification,
+          locale,
+        );
+      }
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  @Roles(Admin, SiteAdmin)
+  @ApiOperation({ title: 'Create Presigned Url for S3' })
+  @Post('photo/presign')
+  public async <span class="fstat-no" title="function not covered" >createPresignedPost</span>(
+    @Body(new RequiredPipe()) dealPresignDto: <span class="branch-0 cbranch-no" title="branch not covered" >DealPresignDto<span class="branch-0 cbranch-no" title="branch not covered" >,</span></span>
+  ): Promise<span class="branch-1 cbranch-no" title="branch not covered" >&lt;any&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.dealService.createPresignedPost(dealPresignDto);</span>
+  }
+&nbsp;
+  /** Public retrieval of Deal images */
+  @ApiOperation({ title: 'Proxy coupon photo from S3' })
+  @Get('photo/file/:fileKey')
+  public <span class="fstat-no" title="function not covered" >proxyFile</span>(
+    @Param('fileKey') fileKey: string,
+    @Req() request,
+    @Res() response,
+    @Next() next,
+  ): any {
+<span class="cstat-no" title="statement not covered" >    this.dealService.proxyFile(fileKey, request, response, next);</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

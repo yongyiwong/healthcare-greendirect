@@ -1,0 +1,1875 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/message/message.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/message</a> message.service.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">81x</span>
+<span class="cline-any cline-yes">81x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">81x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">81x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">81x</span>
+<span class="cline-any cline-yes">81x</span>
+<span class="cline-any cline-yes">81x</span>
+<span class="cline-any cline-yes">81x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">81x</span>
+<span class="cline-any cline-yes">81x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">81x</span>
+<span class="cline-any cline-yes">81x</span>
+<span class="cline-any cline-yes">81x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">81x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { SNS } from 'aws-sdk';
+import * as _ from 'lodash';
+import { EntityManager, Repository } from 'typeorm';
+import {Injectable, LoggerService} from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { ConfigService } from '@sierralabs/nest-utils';
+&nbsp;
+import { GDExpectedException } from '../gd-expected.exception';
+import { Message } from '../entities/message.entity';
+import { Organization } from '../entities/organization.entity';
+import { UserMarketing } from '../entities/user-marketing.entity';
+import { User } from '../entities/user.entity';
+import {
+  BroadcastMessageDto,
+  BroadcastMessageCountDto,
+  BroadcastSummaryDto,
+} from './message.dto';
+import { isNonProduction, isProductionEnv } from '../app.service';
+import { BillingService } from '../billing/billing.service';
+import { InvoiceDto } from '../billing/dto/invoice.dto';
+import { BillingExceptions } from '../billing/billing.exceptions';
+import { MessageExceptions } from './message.exceptions';
+&nbsp;
+import serializeError from 'serialize-error';
+import {GreenDirectLogger} from '../greendirect-logger';
+&nbsp;
+/** Ref: https://frightanic.com/software-development/regex-for-gsm-03-38-7bit-character-set/ */
+export const GSM_CHARACTERS_REGEX =
+  // tslint:disable-next-line:max-line-length
+  '^[A-Za-z0-9 \\r\\n@£$¥èéùìòÇØøÅå\u0394_\u03A6\u0393\u039B\u03A9\u03A0\u03A8\u03A3\u0398\u039EÆæßÉ!"#$%&amp;amp;\'()*+,\\-./:;&amp;lt;=&amp;gt;?¡ÄÖÑÜ§¿äöñüà^{}\\\\\\[~\\]|\u20AC]*$';
+&nbsp;
+/**
+ * SMS Message Limit depends on the encoding scheme.
+ * Ref: https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html
+ * GSM Characters: https://en.wikipedia.org/wiki/GSM_03.38#GSM_7-bit_default_alphabet_and_extension_table_of_3GPP_TS_23.038_.2F_GSM_03.38
+ * UCS2: For strings with Emoji's
+ */
+enum MessageLimit {
+  GSM = 160,
+  UCS2 = 70,
+}
+&nbsp;
+@Injectable()
+export class MessageService {
+  protected readonly sns: SNS;
+  private readonly MESSAGE_LIMIT = MessageLimit;
+  private logger: LoggerService = new GreenDirectLogger('MessageService');
+&nbsp;
+  constructor(
+    @InjectRepository(Message)
+    protected readonly messageRepository: Repository<span class="branch-1 cbranch-no" title="branch not covered" >&lt;Message&gt;,</span>
+    @InjectRepository(UserMarketing)
+    protected readonly userMarketingRepository: Repository<span class="branch-1 cbranch-no" title="branch not covered" >&lt;UserMarketing&gt;,</span>
+    @InjectRepository(Organization)
+    protected readonly organizationRepository: Repository<span class="branch-1 cbranch-no" title="branch not covered" >&lt;Organization&gt;,</span>
+    protected readonly entityManager: EntityManager<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    protected readonly configService: ConfigService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    protected readonly billingService: BillingService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+  ) {
+    const snsOptions: SNS.ClientConfiguration = { apiVersion: '2010-03-31' };
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (isNonProduction()) {
+      // ! Allow specifying localstack SNS to test without using real AWS.
+      const endpoint = this.configService.get('notification.aws.sns.endpoint');
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (!!endpoint) {
+        snsOptions.endpoint = endpoint;
+      }
+    }
+&nbsp;
+    this.sns = new SNS(snsOptions);
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >findAll</span>(
+    limit: number = <span class="branch-0 cbranch-no" title="branch not covered" >100,</span>
+    page: number = <span class="branch-0 cbranch-no" title="branch not covered" >0,</span>
+    order?: any,
+    organizationId?: number,
+    isOrganizationIdRequired?: boolean,
+  ): Promise&lt;[Message[], number]&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      if (isOrganizationIdRequired &amp;&amp; !organizationId) {</span>
+<span class="cstat-no" title="statement not covered" >        return [[], 0];</span>
+      }
+&nbsp;
+      const tableName = <span class="cstat-no" title="statement not covered" >'message';</span>
+      const offset = <span class="cstat-no" title="statement not covered" >page * limit;</span>
+      const query = <span class="cstat-no" title="statement not covered" >this.messageRepository</span>
+        .createQueryBuilder(tableName)
+        .select()
+        .addSelect([
+          'user.id',
+          'user.firstName',
+          'user.lastName',
+          'organization.id',
+          'organization.name',
+        ])
+        .leftJoin(`${tableName}.createdBy`, 'user')
+        .leftJoin(`${tableName}.organization`, 'organization')
+        .limit(limit)
+        .offset(offset);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (order) {</span>
+        const [column, value = <span class="branch-0 cbranch-no" title="branch not covered" >'ASC']</span> = <span class="cstat-no" title="statement not covered" >order.split(' ');</span>
+        const orderValue = <span class="cstat-no" title="statement not covered" >value.toUpperCase() === 'DESC' ? 'DESC' : 'ASC';</span>
+        let orderColumn = <span class="cstat-no" title="statement not covered" >'';</span>
+<span class="cstat-no" title="statement not covered" >        if (column === 'createdBy') {</span>
+<span class="cstat-no" title="statement not covered" >          orderColumn = `user.firstName`;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >          orderColumn = `${tableName}.${column}`;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        query.orderBy(orderColumn, orderValue);</span>
+<span class="cstat-no" title="statement not covered" >        query.addOrderBy(`${tableName}.id`, 'DESC');</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        query.orderBy(`${tableName}.id`, 'DESC');</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (organizationId) {</span>
+<span class="cstat-no" title="statement not covered" >        query.where(`${tableName}.organization.id = :organizationId`, {</span>
+          organizationId,
+        });
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return query.getManyAndCount();</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  /**
+   * Bulk subscribe users to organization specific marketing
+   * if not already subscribed.
+   */
+  async <span class="fstat-no" title="function not covered" >bulkSubscribeMarketing</span>() {
+    const results = <span class="cstat-no" title="statement not covered" >await this.entityManager.query(`</span>
+      SELECT
+        "user"."id" as "userId",
+        "user"."mobile_number" as "mobileNumber",
+        "organization"."id" as "organizationId",
+        "organization"."text_topic_arn" as "textTopicArn"
+      FROM "user"
+      INNER JOIN "order" ON "order"."user_id" = "user"."id" AND "order"."order_status" NOT IN ('cancelled', 'closed')
+      INNER JOIN "location" ON "location"."id" = "order"."location_id"
+      INNER JOIN "organization" ON "organization"."id" = "location"."organization_id"
+      WHERE "is_subscribed_to_marketing" = true AND "user"."mobile_number" IS NOT NULL
+      AND NOT EXISTS (
+        SELECT 1 FROM "user_marketing" WHERE user_id = "user"."id" AND organization_id = "organization"."id"
+      )
+      GROUP BY "user"."id", "user"."mobile_number", "organization"."id", "organization"."text_topic_arn"
+      ORDER BY "user"."id", "user"."mobile_number", "organization"."id", "organization"."text_topic_arn"
+    `);
+&nbsp;
+    let count = <span class="cstat-no" title="statement not covered" >0;</span>
+<span class="cstat-no" title="statement not covered" >    for (const row of results) {</span>
+      const subscriptionArn = <span class="cstat-no" title="statement not covered" >await this.subscribeToTextMessageMarketing(</span>
+        row.userId,
+        row.mobileNumber,
+        row.organizationId,
+      );
+<span class="cstat-no" title="statement not covered" >      count++;</span>
+<span class="cstat-no" title="statement not covered" >      this.logger.log(</span>
+        `processed ${count} of ${results.length}: ${subscriptionArn}`,
+      );
+    }
+  }
+&nbsp;
+  async subscribeToTextMessageMarketing(
+    userId: number,
+    phoneNumber: string,
+    organizationId?: number,
+  ): Promise&lt;string&gt; {
+    GDExpectedException.try(
+      MessageExceptions.phoneNumberRequiredToSubscribe,
+      phoneNumber,
+    );
+    try {
+      let topicArn: string;
+      const generalTopicArn: string = this.configService.get(
+        'notification.aws.sns.topicArn',
+      );
+      // if organization is provided, first see if user is already subscribed to that ARN
+      if (organizationId) {
+        const userMarketing = await this.userMarketingRepository
+          .createQueryBuilder('user_marketing')
+          .select()
+          .addSelect(['user.id'])
+          .leftJoin('user_marketing.user', 'user')
+          .where('user_marketing.user_id = :userId', { userId })
+          .andWhere('user_marketing.organization_id = :organizationId', {
+            organizationId,
+          })
+          .andWhere(
+            'user_marketing.text_marketing_subscription_arn IS NOT NULL',
+          )
+          .getOne();
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (userMarketing) {
+<span class="cstat-no" title="statement not covered" >          return userMarketing.textMarketingSubscriptionArn;</span>
+        } else {
+          // if user is not already subscribed, set the topicARN to organization's ARN if exists, or default
+          const organizationTopic = await this.organizationRepository.findOne({
+            where: { id: organizationId },
+          });
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (!organizationTopic || !organizationTopic.textTopicArn) {
+            // no textTopicArn found so abort (organization isn't part of the marketing messaging)
+<span class="cstat-no" title="statement not covered" >            return;</span>
+          }
+          topicArn = organizationTopic.textTopicArn;
+        }
+      } else {
+        topicArn = generalTopicArn;
+      }
+      const params: SNS.Types.SubscribeInput = {
+        Protocol: 'sms',
+        TopicArn: topicArn,
+        Endpoint: phoneNumber,
+        ReturnSubscriptionArn: true,
+      };
+      const response = await this.sns.subscribe(params).promise();
+      await this.upsertUserMarketing(
+        userId,
+        response.SubscriptionArn,
+        organizationId,
+      );
+      return response.SubscriptionArn;
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  async upsertUserMarketing(
+    userId: number,
+    subscriptionArn: string,
+    organizationId?: number,
+  ): Promise&lt;UserMarketing&gt; {
+    try {
+      let userMarketing: UserMarketing;
+      // first check if user_marketing record already exists
+      const query = this.userMarketingRepository
+        .createQueryBuilder('user_marketing')
+        .select()
+        .where('user_id = :userId', { userId });
+      if (!organizationId) {
+        query.andWhere('organization_id IS NULL');
+      } else {
+        query.andWhere('organization_id = :organizationId', {
+          organizationId,
+        });
+      }
+      const existingUserMarketing = await query.getOne();
+&nbsp;
+      // if existing record exists, only update the subscriptionArn
+      if (existingUserMarketing) {
+        existingUserMarketing.textMarketingSubscriptionArn = subscriptionArn;
+        return this.userMarketingRepository.save(existingUserMarketing);
+      } else {
+        // if existing record does not exist, create new record
+        userMarketing = new UserMarketing();
+        userMarketing.user = new User();
+        userMarketing.user.id = userId;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (organizationId) {
+<span class="cstat-no" title="statement not covered" >          userMarketing.organization = new Organization();</span>
+<span class="cstat-no" title="statement not covered" >          userMarketing.organization.id = organizationId;</span>
+        }
+        userMarketing.textMarketingSubscriptionArn = subscriptionArn;
+        return this.userMarketingRepository.save(userMarketing);
+      }
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  async unsubscribeToTextMessageMarketing(userId: number): Promise&lt;any&gt; {
+    try {
+      // first find all subscriptions for user
+      const userMarketingSubscriptions = await this.userMarketingRepository
+        .createQueryBuilder()
+        .select()
+        .where('user_id = :userId', { userId })
+        .andWhere('text_marketing_subscription_arn IS NOT NULL')
+        .getMany();
+&nbsp;
+      // unsubscribe user from each topicArn
+      for (const userMarketing of userMarketingSubscriptions) {
+        const params: SNS.Types.UnsubscribeInput = {
+          SubscriptionArn: userMarketing.textMarketingSubscriptionArn,
+        };
+        await this.sns.unsubscribe(params).promise();
+      }
+&nbsp;
+      // update records in user_marketing table
+      await this.userMarketingRepository
+        .createQueryBuilder()
+        .update(UserMarketing)
+        .set({ textMarketingSubscriptionArn: null })
+        .where('user_id = :userId', { userId })
+        .execute();
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  /**
+   * Note: this also auto-subscribes to General if not yet subscribed, so recheck that user.isSubscribedToMarketing=true
+   * before calling this method.
+   * @param userId
+   * @param mobileNumber
+   */
+  async resubscribeToTextMessageMarketing(
+    userId: number,
+    mobileNumber: string,
+  ): Promise&lt;any&gt; {
+    GDExpectedException.try(
+      MessageExceptions.phoneNumberRequiredToSubscribe,
+      mobileNumber,
+    );
+    // find all previous subscriptions for user
+    const userMarketingSubscriptions = await this.userMarketingRepository
+      .createQueryBuilder('user_marketing')
+      .select()
+      .leftJoinAndSelect('user_marketing.organization', 'organization')
+      .where('user_id = :userId', { userId })
+      .andWhere('text_marketing_subscription_arn IS NOT NULL')
+      .getMany();
+&nbsp;
+    // 1. unsubscribe user
+    await this.unsubscribeToTextMessageMarketing(userId);
+&nbsp;
+    // 2. Handle different topics.
+    // a. General List Topic: Resubscribe user
+    const generalSubscription = userMarketingSubscriptions.find(
+      userMarketing =&gt; !userMarketing.organization,
+    );
+    if (!generalSubscription) {
+      await this.subscribeToTextMessageMarketing(userId, mobileNumber);
+    }
+&nbsp;
+    // b. Organization Topics: Subscribe again using new mobile number
+    for (const userMarketing of userMarketingSubscriptions) {
+      await this.subscribeToTextMessageMarketing(
+        userId,
+        mobileNumber,
+        userMarketing.organization &amp;&amp; userMarketing.organization.id,
+      );
+    }
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >getMessageCountCurrentWeek</span>(
+    organizationIds?: number[],
+  ): Promise&lt;BroadcastMessageCountDto[]&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const PUERTO_RICO_TIMEZONE = <span class="cstat-no" title="statement not covered" >'America/Puerto_Rico';</span>
+&nbsp;
+      const query = <span class="cstat-no" title="statement not covered" >this.messageRepository</span>
+        .createQueryBuilder('message')
+        .select('COUNT(message.id)::INTEGER as count')
+        .addSelect('organization.id as "organizationId"')
+        .addSelect('organization.name as "organizationName"')
+        .leftJoin('message.organization', 'organization')
+        .where(
+          // Default day of week = Monday
+          // Minus 1 day interval to start week by Sunday
+          `DATE_TRUNC('WEEK', message.created AT TIME ZONE 'UTC' AT TIME ZONE '${PUERTO_RICO_TIMEZONE}'
+            + interval '1 day')::date - INTERVAL '1 DAY' =
+           DATE_TRUNC('WEEK', NOW()  AT TIME ZONE '${PUERTO_RICO_TIMEZONE}'
+            + interval '1 day')::date - INTERVAL '1 DAY'
+          `,
+        )
+        .groupBy('organization.id');
+<span class="cstat-no" title="statement not covered" >      if (!_.isEmpty(organizationIds)) {</span>
+        const isGeneralListFound = <span class="cstat-no" title="statement not covered" >organizationIds.some(<span class="fstat-no" title="function not covered" >orgId</span> =&gt; <span class="cstat-no" title="statement not covered" >!orgId)</span>;</span>
+<span class="cstat-no" title="statement not covered" >        query.andWhere(</span>
+          `(message.organization IN (:...organizationIds)
+            ${isGeneralListFound ? 'OR message.organization IS NULL' : ''}
+          )`,
+          { organizationIds },
+        );
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return query.getRawMany();</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >broadcastMarketingMessage</span>(
+    user: User,
+    messageDto: BroadcastMessageDto,
+    enableBilling = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span>
+  ) {
+    // throw new ServiceUnavailableException(
+    //   'The SMS Blast feature is under maintenance and is temporarily unavailable.',
+    // );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (_.isEmpty(messageDto.organizationIds)) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+&nbsp;
+    /*
+      Disabled weekly limits
+&nbsp;
+      const messageCounts: BroadcastMessageCountDto[] = await this.getMessageCountCurrentWeek(
+        messageDto.organizationIds,
+      );
+      const { broadcastMessageRestricted } = MessageExceptions;
+      GDExpectedException.try(
+        broadcastMessageRestricted,
+        messageCounts,
+        messageCounts,
+      );
+    */
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      // Start broadcasts
+      const broadcastSummary: BroadcastSummaryDto = <span class="cstat-no" title="statement not covered" >{</span>
+        estimatedTotal: 0,
+        broadcasts: [],
+      };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      for (const orgId of messageDto.organizationIds) {</span>
+        const organization = <span class="cstat-no" title="statement not covered" >await this.getOrganizationById(orgId);</span>
+        let blastInvoice: InvoiceDto = <span class="cstat-no" title="statement not covered" >{ totalAmount: 0 };</span>
+        let failures = <span class="cstat-no" title="statement not covered" >0;</span>
+&nbsp;
+        // first get estimated send count for the topic
+        const messageCountDto: BroadcastMessageCountDto = <span class="cstat-no" title="statement not covered" >_.first(</span>
+          await this.getBroadcastMessageCount(orgId, !!orgId),
+        );
+<span class="cstat-no" title="statement not covered" >        if (messageCountDto.count === 0) {</span>
+<span class="cstat-no" title="statement not covered" >          this.logger.log(</span>
+            `WARN SMS BLAST: No receivers - skipping ${organization.name}`,
+          );
+<span class="cstat-no" title="statement not covered" >          continue;</span>
+        }
+&nbsp;
+        const smsCount = <span class="cstat-no" title="statement not covered" >this.getSMSCount(messageDto.message);</span>
+&nbsp;
+        const unitPrice =
+<span class="cstat-no" title="statement not covered" >          this.configService.get('vendors.stripe.messagingFee') || 0;</span>
+<span class="cstat-no" title="statement not covered" >        GDExpectedException.try(</span>
+          BillingExceptions.noDefaultMessageUnitPrice,
+          unitPrice,
+        );
+&nbsp;
+        // Compute and confirm invoice paid before sending
+<span class="cstat-no" title="statement not covered" >        if (enableBilling) {</span>
+          const prepareInvoiceTrans = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async t</span>ransactionalEntityManager =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span></span>
+            const draftInvoice = <span class="cstat-no" title="statement not covered" >await this.billingService.prepareInvoiceForSMSBlast(</span>
+              messageCountDto,
+              organization,
+              user,
+              smsCount,
+            );
+            const finalInvoice = <span class="cstat-no" title="statement not covered" >await this.billingService.finalizeChargeInvoice(</span>
+              draftInvoice,
+            );
+<span class="cstat-no" title="statement not covered" >            blastInvoice = (await transactionalEntityManager.save(</span>
+              finalInvoice,
+            )) as InvoiceDto;
+          };
+<span class="cstat-no" title="statement not covered" >          await this.entityManager.transaction(prepareInvoiceTrans);</span>
+<span class="cstat-no" title="statement not covered" >          blastInvoice = await this.billingService.getInvoice(blastInvoice.id);</span>
+        }
+&nbsp;
+        const params = <span class="cstat-no" title="statement not covered" >this.composeSNSParams(messageDto.message, organization);</span>
+        const message = <span class="cstat-no" title="statement not covered" >Object.assign(new Message(), {</span>
+          text: messageDto.message,
+          estimateSendCount: messageCountDto.count,
+          createdBy: user,
+          organization: Object.assign(new Organization(), { id: orgId }),
+        });
+&nbsp;
+        // Broadcast message in a transaction so that if an error occurs while sending
+        // the text message the transaction will abort.
+        const smsBlastTrans = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >msg</span> =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async t</span>ransactionalEntityManager =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span></span></span>
+          const savedMessage: Message = <span class="cstat-no" title="statement not covered" >await transactionalEntityManager.save(</span>
+            msg,
+          );
+<span class="cstat-no" title="statement not covered" >          if (enableBilling) {</span>
+<span class="cstat-no" title="statement not covered" >            blastInvoice = Object.assign(blastInvoice, {</span>
+              message: savedMessage,
+            });
+<span class="cstat-no" title="statement not covered" >            delete blastInvoice.modified;</span>
+<span class="cstat-no" title="statement not covered" >            await transactionalEntityManager.save(blastInvoice);</span>
+          }
+<span class="cstat-no" title="statement not covered" >          try {</span>
+<span class="cstat-no" title="statement not covered" >            if (isProductionEnv()) {</span>
+<span class="cstat-no" title="statement not covered" >              await this.sns.publish(params).promise();</span>
+            }
+          } catch (error) {
+<span class="cstat-no" title="statement not covered" >            this.logger.error('ERROR SMS BLAST:');</span>
+<span class="cstat-no" title="statement not covered" >            this.logger.error(serializeError(error));</span>
+<span class="cstat-no" title="statement not covered" >            failures++; </span>// ? use for voiding logic if ever
+          }
+        };
+<span class="cstat-no" title="statement not covered" >        await this.entityManager.transaction(smsBlastTrans(message));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        broadcastSummary.broadcasts.push({</span>
+          message,
+          failures,
+          organization,
+          invoice: enableBilling ? blastInvoice : null,
+        });
+<span class="cstat-no" title="statement not covered" >        broadcastSummary.estimatedTotal += enableBilling</span>
+          ? blastInvoice.totalAmount
+          : messageCountDto.count * smsCount * unitPrice;
+      }
+      // end-loop
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return broadcastSummary;</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >getBroadcastMessageCount</span>(
+    organizationId?: number,
+    organizationOnly?: boolean,
+  ): Promise&lt;BroadcastMessageCountDto[]&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      if (organizationOnly &amp;&amp; !organizationId) {</span>
+<span class="cstat-no" title="statement not covered" >        return null;</span>
+      }
+      const table = <span class="cstat-no" title="statement not covered" >'userMarketing';</span>
+      const query = <span class="cstat-no" title="statement not covered" >this.entityManager</span>
+        .createQueryBuilder(UserMarketing, table)
+        .select(`${table}.organization_id as "organizationId"`)
+        .addSelect('COUNT(*) as "count"')
+        .addSelect('organization.name as "organizationName"')
+        .leftJoin(`${table}.organization`, 'organization')
+        .where(`${table}.textMarketingSubscriptionArn IS NOT NULL`)
+        .groupBy(`${table}.organization_id`)
+        .addGroupBy('organization.id');
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (organizationOnly &amp;&amp; organizationId) {</span>
+<span class="cstat-no" title="statement not covered" >        query.andWhere(`${table}.organization = :organizationId`, {</span>
+          organizationId,
+        });
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return query.getRawMany();</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >getEstimatedCost</span>(messageDto: BroadcastMessageDto): Promise&lt;number&gt; {
+    const { message = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span> organizationIds = <span class="branch-0 cbranch-no" title="branch not covered" >[] </span>} = <span class="cstat-no" title="statement not covered" >messageDto || {};</span>
+    const messagingFee =
+<span class="cstat-no" title="statement not covered" >      this.configService.get('vendors.stripe.messagingFee') || 0;</span>
+&nbsp;
+    const receiversPromises = <span class="cstat-no" title="statement not covered" >organizationIds.map(<span class="fstat-no" title="function not covered" >orgId</span> =&gt;</span>
+<span class="cstat-no" title="statement not covered" >      this.getBroadcastMessageCount(orgId, !!orgId),</span>
+    );
+&nbsp;
+    const receivers = <span class="cstat-no" title="statement not covered" >(await Promise.all(receiversPromises))</span>
+      .map(<span class="fstat-no" title="function not covered" >e </span>=&gt; <span class="cstat-no" title="statement not covered" >_.first(e).count)</span>
+      .reduce(<span class="fstat-no" title="function not covered" >(p</span>rev, curr) =&gt; <span class="cstat-no" title="statement not covered" >Number(curr) + prev,</span> 0);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return this.getSMSCount(message) * receivers * messagingFee;</span>
+  }
+&nbsp;
+  /**
+   * Getter by EntityManager since we cannot import OrganizationModule,
+   * too complex circular dependency
+   */
+  private async <span class="fstat-no" title="function not covered" >getOrganizationById</span>(organizationId): Promise&lt;Organization&gt; {
+<span class="cstat-no" title="statement not covered" >    return !organizationId</span>
+      ? null
+      : this.entityManager
+          .createQueryBuilder(Organization, 'organization')
+          .select()
+          .where('id = :organizationId', {
+            organizationId,
+          })
+          .getOne();
+  }
+&nbsp;
+  private <span class="fstat-no" title="function not covered" >composeSNSParams</span>(
+    message: string,
+    organization?: Organization,
+  ): SNS.Types.PublishInput {
+    let topicArn: string = <span class="cstat-no" title="statement not covered" >this.configService.get(</span>
+      'notification.aws.sns.topicArn',
+    );
+    // general topicArn or topicArn for organization
+<span class="cstat-no" title="statement not covered" >    if (organization &amp;&amp; !_.isEmpty(organization.textTopicArn)) {</span>
+<span class="cstat-no" title="statement not covered" >      topicArn = organization.textTopicArn;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      Message: message,
+      TopicArn: topicArn,
+      MessageAttributes: {
+        'AWS.SNS.SMS.SMSType': {
+          DataType: 'String',
+          StringValue: 'Promotional',
+        },
+      },
+    };
+  }
+&nbsp;
+  private <span class="fstat-no" title="function not covered" >getSMSCount</span>(message: string): number {
+<span class="cstat-no" title="statement not covered" >    if (!message) {</span>
+<span class="cstat-no" title="statement not covered" >      return 0;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return Math.ceil(</span>
+      message.length /
+        (message.match(GSM_CHARACTERS_REGEX)
+          ? this.MESSAGE_LIMIT.GSM
+          : this.MESSAGE_LIMIT.UCS2),
+    );
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

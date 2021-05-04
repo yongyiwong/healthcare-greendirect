@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/notification/notification.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/notification</a> notification.service.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">270x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">270x</span>
+<span class="cline-any cline-yes">270x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">270x</span>
+<span class="cline-any cline-yes">270x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@nestjs/common';
+import * as AWS from 'aws-sdk';
+import { ConfigService } from '@sierralabs/nest-utils';
+import * as log from 'fancy-log';
+import * as _ from 'lodash';
+import { MailerService } from '@nest-modules/mailer';
+import { isProductionEnv, Environments } from '../app.service';
+&nbsp;
+export enum NotificationMethod {
+  SMS = 'sms',
+  EMAIL = 'email',
+}
+&nbsp;
+export interface EmailNotification {
+  from: string;
+  to: string;
+  subject: string;
+  message: string;
+}
+&nbsp;
+export interface TextMessageNotification {
+  phoneNumber: string;
+  message: string;
+}
+&nbsp;
+export interface MailerNotification {
+  from: string;
+  to: string;
+  subject: string;
+  /** .pug template filename */
+  template: string;
+  /** key-value variables to pass to template */
+  context: { [k: string]: any };
+}
+&nbsp;
+@Injectable()
+export class NotificationService {
+  readonly localedContactName = {
+    'en-US': 'GreenDirect Notifications',
+    'es-PR': 'GreenDirect Notificaciones',
+  };
+&nbsp;
+  constructor(
+    private readonly configService: ConfigService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    private readonly mailerService: MailerService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+  ) {
+    const config = configService.get('client.aws');
+    AWS.config.update({
+      accessKeyId: config.accessKeyId,
+      secretAccessKey: config.secretAccessKey,
+      region: 'us-west-2',
+    });
+  }
+&nbsp;
+  /**
+   * @param options - accepts same fields as https://nodemailer.com/message/
+   */
+  public async <span class="fstat-no" title="function not covered" >sendEmailMessage</span>(options: any, locale: string = <span class="branch-0 cbranch-no" title="branch not covered" >'en-US')</span> {
+    // no need to await, just fire and forget
+<span class="cstat-no" title="statement not covered" >    options.template = `${locale}_${options.template}`;</span>
+&nbsp;
+    // if there is no &lt; symbol like "Contact Name &lt;email@some.thing&gt;", append Contact Name
+<span class="cstat-no" title="statement not covered" >    if ((options.from + '').indexOf('&lt;') &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      options.from = `${this.localedContactName[locale]} &lt;${options.from}&gt;`;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      this.mailerService.sendMail(options);</span>
+<span class="cstat-no" title="statement not covered" >      return Promise.resolve(true);</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      log.error(error);</span>
+    }
+  }
+&nbsp;
+  /**
+   * @deprecated use sendEmailMessage() instead
+   */
+  public async <span class="fstat-no" title="function not covered" >sendEmail</span>(emailNotification: EmailNotification): Promise&lt;any&gt; {
+    const params = <span class="cstat-no" title="statement not covered" >{</span>
+      Destination: {
+        ToAddresses: [emailNotification.to],
+      },
+      Message: {
+        Body: {
+          // Html: {
+          //  Charset: "UTF-8",
+          //  Data: "HTML_FORMAT_BODY"
+          // },
+          Text: {
+            Charset: 'UTF-8',
+            Data: emailNotification.message,
+          },
+        },
+        Subject: {
+          Charset: 'UTF-8',
+          Data: emailNotification.subject,
+        },
+      },
+      Source: emailNotification.from,
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    log.info('Notification Service: AWS SES send email');</span>
+<span class="cstat-no" title="statement not covered" >    return new AWS.SES({ apiVersion: '2010-12-01' })</span>
+      .sendEmail(params)
+      .promise();
+  }
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >sendTextMessage</span>(
+    textMessageNotification: TextMessageNotification,
+  ): Promise&lt;any&gt; {
+    // Send SMS only when in staging or production
+<span class="cstat-no" title="statement not covered" >    if (isProductionEnv()) {</span>
+      // Check if multiple phone numbers comma separated
+      const phoneNumbers = <span class="cstat-no" title="statement not covered" >textMessageNotification.phoneNumber.split(',');</span>
+<span class="cstat-no" title="statement not covered" >      for (const phoneNumber of phoneNumbers) {</span>
+        const environments = <span class="cstat-no" title="statement not covered" >['staging', 'production'];</span>
+<span class="cstat-no" title="statement not covered" >        if (</span>
+          !_.includes(environments, process.env.NODE_ENV) ||
+          (_.includes(environments, process.env.NODE_ENV) &amp;&amp;
+            phoneNumber &amp;&amp;
+            phoneNumber.trim().indexOf('+1') === 0)
+        ) {
+          const params = <span class="cstat-no" title="statement not covered" >{</span>
+            Message: textMessageNotification.message,
+            PhoneNumber: phoneNumber,
+          } as AWS.SNS.PublishInput;
+<span class="cstat-no" title="statement not covered" >          log.info(params);</span>
+<span class="cstat-no" title="statement not covered" >          await new AWS.SNS({ apiVersion: '2010-03-31' })</span>
+            .publish(params)
+            .promise();
+        } else {
+<span class="cstat-no" title="statement not covered" >          await this.sendEmail({</span>
+            from: this.configService.get('email.from'),
+            to: this.configService.get('email.techSupport'),
+            subject: 'GreenDirect: Invalid Phone Number ' + phoneNumber,
+            message: `GreenDirect attempted to send the following message to ${phoneNumber}:\n\n${textMessageNotification.message}`,
+          });
+        }
+      }
+    }
+<span class="cstat-no" title="statement not covered" >    return;</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

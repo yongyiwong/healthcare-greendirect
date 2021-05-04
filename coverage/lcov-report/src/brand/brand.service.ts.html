@@ -1,0 +1,1008 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/brand/brand.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/brand</a> brand.service.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as path from 'path';
+import * as s3Proxy from 's3-proxy';
+import * as _ from 'lodash';
+&nbsp;
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+&nbsp;
+import { Repository, UpdateResult } from 'typeorm';
+import { S3 } from 'aws-sdk';
+import { ConfigService } from '@sierralabs/nest-utils';
+import { BrandPresignedDto } from './dto/brand-presign.dto';
+import { format } from 'date-fns';
+&nbsp;
+import { Brand, RANDOM_PRIORITY_OPTION } from '../entities/brand.entity';
+import { GDExpectedException } from '../gd-expected.exception';
+import { BrandExceptions } from './brand.exceptions';
+import { Product } from '../entities/product.entity';
+import { LocationSearchDto } from '../location/dto/location-search.dto';
+import { LocationExceptions } from '../location/location.exceptions';
+import { SRID } from '../location/location.service';
+import { HoursService } from '../location/hours/hours.service';
+import { ProductService } from '../product/product.service';
+import {
+  SearchParams,
+  DEFAULT_PARAMS,
+} from '../common/search-params.interface';
+import { SearchCountMapping } from '../common/search-count.dto';
+import { defaults } from 'lodash';
+&nbsp;
+@Injectable()
+export class BrandService {
+  s3client: S3;
+  constructor(
+    @InjectRepository(Brand)
+    protected readonly brandRepository: Repository<span class="branch-1 cbranch-no" title="branch not covered" >&lt;Brand&gt;,</span>
+    @InjectRepository(Product)
+    protected readonly productRepository: Repository<span class="branch-1 cbranch-no" title="branch not covered" >&lt;Product&gt;,</span>
+    protected readonly configService: ConfigService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    protected readonly hoursService: HoursService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    protected readonly productService: ProductService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+  ) {
+    const config = configService.get('storage.aws.s3');
+    config.signatureVersion = 'v4'; // allow for browser upload
+    this.s3client = new S3(config);
+  }
+&nbsp;
+  public async findWithFilter(
+    searchParams: SearchParams,
+  ): Promise&lt;[Brand[], number]&gt; {
+    const {
+      search,
+      page,
+      limit,
+      order,
+      shuffleBaseValue,
+      publishDate,
+      unpublishDate,
+      includeDeleted,
+    } = defaults(searchParams, DEFAULT_PARAMS);
+    try {
+      const TABLE_NAME = 'brand';
+      const offset = page * limit;
+&nbsp;
+      const query = this.brandRepository.createQueryBuilder(TABLE_NAME);
+      const priorityClause = `
+        CASE
+          WHEN ${TABLE_NAME}.priority = ${RANDOM_PRIORITY_OPTION} THEN NULL
+          ELSE ${TABLE_NAME}.priority
+        END`;
+&nbsp;
+      if (search) {
+        const filter = '%' + search + '%';
+        query.andWhere(`brand.name ILIKE :filter`, {
+          filter,
+        });
+      }
+&nbsp;
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (publishDate &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >unpublishDate)</span> {
+<span class="cstat-no" title="statement not covered" >        query.andWhere(</span>
+          `CASE WHEN brand.publishDate IS NOT NULL AND brand.unpublishDate IS NOT NULL THEN
+            brand.publishDate BETWEEN :publishDate and :unpublishDate AND
+            brand.unpublishDate BETWEEN :publishDate and :unpublishDate
+          ELSE
+            true
+          END`,
+          {
+            publishDate: new Date(+publishDate),
+            unpublishDate: new Date(+unpublishDate),
+          },
+        );
+      } else <span class="missing-if-branch" title="if path not taken" >I</span>if (publishDate &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!unpublishDate)</span> {
+<span class="cstat-no" title="statement not covered" >        query.andWhere(</span>
+          `CASE WHEN brand.publishDate IS NOT NULL THEN
+            brand.publishDate &gt;= :publishDate
+          ELSE
+            true
+          END`,
+          { publishDate: new Date(+publishDate) },
+        );
+      } else <span class="missing-if-branch" title="if path not taken" >I</span>if (!publishDate &amp;&amp; unpublishDate) {
+<span class="cstat-no" title="statement not covered" >        query.andWhere(</span>
+          `CASE WHEN brand.unpublishDate IS NOT NULL THEN
+            brand.unpublishDate &gt;= :unpublishDate
+          ELSE
+            true
+          END`,
+          { unpublishDate: new Date(+unpublishDate) },
+        );
+      } else {
+        query.andWhere(`CASE WHEN brand.publishDate IS NOT NULL AND brand.unpublishDate IS NOT NULL THEN
+            current_timestamp BETWEEN brand.publishDate AND brand.unpublishDate
+          ELSE
+            true
+          END`);
+      }
+&nbsp;
+      if (!includeDeleted) {
+        query.andWhere('brand.deleted = false');
+      }
+&nbsp;
+      query.take(limit).skip(offset);
+&nbsp;
+      if (order) {
+        const key = Object.keys(order)[0];
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (key === 'priority') {
+<span class="cstat-no" title="statement not covered" >          query.addSelect(priorityClause, 'priority').orderBy({</span>
+            ['priority']: {
+              order: order[key],
+              nulls: 'NULLS LAST',
+            },
+            [`${TABLE_NAME}.created`]: 'DESC',
+          });
+        } else {
+          query.orderBy(`${TABLE_NAME}.${key}`, order[key]);
+        }
+      } else {
+        query.addSelect(priorityClause, 'priority').orderBy('priority');
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (shuffleBaseValue) {
+          const shuffleClause = <span class="cstat-no" title="statement not covered" >`</span>
+            CASE
+              WHEN ${TABLE_NAME}.priority != ${RANDOM_PRIORITY_OPTION} THEN NULL
+              ELSE (CAST(EXTRACT(EPOCH from ${TABLE_NAME}.modified) as INTEGER) + ${TABLE_NAME}.id) % ${shuffleBaseValue}
+            END`;
+<span class="cstat-no" title="statement not covered" >          query.addSelect(shuffleClause, 'shuffle').addOrderBy('shuffle');</span>
+        }
+        query.addOrderBy(`${TABLE_NAME}.created`, 'DESC');
+      }
+&nbsp;
+      return query.getManyAndCount();
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  public async createBrand(brand: Brand): Promise&lt;Brand&gt; {
+    delete brand.id;
+    try {
+      return this.brandRepository.save(brand);
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  public async findById(id: number, includeDeleted?: boolean): Promise&lt;Brand&gt; {
+    try {
+      const query = this.brandRepository
+        .createQueryBuilder('brand')
+        .leftJoinAndSelect(
+          'brand.productGroups',
+          'productGroups',
+          'productGroups.deleted = false',
+        )
+        .leftJoinAndSelect('productGroups.products', 'products')
+        .leftJoinAndSelect('products.location', 'location')
+        .where('brand.id = :id', { id });
+      if (!includeDeleted) {
+        query.andWhere('brand.deleted = false');
+      }
+      const result = await query.getOne();
+      GDExpectedException.try(BrandExceptions.brandNotFound, result);
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+&nbsp;
+  public async updateBrand(brand: Brand): Promise&lt;Brand&gt; {
+    delete brand.createdBy;
+    delete brand.created;
+    try {
+      return this.brandRepository.save(brand);
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  public async removeBrand(
+    id: number,
+    modifiedBy: number,
+  ): Promise&lt;UpdateResult&gt; {
+    try {
+      return this.brandRepository.update({ id }, { deleted: true, modifiedBy });
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >createPresignedPost</span>(
+    presignDto: BrandPresignedDto,
+    expiration: number = <span class="branch-0 cbranch-no" title="branch not covered" >3600,</span>
+  ): Promise&lt;any&gt; {
+    const PHOTO_TYPE = <span class="cstat-no" title="statement not covered" >'image';</span>
+    const timestamp = <span class="cstat-no" title="statement not covered" >format(new Date(), 'YYYYMMDDHHmmss');</span>
+    let fileKey = <span class="cstat-no" title="statement not covered" >`${presignDto.brandId}_${PHOTO_TYPE}_`;</span>
+<span class="cstat-no" title="statement not covered" >    fileKey += timestamp + path.extname(presignDto.name);</span>
+    const config = <span class="cstat-no" title="statement not covered" >this.configService.get('storage.aws.s3');</span>
+    const endpoint = <span class="cstat-no" title="statement not covered" >this.configService.get('storage.endpoint');</span>
+    const params = <span class="cstat-no" title="statement not covered" >{</span>
+      Bucket: config.bucket,
+      Key: 'brands/' + fileKey,
+      Expires: expiration,
+    };
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      destinationUrl: `${endpoint}/api/brands/photo/file/${fileKey}`,
+      signedUrl: this.s3client.getSignedUrl('putObject', params),
+    };
+  }
+&nbsp;
+  public <span class="fstat-no" title="function not covered" >proxyFile</span>(fileKey: string, request, response, next) {
+<span class="cstat-no" title="statement not covered" >    request.originalUrl = '/brands/' + fileKey;</span>
+    const options<span class="cstat-no" title="statement not covered" > = {</span>
+      ...this.configService.get('storage.aws.s3'),
+    };
+<span class="cstat-no" title="statement not covered" >    s3Proxy(options)(request, response, <span class="fstat-no" title="function not covered" >error</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      if (error &amp;&amp; error.status === 404) {</span>
+<span class="cstat-no" title="statement not covered" >        response.type('json');</span>
+<span class="cstat-no" title="statement not covered" >        return next(new NotFoundException());</span>
+      }
+<span class="cstat-no" title="statement not covered" >      next(error);</span>
+    });
+  }
+&nbsp;
+  public async getBrandLocations(
+    brandId: number,
+    startFromLat?: number,
+    startFromLong?: number,
+  ): Promise&lt;LocationSearchDto[]&gt; {
+    const query = this.productRepository
+      .createQueryBuilder('product')
+      .select([
+        'location.id as id',
+        'location.name as name',
+        'location.thumbnail as thumbnail',
+        'location.description as description',
+        'location.longLat as "longLat"',
+        'location.timezone as timezone',
+        'location.addressLine1 as "addressLine1"',
+        'location.addressLine2 as "addressLine2"',
+        'location.city as city',
+        'location.postalCode as "postalCode"',
+        'state.abbreviation as state',
+        '(ROUND(AVG(rating.rating)::numeric * 2) / 2)::float as rating',
+        'COUNT(DISTINCT rating.id) as "ratingCount"',
+      ])
+      .leftJoin('product.location', 'location', 'location.deleted = false')
+      .leftJoin('location.state', 'state')
+      .leftJoin('location.ratings', 'rating', 'rating.deleted = false')
+      .leftJoin(
+        'product.productGroup',
+        'productGroup',
+        'productGroup.deleted = false',
+      )
+      .leftJoin('productGroup.brand', 'brand')
+      .where('productGroup.brand = :brandId and brand.deleted = false', {
+        brandId,
+      })
+      .groupBy('location.id, state.id, brand.id');
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (startFromLat || startFromLong) {
+      const longLat = <span class="cstat-no" title="statement not covered" >{ startFromLat, startFromLong };</span>
+<span class="cstat-no" title="statement not covered" >      GDExpectedException.try(</span>
+        LocationExceptions.invalidStartingLatLong,
+        longLat,
+      );
+      const distanceClause = <span class="cstat-no" title="statement not covered" >`</span>
+      CASE WHEN long_lat IS NULL THEN NULL ELSE (ST_DistanceSphere(
+        ST_SetSrid(ST_MakePoint(long_lat[0], long_lat[1]), ${SRID}),
+        ST_SetSrid(ST_MakePoint(${startFromLong}, ${startFromLat}), ${SRID})
+      ) / 1000.0)
+      END`;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      query</span>
+        .addSelect(distanceClause, 'distance')
+        .orderBy('distance', 'ASC', 'NULLS LAST');
+    }
+    const locations = await query.getRawMany();
+&nbsp;
+    const result = await Promise.all(
+      locations.map(async location =&gt; {
+        location.hours = await this.hoursService.getLocationHours(location.id);
+        location.hoursToday = await this.hoursService.getHoursToday(location);
+        return location;
+      }),
+    );
+    return result;
+  }
+&nbsp;
+  public async getSearchCount(
+    searchParams: SearchParams,
+  ): Promise&lt;SearchCountMapping&gt; {
+    const { search } = searchParams;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!search) {
+<span class="cstat-no" title="statement not covered" >      return { count: 0 };</span>
+    }
+    const [_, count] = await this.findWithFilter({
+      search,
+    });
+    return { count };
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

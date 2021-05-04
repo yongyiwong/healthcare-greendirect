@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/reports/google-play/google-play.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/reports/google-play</a> google-play.service.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as path from 'path';
+import * as CSV from 'csvtojson';
+import { google } from 'googleapis';
+import { padStart, range } from 'lodash';
+import { Injectable } from '@nestjs/common';
+import { ConfigService } from '@sierralabs/nest-utils';
+&nbsp;
+import { GDExpectedException } from '../../gd-expected.exception';
+import { ReportsExceptions } from '../reports.exceptions';
+import { AnnualMonthlyTotalDto } from '../dto/annual-monthly-total.dto';
+import {
+  isProductionEnv,
+  Environments,
+  readFromFileAsync,
+} from '../../app.service';
+&nbsp;
+interface GooglePlayReport {
+  Date: string;
+  'Package Name': string;
+  Device: string;
+  'Daily Device Installs': string;
+  'Daily Device Uninstalls': string;
+  'Daily Device Upgrades': string;
+  'Total User Installs': string;
+  'Daily User Installs': string;
+  'Daily User Uninstalls': string;
+  'Active Device Installs': string;
+  'Install events': string;
+  'Update events': string;
+  'Uninstall events': string;
+}
+export interface GooglePlayConfig {
+  clientEmail: string;
+  bucketId: string;
+  appPackageName: string;
+}
+&nbsp;
+@Injectable()
+export class GooglePlayService {
+  public config: GooglePlayConfig = null;
+&nbsp;
+  constructor(private readonly configService: ConfigService<span class="branch-1 cbranch-no" title="branch not covered" >) {</span>
+    this.config = configService.get('analytics.googleplay');
+  }
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >getGooglePlayReport</span>(
+    year: number,
+  ): Promise&lt;AnnualMonthlyTotalDto&gt; {
+    let jwt = <span class="cstat-no" title="statement not covered" >null;</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      GDExpectedException.try(ReportsExceptions.reportYearInvalid, year);</span>
+<span class="cstat-no" title="statement not covered" >      GDExpectedException.try(</span>
+        ReportsExceptions.googlePlayMisconfigured,
+        this.config,
+      );
+<span class="cstat-no" title="statement not covered" >      jwt = await this.getJWT();</span>
+<span class="cstat-no" title="statement not covered" >      GDExpectedException.try(ReportsExceptions.googlePlayUnauthorized, jwt);</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+&nbsp;
+    const storage = <span class="cstat-no" title="statement not covered" >google.storage('v1');</span>
+    const months = <span class="cstat-no" title="statement not covered" >range(1, 12 + 1);</span> // 1 - 12
+    const yearlyReport: AnnualMonthlyTotalDto = <span class="cstat-no" title="statement not covered" >{</span>
+      [year]: { total: 0, monthlyTotal: months.map(<span class="fstat-no" title="function not covered" >month</span> =&gt; <span class="cstat-no" title="statement not covered" >0)</span> },
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const promises: Promise&lt;any&gt;[] = <span class="cstat-no" title="statement not covered" >months.map(<span class="fstat-no" title="function not covered" >(m</span>onth: number) =&gt; {</span>
+        const zeroPaddedMonth = <span class="cstat-no" title="statement not covered" >padStart(month.toString(), 2, '0');</span> // 1 -&gt; 01
+<span class="cstat-no" title="statement not covered" >        return storage.objects</span>
+          .get({
+            auth: jwt,
+            bucket: this.config.bucketId,
+            object: `stats/installs/installs_${this.config.appPackageName}_${year}${zeroPaddedMonth}_device.csv`,
+            alt: 'media',
+          })
+          .catch(<span class="fstat-no" title="function not covered" >() </span>=&gt; <span class="cstat-no" title="statement not covered" >null)</span>; // catch if there are no available report for this month.
+      });
+      const reports = <span class="cstat-no" title="statement not covered" >await Promise.all(promises);</span>
+&nbsp;
+      const parsedReportsPromises: Promise&lt;
+        GooglePlayReport[]
+      &gt;[] = <span class="cstat-no" title="statement not covered" >reports.map(<span class="fstat-no" title="function not covered" >report</span> =&gt;</span>
+<span class="cstat-no" title="statement not covered" >        !report ? null : this.parseCsv(report.data),</span>
+      );
+      const parsedReports: GooglePlayReport[][] = <span class="cstat-no" title="statement not covered" >await Promise.all(</span>
+        parsedReportsPromises,
+      );
+&nbsp;
+      // Compose report
+      const monthlyTotal: number[] = <span class="cstat-no" title="statement not covered" >parsedReports.map(</span>
+<span class="fstat-no" title="function not covered" >        (r</span>eport: GooglePlayReport[]) =&gt; {
+<span class="cstat-no" title="statement not covered" >          if (!report) {</span>
+            // the only time the report goes falsy is when there are no report fetched for a certain month.
+<span class="cstat-no" title="statement not covered" >            return 0;</span>
+          }
+<span class="cstat-no" title="statement not covered" >          return report.reduce(</span>
+<span class="fstat-no" title="function not covered" >            (a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >a + Number(b['Daily User Installs']),</span>
+            0,
+          );
+        },
+      );
+      const total = <span class="cstat-no" title="statement not covered" >monthlyTotal.reduce(<span class="fstat-no" title="function not covered" >(a</span>: number, b: number) =&gt; <span class="cstat-no" title="statement not covered" >a + b,</span> 0);</span>
+<span class="cstat-no" title="statement not covered" >      yearlyReport[year] = { total, monthlyTotal };</span>
+    } catch (error) {
+      // TODO add if-else for checking Google Play-specific error?
+      // else fail silently and return empty report
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return yearlyReport;</span>
+  }
+&nbsp;
+  /**
+   * Select appropriate key for prod or dev from config/keys/
+   * DEV is allowed only if you know the config.json values (should not be git-committed).
+   */
+  private async <span class="fstat-no" title="function not covered" >getPrivateKey</span>() {
+    let privateKey = <span class="cstat-no" title="statement not covered" >'';</span>
+    const hasRequiredConfiguration =
+<span class="cstat-no" title="statement not covered" >      this.config.clientEmail &amp;&amp;</span>
+      this.config.bucketId &amp;&amp;
+      this.config.appPackageName;
+&nbsp;
+    // Select which key file to load. Staging and Prod share the same prod keys
+    // Uses DEV only IF the required config.json is provided
+    const { DEV, PRODUCTION } = <span class="cstat-no" title="statement not covered" >Environments;</span>
+    const configEnv = <span class="cstat-no" title="statement not covered" >isProductionEnv()</span>
+      ? PRODUCTION
+      : hasRequiredConfiguration
+      ? DEV
+      : '';
+<span class="cstat-no" title="statement not covered" >    if (configEnv) {</span>
+<span class="cstat-no" title="statement not covered" >      privateKey = await readFromFileAsync(</span>
+        path.join(
+          process.cwd(),
+          `/config/keys/googleplay.privatekey.${configEnv}.p12`,
+        ),
+      );
+    }
+<span class="cstat-no" title="statement not covered" >    return privateKey;</span>
+  }
+&nbsp;
+  private async <span class="fstat-no" title="function not covered" >getJWT</span>() {
+    const scopes = <span class="cstat-no" title="statement not covered" >'https://www.googleapis.com/auth/devstorage.read_only';</span>
+    const privateKey = <span class="cstat-no" title="statement not covered" >await this.getPrivateKey();</span>
+    const jwt = <span class="cstat-no" title="statement not covered" >new google.auth.JWT(</span>
+      this.config.clientEmail,
+      null,
+      privateKey,
+      scopes,
+    );
+<span class="cstat-no" title="statement not covered" >    return jwt;</span>
+  }
+&nbsp;
+  private async <span class="fstat-no" title="function not covered" >parseCsv</span>(csvString: string): Promise&lt;GooglePlayReport[]&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const REGEX_UNKNOWN_CHARACTERS = <span class="cstat-no" title="statement not covered" >/[\uFFFD\u0000]/g;</span> // matches unknown encode characters
+<span class="cstat-no" title="statement not covered" >      csvString = csvString.replace(REGEX_UNKNOWN_CHARACTERS, '');</span>
+<span class="cstat-no" title="statement not covered" >      return CSV().fromString(csvString); </span>// fromString() is PromiseLike
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      GDExpectedException.throw(ReportsExceptions.googlePlayReportParseFailed);</span>
+    }
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

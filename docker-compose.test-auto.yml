@@ -1,0 +1,38 @@
+# Shell environment vars:
+# * DB_PORT and DB_NAME is already recognized by nestjs config schema
+# * reused below to forward the values to our dockerized db
+version: '2.3' # Specify docker-compose file version to allow variable substitution
+networks:
+  auto-net:
+    # use default driver
+services:
+  db-auto:
+    build: ./db
+    restart: 'no'
+    healthcheck:
+      test: 'exit 0'
+    environment:
+      - POSTGRES_DB=${DB_NAME:-greendirect-auto}
+    ports: # host's DB_PORT, else default 5432.
+      - '${DB_PORT:-51505}:5432'
+    networks:
+      - auto-net
+
+  localstack-s3-auto:
+    image: localstack/localstack:latest
+    restart: 'no'
+    depends_on:
+      # force compose to prioritize db starting order
+      db-auto:
+        condition: service_healthy
+    volumes:
+      - ./localstack:/tmp/localstack-auto
+    ports:
+      - '5157:5000'
+      - '5154:8080'
+    environment:
+      - SERVICES=s3:5000,web:8080
+      - DEFAULT_REGION=us-west-2
+      - DATA_DIR=/tmp/localstack-auto/data
+    networks:
+      - auto-net

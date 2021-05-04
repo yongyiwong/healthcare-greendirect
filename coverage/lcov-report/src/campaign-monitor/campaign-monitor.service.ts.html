@@ -1,0 +1,1071 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/campaign-monitor/campaign-monitor.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/campaign-monitor</a> campaign-monitor.service.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Hashids from 'hashids';
+import { EMPTY, from, of } from 'rxjs';
+import { catchError, concatMap, last, switchMap } from 'rxjs/operators';
+import { EntityManager } from 'typeorm';
+&nbsp;
+import {
+  HttpService,
+  Injectable, LoggerService,
+  UnauthorizedException,
+} from '@nestjs/common';
+import { ConfigService } from '@sierralabs/nest-utils';
+import { NotificationService } from '../notification/notification.service';
+import serializeError = require('serialize-error');
+import { httpConfig } from '../common/http.config';
+import {GreenDirectLogger} from '../greendirect-logger';
+&nbsp;
+export enum AutomatedEmailType {
+  DailyEmails = 'daily',
+  WeeklyEmails = 'weekly',
+}
+&nbsp;
+interface CampaignMonitorUser {
+  freewayId: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  totalPoints?: number;
+}
+&nbsp;
+const BASE_URL = 'https://api.createsend.com/api/v3.2/transactional/smartEmail';
+@Injectable()
+export class CampaignMonitorService {
+  logText = '';
+  // tslint:disable-next-line:max-line-length
+  auth =
+    'Basic c0tVTGh3WlM4dkNXREUxSEVEeXJ2S1lBekRzeHBXeVNWV3hiamxxMUJSNDc3UHlwTnA0TlBmSDFNOG9SMENiLzJCdGYyUnVURmVvRHNuQzRBZ2dJZzFqTkFuRXMvWjcyZGRzTTNSdExFZkVEdXdyUnF2UVhtY3djRmFWOXVZS1ZZSWd1Z2NxVC9HSEVORkw3UG1vdjhnPT06';
+  private logger: LoggerService = new GreenDirectLogger('CampaignMonitorService');
+&nbsp;
+  constructor(
+    private readonly entityManager: EntityManager<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    private readonly configService: ConfigService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    private readonly httpService: HttpService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    private readonly notificationService: NotificationService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+  ) {
+  }
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >sendAutomatedEmails</span>(automatedEmailType: AutomatedEmailType) {
+<span class="cstat-no" title="statement not covered" >    this.logger.log('sending automated emails');</span>
+    const startTime = <span class="cstat-no" title="statement not covered" >new Date();</span>
+<span class="cstat-no" title="statement not covered" >    switch (automatedEmailType) {</span>
+      case AutomatedEmailType.WeeklyEmails:
+<span class="cstat-no" title="statement not covered" >        await this.sendWeeklyPointsReminder();</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case AutomatedEmailType.DailyEmails:
+<span class="cstat-no" title="statement not covered" >        await this.sendPreBirthdayEmail();</span>
+<span class="cstat-no" title="statement not covered" >        await this.sendBirthdayEmail();</span>
+<span class="cstat-no" title="statement not covered" >        await this.sendFortyFiveDaysOfflineEmail();</span>
+<span class="cstat-no" title="statement not covered" >        await this.sendNinetyDaysOfflineEmail();</span>
+<span class="cstat-no" title="statement not covered" >        await this.sendMedicalExpirySoonEmail();</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+    }
+    const elapseTime = <span class="cstat-no" title="statement not covered" >this.getTimeDiff(startTime);</span>
+<span class="cstat-no" title="statement not covered" >    this.logger.log(</span>
+      `finished sending automated ${automatedEmailType} emails (${elapseTime}s)`,
+    );
+<span class="cstat-no" title="statement not covered" >    return this.sendLog(automatedEmailType);</span>
+  }
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >sendPreBirthdayEmail</span>() {
+    const startQueryTime = <span class="cstat-no" title="statement not covered" >new Date();</span>
+    const emailId = <span class="cstat-no" title="statement not covered" >'4e787788-1f6c-4846-a7bd-db48d71cd224';</span>
+    const queryString = <span class="cstat-no" title="statement not covered" >`</span>
+      SELECT pos_id as "freewayId", first_name as "firstName", last_name as "lastName", email FROM freeway_user
+      WHERE DATE_PART('day', birthday) = date_part('day', CURRENT_DATE + INTERVAL '4 day')
+      AND DATE_PART('month', birthday) = date_part('month', CURRENT_DATE + INTERVAL '4 day')
+      AND org_id = 207
+      AND email IS NOT NULL AND email != '' AND active = TRUE AND unsubscribed = false
+      `;
+    const users = (<span class="cstat-no" title="statement not covered" >await this.entityManager.query(</span>
+      queryString,
+    )) as CampaignMonitorUser[];
+    const elapseTime = <span class="cstat-no" title="statement not covered" >this.getTimeDiff(startQueryTime);</span>
+<span class="cstat-no" title="statement not covered" >    this.logger.log(</span>
+      `Pre-birthday email fetched ${users.length} users (${elapseTime}s)`,
+    );
+<span class="cstat-no" title="statement not covered" >    return this.sendUsersToCampaignMonitor(emailId, users);</span>
+  }
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >sendBirthdayEmail</span>() {
+    const startQueryTime = <span class="cstat-no" title="statement not covered" >new Date();</span>
+    const emailId = <span class="cstat-no" title="statement not covered" >'2f289925-32a8-4ec2-85cd-7b7b25d7c8fc';</span>
+    const queryString = <span class="cstat-no" title="statement not covered" >`</span>
+      SELECT pos_id as "freewayId", first_name as "firstName", last_name as "lastName", email FROM freeway_user
+      WHERE DATE_PART('day', birthday) = date_part('day', CURRENT_DATE)
+      AND DATE_PART('month', birthday) = date_part('month', CURRENT_DATE)
+      AND org_id = 207
+      AND email IS NOT NULL AND email != '' AND active = TRUE AND unsubscribed = false
+      `;
+    const users = (<span class="cstat-no" title="statement not covered" >await this.entityManager.query(</span>
+      queryString,
+    )) as CampaignMonitorUser[];
+    const elapseTime = <span class="cstat-no" title="statement not covered" >this.getTimeDiff(startQueryTime);</span>
+<span class="cstat-no" title="statement not covered" >    this.logger.log(</span>
+      `Birthday email fetched ${users.length} users (${elapseTime}s)`,
+    );
+<span class="cstat-no" title="statement not covered" >    return this.sendUsersToCampaignMonitor(emailId, users);</span>
+  }
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >sendFortyFiveDaysOfflineEmail</span>() {
+    const startQueryTime = <span class="cstat-no" title="statement not covered" >new Date();</span>
+    const emailId = <span class="cstat-no" title="statement not covered" >'0cc3521d-ea9b-4593-9b62-ab82f2aff77e';</span>
+    const queryString = <span class="cstat-no" title="statement not covered" >`</span>
+    SELECT pos_id as "freewayId", first_name as "firstName", last_name as "lastName", email FROM freeway_user
+    WHERE DATE_PART('day',current_date - modified) = 45
+    AND org_id = 207
+    AND email is NOT NULL and email != '' AND active = true AND unsubscribed = false
+    `;
+    const users = (<span class="cstat-no" title="statement not covered" >await this.entityManager.query(</span>
+      queryString,
+    )) as CampaignMonitorUser[];
+    const elapseTime = <span class="cstat-no" title="statement not covered" >this.getTimeDiff(startQueryTime);</span>
+<span class="cstat-no" title="statement not covered" >    this.logger.log(</span>
+      `45 days offline email fetched ${users.length} users (${elapseTime}s)`,
+    );
+<span class="cstat-no" title="statement not covered" >    return this.sendUsersToCampaignMonitor(emailId, users);</span>
+  }
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >sendNinetyDaysOfflineEmail</span>() {
+    const startQueryTime = <span class="cstat-no" title="statement not covered" >new Date();</span>
+    const emailId = <span class="cstat-no" title="statement not covered" >'0cc3521d-ea9b-4593-9b62-ab82f2aff77e';</span>
+    const queryString = <span class="cstat-no" title="statement not covered" >`</span>
+    SELECT pos_id as "freewayId", first_name as "firstName", last_name as "lastName", email FROM freeway_user
+    WHERE DATE_PART('day',current_date - modified) = 90
+    AND org_id = 207
+    AND email is NOT NULL and email != '' AND active = true AND unsubscribed = false
+    `;
+    const users = (<span class="cstat-no" title="statement not covered" >await this.entityManager.query(</span>
+      queryString,
+    )) as CampaignMonitorUser[];
+    const elapseTime = <span class="cstat-no" title="statement not covered" >this.getTimeDiff(startQueryTime);</span>
+<span class="cstat-no" title="statement not covered" >    this.logger.log(</span>
+      `90 days offline email fetched ${users.length} users (${elapseTime}s)`,
+    );
+<span class="cstat-no" title="statement not covered" >    return this.sendUsersToCampaignMonitor(emailId, users);</span>
+  }
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >sendMedicalExpirySoonEmail</span>() {
+    const startQueryTime = <span class="cstat-no" title="statement not covered" >new Date();</span>
+    const emailId = <span class="cstat-no" title="statement not covered" >'52538a70-7daa-46e5-b17e-4ced30141483';</span>
+    const queryString = <span class="cstat-no" title="statement not covered" >`</span>
+    SELECT freeway_user.pos_id as "freewayId", first_name as "firstName", last_name as "lastName", email FROM freeway_user
+    INNER JOIN freeway_user_identification ON freeway_user.pos_id = freeway_user_identification.freeway_user_id
+    WHERE "freeway_user_identification"."type" = 'med'
+    AND date_part('day', freeway_user_identification.expires - Current_date) = 30
+    AND freeway_user.org_id = 207
+    AND email is NOT NULL and email != '' AND freeway_user.active = true AND unsubscribed = false
+    `;
+    const users = (<span class="cstat-no" title="statement not covered" >await this.entityManager.query(</span>
+      queryString,
+    )) as CampaignMonitorUser[];
+    const elapseTime = <span class="cstat-no" title="statement not covered" >this.getTimeDiff(startQueryTime);</span>
+<span class="cstat-no" title="statement not covered" >    this.logger.log(</span>
+      `Medical ID reminder email fetched ${users.length} users (${elapseTime}s)`,
+    );
+<span class="cstat-no" title="statement not covered" >    return this.sendUsersToCampaignMonitor(emailId, users);</span>
+  }
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >sendWeeklyPointsReminder</span>() {
+    const startQueryTime = <span class="cstat-no" title="statement not covered" >new Date();</span>
+    const emailId = <span class="cstat-no" title="statement not covered" >'2abd690f-2b3c-49b2-ab2a-d2818dd2ef5f';</span>
+    const queryString = <span class="cstat-no" title="statement not covered" >`</span>
+    SELECT pos_id as "freewayId", first_name as "firstName", last_name as "lastName", email, total_points as "totalPoints" FROM freeway_user
+    WHERE email is NOT NULL and email != '' AND active = true AND unsubscribed = false AND has_bwell = true AND org_id = 207
+    `;
+    const users = (<span class="cstat-no" title="statement not covered" >await this.entityManager.query(</span>
+      queryString,
+    )) as CampaignMonitorUser[];
+    const elapseTime = <span class="cstat-no" title="statement not covered" >this.getTimeDiff(startQueryTime);</span>
+<span class="cstat-no" title="statement not covered" >    this.logger.log(</span>
+      `Weekly points reminder email fetched ${users.length} users (${elapseTime}s)`,
+    );
+<span class="cstat-no" title="statement not covered" >    return this.sendUsersToCampaignMonitor(emailId, users);</span>
+  }
+&nbsp;
+  private <span class="fstat-no" title="function not covered" >encodeFreewayId</span>(freewayId: number) {
+    const hashids = <span class="cstat-no" title="statement not covered" >new Hashids(this.configService.get('salt'));</span>
+    const hash = <span class="cstat-no" title="statement not covered" >hashids.encode([freewayId, +new Date()]);</span>
+<span class="cstat-no" title="statement not covered" >    return hash;</span>
+  }
+&nbsp;
+  private <span class="fstat-no" title="function not covered" >decodeFreewayId</span>(hash: string) {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const hashids = <span class="cstat-no" title="statement not covered" >new Hashids(this.configService.get('salt'));</span>
+      const decodeHash = <span class="cstat-no" title="statement not covered" >hashids.decode(hash);</span>
+<span class="cstat-no" title="statement not covered" >      return parseInt(decodeHash[0], 10);</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw new UnauthorizedException();</span>
+    }
+  }
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >unsubscribeUser</span>(hash: string) {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const freewayId = <span class="cstat-no" title="statement not covered" >this.decodeFreewayId(hash);</span>
+      const query = <span class="cstat-no" title="statement not covered" >`SELECT EXISTS(SELECT 1 FROM freeway_user WHERE pos_id = $1)`;</span>
+      const user = <span class="cstat-no" title="statement not covered" >await this.entityManager.query(query, [freewayId]);</span>
+<span class="cstat-no" title="statement not covered" >      if (user[0].exists) {</span>
+        const queryString = <span class="cstat-no" title="statement not covered" >`UPDATE freeway_user SET unsubscribed = true WHERE pos_id = $1`;</span>
+<span class="cstat-no" title="statement not covered" >        await this.entityManager.query(queryString, [freewayId]);</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+      }
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw new UnauthorizedException();</span>
+    }
+  }
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >subscribeUser</span>(hash: string) {
+    const freewayId = <span class="cstat-no" title="statement not covered" >this.decodeFreewayId(hash);</span>
+    const query = <span class="cstat-no" title="statement not covered" >`SELECT EXISTS(SELECT 1 FROM freeway_user WHERE pos_id = $1)`;</span>
+    const user = <span class="cstat-no" title="statement not covered" >await this.entityManager.query(query, [freewayId]);</span>
+<span class="cstat-no" title="statement not covered" >    if (user[0].exists) {</span>
+      const queryString = <span class="cstat-no" title="statement not covered" >`UPDATE freeway_user SET unsubscribed = false WHERE pos_id = $1`;</span>
+<span class="cstat-no" title="statement not covered" >      await this.entityManager.query(queryString, [freewayId]);</span>
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      return false;</span>
+    }
+  }
+&nbsp;
+  /**
+   * Helper method for send email to users via campaign monitor
+   * @param emailId
+   * @param users
+   */
+  private async <span class="fstat-no" title="function not covered" >sendUsersToCampaignMonitor</span>(
+    emailId: string,
+    users: CampaignMonitorUser[],
+  ) {
+<span class="cstat-no" title="statement not covered" >    if (process.env.NODE_ENV !== 'production') {</span>
+<span class="cstat-no" title="statement not covered" >      this.logger.log(</span>
+        `Non-production environment. Skip sending ${users.length} e-mails.`,
+      );
+<span class="cstat-no" title="statement not covered" >      return { successful: true };</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return new Promise(<span class="fstat-no" title="function not covered" >async (r</span>esolve, reject) =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span></span>
+      const startTime = <span class="cstat-no" title="statement not covered" >new Date();</span>
+<span class="cstat-no" title="statement not covered" >      from(users)</span>
+        .pipe(
+          concatMap(<span class="fstat-no" title="function not covered" >user</span> =&gt; {
+            const code = <span class="cstat-no" title="statement not covered" >this.encodeFreewayId(user.freewayId);</span>
+            const apiPath = <span class="cstat-no" title="statement not covered" >`${BASE_URL}/${emailId}/send`;</span>
+            const postBody = <span class="cstat-no" title="statement not covered" >{</span>
+              To: `${user.firstName} ${user.lastName} &lt;${user.email}&gt;`,
+              ConsentToTrack: 'Yes',
+              Data: {
+                FullName: `${user.firstName} ${user.lastName}`,
+                TotalPoints: user.totalPoints,
+                UnsubUrl: `http://greendirect.com/unsubscribe/${code}`,
+              },
+            };
+            // if campaign monitor error send email notification and recover (continue sending e-mails)
+<span class="cstat-no" title="statement not covered" >            return of(user).pipe(</span>
+              switchMap(<span class="fstat-no" title="function not covered" >() </span>=&gt; {
+<span class="cstat-no" title="statement not covered" >                return this.httpService.post(</span>
+                  apiPath,
+                  postBody,
+                  this.getHttpConfig(),
+                );
+              }),
+              catchError(<span class="fstat-no" title="function not covered" >async e</span>rror =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span>
+<span class="cstat-no" title="statement not covered" >                this.logger.log(`Error from campaign monitor`);</span>
+<span class="cstat-no" title="statement not covered" >                this.logger.error(serializeError(error));</span>
+<span class="cstat-no" title="statement not covered" >                await this.sendErrorNotificationEmail(</span>
+                  'GreenDirect: Campaign Monitor Error',
+                  error,
+                );
+<span class="cstat-no" title="statement not covered" >                return EMPTY;</span>
+              }),
+            );
+          }),
+          last(),
+        )
+        .subscribe(
+<span class="fstat-no" title="function not covered" >          results</span> =&gt; {
+            const elapseTime = <span class="cstat-no" title="statement not covered" >this.getTimeDiff(startTime);</span>
+<span class="cstat-no" title="statement not covered" >            this.logger.log(</span>
+              `sent emails to ${users.length} users (${elapseTime}s)`,
+            );
+<span class="cstat-no" title="statement not covered" >            resolve({ successful: true });</span>
+          },
+<span class="fstat-no" title="function not covered" >          error</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >            this.logger.log(`Error in sendUsersToCampaignMonitor`);</span>
+<span class="cstat-no" title="statement not covered" >            this.logger.error(error);</span>
+<span class="cstat-no" title="statement not covered" >            reject(error);</span>
+          },
+        );
+    });
+  }
+&nbsp;
+  /**
+   * Helper method for getting the Axios HTTP config
+   */
+  private <span class="fstat-no" title="function not covered" >getHttpConfig</span>() {
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      baseURL: BASE_URL,
+      headers: {
+        ...httpConfig.headers,
+        // tslint:disable-next-line
+        Authorization: this.auth,
+        'Content-Type': 'application/json',
+      },
+    };
+  }
+&nbsp;
+  private <span class="fstat-no" title="function not covered" >getTimeDiff</span>(startTime: Date): number {
+    const endTime = <span class="cstat-no" title="statement not covered" >new Date();</span>
+<span class="cstat-no" title="statement not covered" >    return (endTime.getTime() - startTime.getTime()) / 1000;</span>
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >sendLog</span>(automatedEmailType: AutomatedEmailType) {
+<span class="cstat-no" title="statement not covered" >    if (process.env.SEND_EMAIL === '1') {</span>
+<span class="cstat-no" title="statement not covered" >      return this.notificationService.sendEmail({</span>
+        from: this.configService.get('email.from'),
+        to: this.configService.get('email.techSupport'),
+        subject: `GreenDirect: Automated ${automatedEmailType} e-mail status report`,
+        message: `Automated ${automatedEmailType} e-mails sent: \n\n${this.logText}`,
+      });
+    }
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >sendErrorNotificationEmail</span>(subject: string, error: Error) {
+    const configService = <span class="cstat-no" title="statement not covered" >new ConfigService();</span>
+<span class="cstat-no" title="statement not covered" >    await this.notificationService.sendEmail({</span>
+      from: configService.get('email.from'),
+      to: configService.get('email.techSupport'),
+      subject,
+      message:
+        'An error occurred:\n' + JSON.stringify(serializeError(error), null, 2),
+    });
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

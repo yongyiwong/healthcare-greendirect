@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/user/user.exceptions.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/user</a> user.exceptions.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { HttpStatus } from '@nestjs/common';
+import { intersection } from 'lodash';
+import { Role } from '@sierralabs/nest-identity';
+&nbsp;
+import { ExpectedExceptionMap } from '../app.interface';
+import { User } from '../entities/user.entity';
+import { UserAddress } from '../entities/user-address.entity';
+import { Organization } from '../entities/organization.entity';
+&nbsp;
+export const UserExceptions: ExpectedExceptionMap = {
+  requiredPropertiesMissing: {
+    message: 'Please provide all required fields.',
+    httpStatus: HttpStatus.BAD_REQUEST,
+    i18n: { 'es-PR': 'Por favor proporcione todos los campos requeridos' },
+    failCondition: error =&gt;
+      /^.*violates not-null constraint.*$/.test(error.message),
+  },
+  accountExists: {
+    message: 'Account Email exists.',
+    httpStatus: HttpStatus.CONFLICT,
+    failCondition: error =&gt;
+      /^duplicate key value violates unique constraint "user__email__uq"/.test(
+        error.message,
+      ) ||
+      /^Duplicate email/.test(error.message) ||
+      HttpStatus.CONFLICT === error.status,
+    i18n: { 'es-PR': 'Cuenta de correo electrónico existe.' },
+  },
+  loginFailed: {
+    message: 'Login failed. Please double-check your credentials.',
+    httpStatus: HttpStatus.UNAUTHORIZED,
+    i18n: {
+      'es-PR':
+        'Error de inicio de sesion. Por favor, compruebe sus credenciales.',
+    },
+  },
+  passwordIncorrect: {
+    message: 'Password is incorrect.',
+    httpStatus: HttpStatus.BAD_REQUEST,
+    i18n: { 'es-PR': 'La contraseña es incorrecta.' },
+  },
+  tokenRequired: {
+    message: 'Token required.',
+    httpStatus: HttpStatus.UNAUTHORIZED,
+    i18n: { 'es-PR': 'Token requerido.' },
+    failCondition: jwtToken =&gt; !jwtToken,
+  },
+  tokenExpired: {
+    message: 'Reset password link has expired.',
+    i18n: { 'es-PR': 'El enlace para restablecer la contraseña ha caducado' },
+    httpStatus: HttpStatus.UNAUTHORIZED,
+    failCondition: <span class="fstat-no" title="function not covered" >error</span> =&gt; <span class="cstat-no" title="statement not covered" >/^jwt expired/.test(error.message),</span>
+  },
+  tokenInvalid: {
+    message:
+      'Invalid token. Please use the link you received in your Reset Password email.',
+    httpStatus: HttpStatus.BAD_REQUEST,
+    i18n: {
+      'es-PR':
+        'Simbolo no valido. Utilice el enlace que recibió en el correo electrónico de Restablecer contraseña.',
+    },
+    failCondition: error =&gt; /^jwt malformed/.test(error.message),
+  },
+  secretMisMatched: {
+    message:
+      'Invalid token. Please use the link you received in your Reset Password email.',
+    httpStatus: HttpStatus.BAD_REQUEST,
+    i18n: {
+      'es-PR':
+        'Simbolo no valido. Utilice el enlace que recibió en el correo electrónico de Restablecer contraseña.',
+    },
+    failCondition: <span class="fstat-no" title="function not covered" >error</span> =&gt; <span class="cstat-no" title="statement not covered" >/^invalid signature/.test(error.message),</span>
+  },
+  noAdminRights: {
+    message: 'Your role is not authorized for access.',
+    httpStatus: HttpStatus.UNAUTHORIZED,
+    /**
+     * failCondition: (context) = list of user roles compared to an array of allowed administrative Role names.
+     */ failCondition: (context: {
+      userRoles: Role[];
+      allowedRoles: string[];
+    }) =&gt; {
+      return !intersection(
+        context.allowedRoles,
+        context.userRoles.map(ur =&gt; ur.name),
+      ).length;
+    },
+  },
+  notLogin: {
+    message: 'Not logged in.',
+    httpStatus: HttpStatus.UNAUTHORIZED,
+    i18n: { 'es-PR': 'Sin iniciar sesión.' },
+    failCondition: <span class="fstat-no" title="function not covered" >(u</span>ser: User) =&gt; <span class="cstat-no" title="statement not covered" >!user.id,</span>
+  },
+  userNotVerified: {
+    message: 'Error: Please verify your phone number.',
+    httpStatus: HttpStatus.FORBIDDEN,
+    i18n: { 'es-PR': 'Error: Por favor verifique su número de teléfono.' },
+    failCondition: (user: User) =&gt; user.mobileNumber &amp;&amp; !user.verified,
+  },
+  userNotFound: {
+    message: 'Error: User not found',
+    httpStatus: HttpStatus.NOT_FOUND,
+    i18n: { 'es-PR': 'Error: Usuario no encontrado' },
+    failCondition: (user: User) =&gt; !user || !user.id,
+  },
+  maxAddressNumExceeded: {
+    message: 'Only a maximum of 10 delivery addresses is allowed.',
+    httpStatus: HttpStatus.BAD_REQUEST,
+    i18n: {
+      'es-PR': 'Sólo se permite un máximo de 10 direcciones de entrega.',
+    },
+    failCondition: existingAddressesCount =&gt; existingAddressesCount &gt;= 10,
+  },
+  userAddressNotFound: {
+    message: 'Error: Address not found',
+    httpStatus: HttpStatus.NOT_FOUND,
+    i18n: { 'es-PR': 'Error: Dirección no encontrada' },
+    failCondition: (userAddress: UserAddress) =&gt;
+      !userAddress || !userAddress.id,
+  },
+  mobileNumberRequired: {
+    message: 'Please provide a mobile number',
+    httpStatus: HttpStatus.BAD_REQUEST,
+    i18n: { 'es-PR': 'Por favor proporcione un número de móvil' },
+    failCondition: (mobileNumber: string) =&gt; !mobileNumber,
+  },
+  emailRequired: {
+    message: 'Please provide an email',
+    httpStatus: HttpStatus.BAD_REQUEST,
+    i18n: { 'es-PR': 'Por favor proporcione un correo electrónico' },
+    failCondition: <span class="fstat-no" title="function not covered" >(e</span>mail: string) =&gt; <span class="cstat-no" title="statement not covered" >!email,</span>
+  },
+  noAssignedOrganization: {
+    message: 'Error: User has no assigned company.',
+    httpStatus: HttpStatus.NOT_FOUND,
+    failCondition: <span class="fstat-no" title="function not covered" >(o</span>rganization: Organization) =&gt; <span class="cstat-no" title="statement not covered" >!organization,</span>
+  },
+  patientNumberFailed: {
+    message: 'Please provide correct patient number format.',
+    httpStatus: HttpStatus.BAD_REQUEST,
+    i18n: {
+      'es-PR':
+        'Proporcione el formato de número de paciente correcto.',
+    },
+  },
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

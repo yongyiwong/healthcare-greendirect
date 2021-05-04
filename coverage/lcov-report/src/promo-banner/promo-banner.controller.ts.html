@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/promo-banner/promo-banner.controller.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/promo-banner</a> promo-banner.controller.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {
+  Controller,
+  Get,
+  Post,
+  Put,
+  Body,
+  Param,
+  Query,
+  UsePipes,
+  UseInterceptors,
+  ParseIntPipe,
+  Req,
+  Res,
+  Next,
+} from '@nestjs/common';
+import { Roles, OwnerInterceptor } from '@sierralabs/nest-identity';
+import { RequiredPipe, ParseBooleanPipe } from '@sierralabs/nest-utils';
+import { ApiImplicitQuery, ApiOperation } from '@nestjs/swagger';
+&nbsp;
+import { PromoBannerService } from './promo-banner.service';
+import { PromoBanner } from '../entities/promo-banner.entity';
+import { PromoBannerDto } from './promo-banner.dto';
+import { RoleEnum } from '../roles/roles.enum';
+import { SearchValidationPipe } from '../common/pipes/search-validation.pipe';
+import { PromoBannerPhotoPresignDto } from './promo-banner-photo-presign.dto';
+&nbsp;
+const { Admin } = RoleEnum;
+&nbsp;
+@Controller('promo-banner')
+export class PromoBannerController {
+  constructor(public readonly promoBannerService: PromoBannerService<span class="branch-1 cbranch-no" title="branch not covered" >) {}</span>
+&nbsp;
+  @Get()
+  @UsePipes(new SearchValidationPipe(PromoBanner))
+  @ApiImplicitQuery({ name: 'search', required: false })
+  @ApiImplicitQuery({ name: 'page', required: false })
+  @ApiImplicitQuery({ name: 'limit', required: false })
+  @ApiImplicitQuery({ name: 'order', required: false })
+  @ApiImplicitQuery({ name: 'includeInactive', required: false })
+  public async <span class="fstat-no" title="function not covered" >findWithFilter</span>(
+    @Query('search') search?: string,
+    @Query('page') page?: number,
+    @Query('limit') limit?: number,
+    @Query('order') order?: string,
+    @Query('includeInactive', new ParseBooleanPipe()) includeInactive?: boolean,
+  ): Promise<span class="branch-1 cbranch-no" title="branch not covered" >&lt;[PromoBanner[], number]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.promoBannerService.findWithFilter(</span>
+      search,
+      page,
+      limit,
+      order,
+      includeInactive,
+    );
+  }
+&nbsp;
+  @Get(':id([0-9]+)')
+  public async <span class="fstat-no" title="function not covered" >findById</span>(
+    @Param('id', new ParseIntPipe()) id: number,
+  ): Promise<span class="branch-1 cbranch-no" title="branch not covered" >&lt;PromoBanner&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.promoBannerService.findById(id);</span>
+  }
+&nbsp;
+  @Roles(Admin)
+  @Post()
+  @UseInterceptors(new OwnerInterceptor(['createdBy', 'modifiedBy']))
+  public async <span class="fstat-no" title="function not covered" >create</span>(
+    @Body(new RequiredPipe()) promoBanner: PromoBanner<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+  ): Promise<span class="branch-1 cbranch-no" title="branch not covered" >&lt;PromoBanner&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.promoBannerService.create(promoBanner);</span>
+  }
+&nbsp;
+  @Roles(Admin)
+  @Put(':id([0-9]+)')
+  @UseInterceptors(new OwnerInterceptor(['modifiedBy']))
+  public async <span class="fstat-no" title="function not covered" >update</span>(
+    @Param('id', new ParseIntPipe()) id: number,
+    @Body(new RequiredPipe()) promoBannerDto: <span class="branch-0 cbranch-no" title="branch not covered" >PromoBannerDto<span class="branch-0 cbranch-no" title="branch not covered" >,</span></span>
+  ): Promise<span class="branch-1 cbranch-no" title="branch not covered" >&lt;PromoBanner&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    promoBannerDto.id = id;</span>
+<span class="cstat-no" title="statement not covered" >    return this.promoBannerService.update(promoBannerDto);</span>
+  }
+&nbsp;
+  @Roles(Admin)
+  @ApiOperation({ title: 'Create Presigned Url for S3' })
+  @Post('photo/presign')
+  public async <span class="fstat-no" title="function not covered" >createPresignedPost</span>(
+    @Body(new RequiredPipe())
+    promoBannerPhotoPresignDto: <span class="branch-0 cbranch-no" title="branch not covered" >PromoBannerPhotoPresignDto<span class="branch-0 cbranch-no" title="branch not covered" >,</span></span>
+  ): Promise<span class="branch-1 cbranch-no" title="branch not covered" >&lt;any&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.promoBannerService.createPresignedPost(</span>
+      promoBannerPhotoPresignDto,
+    );
+  }
+&nbsp;
+  @ApiOperation({ title: 'Proxy promo banner photo from S3' })
+  @Get('photo/file/:fileKey')
+  public <span class="fstat-no" title="function not covered" >proxyFile</span>(
+    @Param('fileKey') fileKey: string,
+    @Req() request,
+    @Res() response,
+    @Next() next,
+  ): any {
+<span class="cstat-no" title="statement not covered" >    this.promoBannerService.proxyFile(fileKey, request, response, next);</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

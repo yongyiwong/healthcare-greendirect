@@ -1,0 +1,12 @@
+p Saludos #{forUser.firstName},
+
+p
+  | &#161;Buenas noticias&#33;
+  each organizationName in organizationNames
+    | #{organizationName},&nbsp;
+  | se ha asociado con GreenDirect para proveer pedidos en línea para todos nuestros pacientes.&nbsp;
+  a( href=signInLinkUrl ) Haz click aquí
+  | &nbsp;para activar tu cuenta.
+
+p(style="margin-bottom: 0") Sinceramente,
+p(style="margin-top: 0") GreenDirect

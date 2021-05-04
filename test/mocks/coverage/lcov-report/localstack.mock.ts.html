@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for localstack.mock.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> localstack.mock.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as _ from 'lodash';
+import * as AWS from 'aws-sdk';
+import { Logger } from '@nestjs/common';
+import { TestingModule } from '@nestjs/testing';
+import { ConfigService } from '@sierralabs/nest-utils';
+&nbsp;
+import { Environments } from '../../src/app.service';
+&nbsp;
+export const MOCK_LOCALSTACK_TOPIC_ARN = {
+  GENERAL: 'LOCALSTACK_GENERAL',
+  PH: 'TEST_TOPIC_PH',
+  CV: 'TEST_TOPIC_CV',
+};
+export class LocalstackMock {
+  configService: ConfigService;
+  s3client: AWS.S3;
+  snsClient: AWS.SNS;
+  bucketName: string;
+  region: string;
+  logger = new Logger('LocalstackMock');
+&nbsp;
+  constructor(private readonly module: TestingModule) {
+    this.configService = module.get&lt;ConfigService&gt;(ConfigService);
+    this.s3client = new AWS.S3(this.configService.get('storage.aws.s3'));
+    this.bucketName = this.configService.get('storage.aws.s3.bucket');
+    this.region =
+      this.configService.get('storage.aws.s3.region') || <span class="branch-1 cbranch-no" title="branch not covered" >'us-west-2';</span>
+    const snsMockConfig = {
+      endpoint: this.configService.get('notification.aws.sns.endpoint'),
+    };
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (snsMockConfig.endpoint) {
+      this.snsClient = new AWS.SNS(snsMockConfig);
+    }
+  }
+&nbsp;
+  async generate() {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!(await this.isBucketExists())) {
+<span class="cstat-no" title="statement not covered" >      await this.createBucket();</span>
+    }
+&nbsp;
+    // localstack generates the same ARN 'arn:aws:sns:us-west-2:123456789012:TEST_TOPIC_PH'
+    // Adds general list, and two sample organizations ARNs
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (this.snsClient) {
+      const environment = process.env.NODE_ENV as Environments;
+      <span class="missing-if-branch" title="else path not taken" >E</span>if ([Environments.TEST, Environments.DEV].includes(environment)) {
+        await Promise.all(
+          _.values(MOCK_LOCALSTACK_TOPIC_ARN).map(topic =&gt;
+            this.createTopic(topic),
+          ),
+        );
+      }
+    }
+  }
+&nbsp;
+  async isBucketExists() {
+    const params: AWS.S3.Types.HeadBucketRequest = {
+      Bucket: this.bucketName,
+    };
+    try {
+      const exist = await this.s3client.headBucket(params).promise();
+      return exist ? Promise.resolve(true) : <span class="branch-1 cbranch-no" title="branch not covered" >Promise.resolve(false);</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      this.logger.log(error);</span>
+<span class="cstat-no" title="statement not covered" >      return Promise.resolve(false);</span>
+    }
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >createBucket</span>(): Promise&lt;AWS.S3.Types.CreateBucketOutput&gt; {
+    const params: AWS.S3.Types.CreateBucketRequest = <span class="cstat-no" title="statement not covered" >{</span>
+      ACL: 'public-read',
+      Bucket: this.bucketName,
+    };
+<span class="cstat-no" title="statement not covered" >    return await this.s3client.createBucket(params).promise();</span>
+  }
+&nbsp;
+  async createTopic(topicName: string): Promise&lt;AWS.SNS.CreateTopicResponse&gt; {
+    const params: AWS.SNS.Types.CreateTopicInput = {
+      Name: topicName,
+    };
+    return this.snsClient.createTopic(params).promise();
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:14:42 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>

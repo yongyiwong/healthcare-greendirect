@@ -1,0 +1,33 @@
+p(style="margin-bottom: 0") [ATTENTION]
+
+p(style="margin-top: 0") Un contacto te ha enviado un último mensaje #{contact.created}.
+
+p(style="margin-bottom: 0") Nombre de contacto: #{contact.fullName}
+
+p(style="margin-top: 0; margin-bottom: 0") Email de contacto: #{contact.email}
+
+p(style="margin-top: 0; margin-bottom: 0") Número de teléfono: #{contact.phoneNumber}
+
+p(style="margin-top: 0; margin-bottom: 0") Ciudad: #{contact.city}
+
+if contact.state
+  p(style="margin-top: 0; margin-bottom: 0") Estado: #{contact.state.abbreviation} - #{contact.state.name}
+
+p(style="margin-top: 0; margin-bottom: 0") Código postal: #{contact.postalCode}
+
+p Detalles de la cuenta registrada:&nbsp;
+  if contact.user && contact.user.id
+    span #{contact.user.firstName} #{contact.user.lastName} (ID: #{contact.user.id})
+  else
+    span (Not registered)
+
+p(style="margin-top: 0; margin-bottom: 0") Razón: #{reason}
+
+p(style="margin-top: 0; margin-bottom: 0") Mensaje:
+
+p #{contact.message}
+
+p(style="margin-top: 0; margin-bottom: 0") -----------------------------------------
+br
+br
+p GreenDirect

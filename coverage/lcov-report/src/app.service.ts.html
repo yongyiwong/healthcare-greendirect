@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">src</a> app.service.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">109x</span>
+<span class="cline-any cline-yes">109x</span>
+<span class="cline-any cline-yes">109x</span>
+<span class="cline-any cline-yes">109x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">56x</span>
+<span class="cline-any cline-yes">56x</span>
+<span class="cline-any cline-yes">56x</span>
+<span class="cline-any cline-yes">112x</span>
+<span class="cline-any cline-yes">56x</span>
+<span class="cline-any cline-yes">56x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as _ from 'lodash';
+import * as fs from 'fs';
+import { Injectable } from '@nestjs/common';
+import { RootResponse } from './app.interface';
+const readFileAsync = <span class="fstat-no" title="function not covered" >(f</span>ile, encoding) =&gt;
+<span class="cstat-no" title="statement not covered" >  new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    fs.readFile(file, encoding, <span class="fstat-no" title="function not covered" >(e</span>rr, data) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >      err ? reject(err) : resolve(data),</span>
+    );
+  });
+&nbsp;
+/** NODE_ENV values used by GD */
+export enum Environments {
+  DEV = 'development',
+  TEST = 'test', // local-server, distinct from dev
+  TEST_AUTO = 'test-auto', // isolated instance meant for automation and repeated tests
+  STAGING = 'staging', // paid test environment for client
+  PRODUCTION = 'production', // live
+}
+&nbsp;
+const PRODUCTION = [Environments.STAGING, Environments.PRODUCTION];
+const NON_PRODUCTION = [
+  Environments.DEV,
+  Environments.TEST,
+  Environments.TEST_AUTO,
+]; // allows workarounds for automation
+&nbsp;
+/**
+ *
+ * @param options.includes allows a temporary override to include another environment
+ */
+export const isNonProduction = (options?: { includes?: Environments[] }) =&gt; {
+  const env = process.env.NODE_ENV; // dont use a default
+  const includes = options &amp;&amp; options.includes ? options.includes : [];
+  const nonProduction = _.concat(NON_PRODUCTION, includes);
+  return env &amp;&amp; _.includes(nonProduction, env);
+};
+&nbsp;
+/**
+ *
+ * @param options options.excepts allows a temporary override to exclude an environment
+ */
+export const isProductionEnv = (options?: {
+  excepts?: Environments[];
+  allow?: Environments[];
+}) =&gt; {
+  const env = process.env.NODE_ENV; // dont use a default
+  const excluded = options &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >options.excepts </span>? <span class="branch-0 cbranch-no" title="branch not covered" >options.excepts </span>: [];
+  const allows = options &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >options.allow </span>? <span class="branch-0 cbranch-no" title="branch not covered" >options.allow </span>: [];
+  const removedExcepts = PRODUCTION.filter(e =&gt; !_.includes(excluded, e));
+  const allowed = _.concat(removedExcepts, allows);
+  return env &amp;&amp; _.includes(allowed, env);
+};
+&nbsp;
+export const readFromFileAsync = <span class="fstat-no" title="function not covered" >async (f</span>ilePath: string) =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span>
+<span class="cstat-no" title="statement not covered" >  try {</span>
+    const content = <span class="cstat-no" title="statement not covered" >await readFileAsync(filePath, 'utf8');</span>
+<span class="cstat-no" title="statement not covered" >    return content.toString();</span>
+  } catch (err) {
+<span class="cstat-no" title="statement not covered" >    if (err.code !== 'ENOENT') <span class="cstat-no" title="statement not covered" >throw err;</span></span>
+    // For missing file, fail silently
+<span class="cstat-no" title="statement not covered" >    return '';</span>
+  }
+};
+&nbsp;
+@Injectable()
+export class AppService {
+  root(): RootResponse {
+    const { name, version } = require(process.cwd() + '/package.json');
+    const environment = process.env.NODE_ENV || <span class="branch-1 cbranch-no" title="branch not covered" >'(development)';</span>
+    return {
+      name,
+      version,
+      environment,
+    };
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

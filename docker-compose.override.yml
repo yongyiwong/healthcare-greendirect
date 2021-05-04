@@ -1,0 +1,26 @@
+version: '2.3' # Specify docker-compose file version to allow variable substitution
+services:
+  db:
+    build: ./db
+    restart: on-failure
+    healthcheck:
+      test: 'exit 0'
+    environment:
+      - POSTGRES_DB=${DB_NAME:-greendirect}
+    ports:
+      - '5432:5432'
+
+  localstack-s3:
+    image: localstack/localstack:latest
+    depends_on:
+      # force compose to prioritize db starting order
+      db:
+        condition: service_healthy
+    volumes:
+      - ./localstack:/tmp/localstack
+    ports:
+      - '5000:4566'
+    environment:
+      - SERVICES=s3,web,sns
+      - DEFAULT_REGION=us-west-2
+      - DATA_DIR=/tmp/localstack/data

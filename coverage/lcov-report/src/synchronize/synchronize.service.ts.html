@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/synchronize/synchronize.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/synchronize</a> synchronize.service.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as AWS from 'aws-sdk';
+import * as log from 'fancy-log';
+import { RunTaskRequest } from 'aws-sdk/clients/ecs';
+&nbsp;
+import {
+  ConflictException,
+  Injectable,
+  NotImplementedException,
+} from '@nestjs/common';
+import { ConfigService } from '@sierralabs/nest-utils';
+&nbsp;
+@Injectable()
+export class SynchronizeService {
+  config: any;
+  ecs: AWS.ECS;
+&nbsp;
+  constructor(private readonly configService: ConfigService<span class="branch-1 cbranch-no" title="branch not covered" >) {</span>
+    this.config = configService.get('client.aws');
+    AWS.config.update({
+      accessKeyId: this.config.accessKeyId,
+      secretAccessKey: this.config.secretAccessKey,
+      region: this.config.ecs ? <span class="branch-0 cbranch-no" title="branch not covered" >this.config.ecs.region </span>: 'us-west-2',
+    });
+    this.ecs = new AWS.ECS({ apiVersion: '2014-11-13' });
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >launchInventorySynchronizeTask</span>(userId: number): Promise&lt;any&gt; {
+    const results = <span class="cstat-no" title="statement not covered" >await this.getSynchronizeTasks();</span>
+    let isAlreadyRunning = <span class="cstat-no" title="statement not covered" >false;</span>
+<span class="cstat-no" title="statement not covered" >    for (const task of results.tasks) {</span>
+<span class="cstat-no" title="statement not covered" >      if (task.overrides &amp;&amp; task.overrides.containerOverrides) {</span>
+<span class="cstat-no" title="statement not covered" >        for (const overrides of task.overrides.containerOverrides) {</span>
+<span class="cstat-no" title="statement not covered" >          if (overrides.environment &amp;&amp; overrides.environment.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            for (const variable of overrides.environment) {</span>
+<span class="cstat-no" title="statement not covered" >              if (</span>
+                variable.name === 'TASK' &amp;&amp;
+                variable.value === 'SYNCHRONIZE_INVENTORY'
+              ) {
+<span class="cstat-no" title="statement not covered" >                isAlreadyRunning = true;</span>
+<span class="cstat-no" title="statement not covered" >                break;</span>
+              }
+            }
+          }
+        }
+      }
+    }
+<span class="cstat-no" title="statement not covered" >    if (!isAlreadyRunning) {</span>
+<span class="cstat-no" title="statement not covered" >      return this.runAwsTask(userId);</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      throw new ConflictException('Synchronization is already running.');</span>
+    }
+  }
+&nbsp;
+  async <span class="fstat-no" title="function not covered" >getSynchronizeTasks</span>(): Promise&lt;any&gt; {
+    const tasksArns = <span class="cstat-no" title="statement not covered" >await this.getAwsTaskList();</span>
+<span class="cstat-no" title="statement not covered" >    return this.getAwsTaskDefinition(tasksArns);</span>
+  }
+&nbsp;
+  private async <span class="fstat-no" title="function not covered" >runAwsTask</span>(userId: number): Promise&lt;any&gt; {
+<span class="cstat-no" title="statement not covered" >    if (!this.config.ecs) {</span>
+<span class="cstat-no" title="statement not covered" >      throw new NotImplementedException('Missing AWS Config');</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
+      const params: RunTaskRequest = <span class="cstat-no" title="statement not covered" >{</span>
+        taskDefinition: this.config.ecs.taskDefinition,
+        cluster: this.config.ecs.cluster,
+        count: 1,
+        launchType: 'FARGATE',
+        networkConfiguration: {
+          awsvpcConfiguration: {
+            assignPublicIp: 'ENABLED', // needed otherwise task gets prematurely terminated
+            subnets: this.config.ecs.subnets,
+            securityGroups: this.config.ecs.securityGroups,
+          },
+        },
+        overrides: {
+          containerOverrides: [
+            {
+              name: this.config.ecs.container,
+              command: ['node', 'dist/main.js'],
+              environment: [
+                {
+                  name: 'TASK',
+                  value: 'SYNCHRONIZE_INVENTORY',
+                },
+                {
+                  name: 'CREATED_BY',
+                  value: userId.toString(),
+                },
+              ],
+            },
+          ],
+        },
+      };
+<span class="cstat-no" title="statement not covered" >      log.info('Synchronize Service Running ECS Task');</span>
+<span class="cstat-no" title="statement not covered" >      this.ecs.runTask(params, <span class="fstat-no" title="function not covered" >(e</span>rror, data) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (error) {</span>
+<span class="cstat-no" title="statement not covered" >          return reject(error);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        resolve(data);</span>
+      });
+    });
+  }
+&nbsp;
+  private async <span class="fstat-no" title="function not covered" >getAwsTaskList</span>(): Promise&lt;any&gt; {
+<span class="cstat-no" title="statement not covered" >    if (!this.config.ecs) {</span>
+<span class="cstat-no" title="statement not covered" >      throw new NotImplementedException('Missing AWS Config');</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
+      const params = <span class="cstat-no" title="statement not covered" >{</span>
+        cluster: this.config.ecs.cluster,
+        family: this.config.ecs.family,
+      };
+<span class="cstat-no" title="statement not covered" >      this.ecs.listTasks(params, <span class="fstat-no" title="function not covered" >(e</span>rror, data) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (error) {</span>
+<span class="cstat-no" title="statement not covered" >          return reject(error);</span>
+        }
+        // TODO: account for `nextToken` if a lot of tasks exists
+<span class="cstat-no" title="statement not covered" >        resolve(data.taskArns);</span>
+      });
+    });
+  }
+&nbsp;
+  private async <span class="fstat-no" title="function not covered" >getAwsTaskDefinition</span>(taskArns: string[]): Promise&lt;any&gt; {
+<span class="cstat-no" title="statement not covered" >    return new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
+      const params = <span class="cstat-no" title="statement not covered" >{ tasks: taskArns, cluster: this.config.ecs.cluster };</span>
+<span class="cstat-no" title="statement not covered" >      this.ecs.describeTasks(params, <span class="fstat-no" title="function not covered" >(e</span>rror, data) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (error) {</span>
+<span class="cstat-no" title="statement not covered" >          return reject(error);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        resolve(data);</span>
+      });
+    });
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

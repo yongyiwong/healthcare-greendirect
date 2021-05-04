@@ -1,0 +1,29 @@
+p Saludos #{forUser.firstName},
+
+p
+  | &#161;Buenas noticias&#33;&nbsp;
+  each organizationName in organizationNames
+    | #{organizationName},&nbsp;
+  | se ha asociado con GreenDirect para proveer pedidos en línea para todos nuestros pacientes.&nbsp;
+  a( href=signInLinkUrl ) Haz click aquí
+  | &nbsp;para activar tu cuenta.
+
+p(style="margin-bottom: 0") Sinceramente,
+p(style="margin-top: 0") GreenDirect
+
+br
+br
+p Hello #{forUser.firstName},
+
+p
+  | Good news&#33;&nbsp;
+  each organizationName in organizationNames
+    | #{organizationName},&nbsp;
+  | has partnered with GreenDirect to provide online ordering for all of our patients.&nbsp;
+  a( href=signInLinkUrl ) Click here
+  | &nbsp;to activate your account.
+
+p(style="margin-bottom: 0") Sincerely,
+p(style="margin-top: 0") GreenDirect
+p(style="margin-top: 0") www.greendirect.com
+img(src=clientBaseUrl+'/assets/greendirect-logo.png', height=40, alt='GreenDirect')

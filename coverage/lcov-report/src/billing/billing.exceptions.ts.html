@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/billing/billing.exceptions.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/billing</a> billing.exceptions.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { HttpStatus } from '@nestjs/common';
+import { isEmpty } from 'lodash';
+import Stripe from 'stripe';
+&nbsp;
+import { ExpectedExceptionMap } from '../app.interface';
+import { Organization } from '../entities/organization.entity';
+&nbsp;
+export const BillingExceptions: ExpectedExceptionMap = {
+  noCustomerId: {
+    message:
+      'Error: Company has no billing card reference. Create card information in the Billing Section.',
+    httpStatus: HttpStatus.NOT_FOUND,
+    failCondition: <span class="fstat-no" title="function not covered" >(c</span>ustomerId: string) =&gt; <span class="cstat-no" title="statement not covered" >!customerId,</span>
+  },
+  noDefaultCard: {
+    message:
+      'Error: Company has no default billing card. Create card information in the Billing Section.',
+    messageFn(customerName) {
+<span class="cstat-no" title="statement not covered" >      return customerName</span>
+        ? this.message.replace('Company', customerName)
+        : this.message;
+    },
+    httpStatus: HttpStatus.NOT_FOUND,
+    failCondition: <span class="fstat-no" title="function not covered" >(d</span>efaultCard: string) =&gt; <span class="cstat-no" title="statement not covered" >!defaultCard,</span>
+  },
+  cardTokenUnrecognized: {
+    message:
+      'Error: Request token for billing card information was not recognized. Resubmit card information to try again.',
+    httpStatus: HttpStatus.BAD_REQUEST,
+    failCondition: <span class="fstat-no" title="function not covered" >(e</span>rrorCode: string) =&gt; <span class="cstat-no" title="statement not covered" >errorCode === 'resource_missing',</span>
+  },
+  cardTokenExpired: {
+    message:
+      'Error: Request token for billing card information has expired. Resubmit card information to try again.',
+    httpStatus: HttpStatus.CONFLICT,
+    failCondition: <span class="fstat-no" title="function not covered" >(e</span>rrorCode: string) =&gt; <span class="cstat-no" title="statement not covered" >errorCode === 'token_already_used',</span>
+  },
+  retrieveCardTokenFailed: {
+    message:
+      'Error: Retrieving billing card information failed. Resubmit card information to try again.',
+    httpStatus: HttpStatus.INTERNAL_SERVER_ERROR,
+    failCondition: <span class="fstat-no" title="function not covered" >(c</span>ardToken: Stripe.Token) =&gt;
+<span class="cstat-no" title="statement not covered" >      isEmpty(cardToken &amp;&amp; cardToken.card),</span>
+  },
+  createCardFailed: {
+    message:
+      'Error: Creating billing card information failed. Resubmit card information to try again.',
+    httpStatus: HttpStatus.INTERNAL_SERVER_ERROR,
+    failCondition: <span class="fstat-no" title="function not covered" >(c</span>reatedCustomer: Stripe.Customer) =&gt; <span class="cstat-no" title="statement not covered" >!createdCustomer,</span>
+  },
+  updateCardFailed: {
+    message:
+      'Error: Updating billing card information failed. Resubmit card information to try again.',
+    httpStatus: HttpStatus.INTERNAL_SERVER_ERROR,
+    failCondition: <span class="fstat-no" title="function not covered" >(u</span>pdatedCustomer: Stripe.Customer) =&gt; <span class="cstat-no" title="statement not covered" >!updatedCustomer,</span>
+  },
+  deleteCardFailed: {
+    message:
+      'Error: Deleting billing card information failed. Resubmit the request for card deletion to try again.',
+    httpStatus: HttpStatus.INTERNAL_SERVER_ERROR,
+    failCondition: <span class="fstat-no" title="function not covered" >(d</span>eletedCard: Stripe.DeletedCard) =&gt; <span class="cstat-no" title="statement not covered" >!deletedCard,</span>
+  },
+  saveCardReferenceFailed: {
+    message:
+      'Error: Saving billing card reference failed. Resubmit card information to try again.',
+    httpStatus: HttpStatus.INTERNAL_SERVER_ERROR,
+    failCondition: <span class="fstat-no" title="function not covered" >(u</span>pdatedOrganization: Organization) =&gt; <span class="cstat-no" title="statement not covered" >!updatedOrganization,</span>
+  },
+  noDefaultMessageUnitPrice: {
+    message: 'Error: SMS Blast billing has no unit price set up.',
+    httpStatus: HttpStatus.NOT_IMPLEMENTED,
+    failCondition: <span class="fstat-no" title="function not covered" >(u</span>nitPrice: number) =&gt; <span class="cstat-no" title="statement not covered" >!unitPrice || unitPrice &lt;= 0,</span>
+  },
+  createInvoiceFailed: {
+    message:
+      'Error: creating an invoice failed. Please wait a while and try again later.',
+    httpStatus: HttpStatus.INTERNAL_SERVER_ERROR,
+  },
+  externalInvoiceNotFound: {
+    message: 'Error: Invoice record was not found.',
+    httpStatus: HttpStatus.NOT_FOUND,
+    failCondition: <span class="fstat-no" title="function not covered" >(e</span>rrorCode: string) =&gt; <span class="cstat-no" title="statement not covered" >errorCode === 'resource_missing',</span>
+  },
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

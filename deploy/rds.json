@@ -1,0 +1,52 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "Database": {
+      "Type": "AWS::RDS::DBInstance",
+      "Properties": {
+        "AllocatedStorage": "20",
+        "AutoMinorVersionUpgrade": true,
+        "BackupRetentionPeriod": "7",
+        "DBInstanceClass": "db.t2.medium",
+        "DBInstanceIdentifier": "greendirect-prod",
+        "DBName": "greendirect",
+        "DBParameterGroupName": "default.postgres10",
+        "DBSubnetGroupName": {
+          "Ref": "DatabaseSubnetGroup"
+        },
+        "DeletionProtection": true,
+        "EnablePerformanceInsights": false,
+        "Engine": "postgres",
+        "EngineVersion": "10.4",
+        "LicenseModel": "postgresql-license",
+        "MasterUsername": "root",
+        "MasterUserPassword": "a2MvbA49ht5w",
+        "MultiAZ": true,
+        "PreferredBackupWindow": "02:30-03:00",
+        "PreferredMaintenanceWindow": "mon:05:00-mon:05:30",
+        "PubliclyAccessible": true,
+        "StorageEncrypted": true,
+        "StorageType": "standard",
+        "VPCSecurityGroups": ["sg-0b956093a71177c01"]
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "b01ea0f8-6e40-4736-9c2b-78958730e4e9"
+        }
+      }
+    },
+    "DatabaseSubnetGroup": {
+      "Type": "AWS::RDS::DBSubnetGroup",
+      "Properties": {
+        "DBSubnetGroupDescription": "GreenDirect Production Subnet Group",
+        "DBSubnetGroupName": "greendirect-prod",
+        "SubnetIds": ["subnet-0aeffd7c9e791d249", "subnet-0bc26650b8f7f4948"]
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "7e05c823-069f-47fe-9dec-3cbb0e7297ee"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/location/hours/hours.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/location/hours</a> hours.service.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">641x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">639x</span>
+<span class="cline-any cline-yes">639x</span>
+<span class="cline-any cline-yes">639x</span>
+<span class="cline-any cline-yes">570x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">570x</span>
+<span class="cline-any cline-yes">604x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1166x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">570x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">570x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">570x</span>
+<span class="cline-any cline-yes">570x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">570x</span>
+<span class="cline-any cline-yes">570x</span>
+<span class="cline-any cline-yes">570x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">570x</span>
+<span class="cline-any cline-yes">570x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">570x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1557x</span>
+<span class="cline-any cline-yes">1557x</span>
+<span class="cline-any cline-yes">1557x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1557x</span>
+<span class="cline-any cline-yes">1557x</span>
+<span class="cline-any cline-yes">995x</span>
+<span class="cline-any cline-yes">562x</span>
+<span class="cline-any cline-yes">562x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1557x</span>
+<span class="cline-any cline-yes">1557x</span>
+<span class="cline-any cline-yes">1557x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1557x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1557x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">636x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">636x</span>
+<span class="cline-any cline-yes">636x</span>
+<span class="cline-any cline-yes">636x</span>
+<span class="cline-any cline-yes">539x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">539x</span>
+<span class="cline-any cline-yes">963x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">539x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">539x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import {
+  getDay,
+  addDays,
+  addWeeks,
+  subDays,
+  isWithinRange,
+  parse,
+  format,
+  isValid,
+} from 'date-fns';
+&nbsp;
+import {
+  LocationHoursTodayDto,
+  HourDto,
+  HoursTodayDto,
+  LocationDeliveryHourTodayDto,
+} from '../dto/location-hour.dto';
+import { LocationDeliveryHour } from '../../entities/location-delivery-hour.entity';
+import { LocationHour } from '../../entities/location-hour.entity';
+import { GDExpectedException } from '../../gd-expected.exception';
+import { LocationExceptions } from '../location.exceptions';
+import { Location } from '../../entities/location.entity';
+import { Organization } from '../../entities/organization.entity';
+&nbsp;
+@Injectable()
+export class HoursService {
+  constructor(
+    @InjectRepository(LocationHour)
+    protected readonly hourRepository: Repository<span class="branch-1 cbranch-no" title="branch not covered" >&lt;LocationHour&gt;,</span>
+    @InjectRepository(LocationDeliveryHour)
+    protected readonly deliveryHourRepository: Repository<span class="branch-1 cbranch-no" title="branch not covered" >&lt;LocationDeliveryHour&gt;,</span>
+  ) {}
+&nbsp;
+  public async getLocationHours(locationId: number) {
+    return await this.hourRepository.find({
+      where: { location: locationId },
+      order: { dayOfWeek: 'ASC' },
+    });
+  }
+&nbsp;
+  public async getLocationHour(
+    locationId: number,
+    dayOfWeek: number,
+  ): Promise&lt;LocationHour&gt; {
+    let result = null;
+    try {
+      result = await this.hourRepository
+        .createQueryBuilder('hour')
+        .where('hour.location_id = :locationId', { locationId })
+        .andWhere('hour.dayOfWeek = :dayOfWeek', {
+          dayOfWeek,
+        })
+        .getOne();
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+    return new Promise&lt;LocationHour&gt;(resolve =&gt; resolve(result));
+  }
+&nbsp;
+  public async createLocationHour(
+    locationHour: LocationHour,
+  ): Promise&lt;LocationHour&gt; {
+    let result = null;
+    delete locationHour.id;
+    try {
+      result = await this.hourRepository.save(locationHour);
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+    return new Promise&lt;LocationHour&gt;(resolve =&gt; resolve(result));
+  }
+&nbsp;
+  public async updateLocationHour(locationHour: LocationHour) {
+    let result = null;
+    delete locationHour.createdBy;
+    try {
+      result = await this.hourRepository.save(locationHour);
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+    return new Promise&lt;LocationHour&gt;(resolve =&gt; resolve(result));
+  }
+&nbsp;
+  public async saveLocationHours(
+    locationHours: LocationHour[],
+  ): Promise&lt;LocationHour[]&gt; {
+    let hours = [];
+    try {
+      this.validateLocationHours(locationHours);
+      hours = await Promise.all(
+        locationHours.map(async hour =&gt; {
+          const hourData = await this.getLocationHour(
+            hour.location.id,
+            hour.dayOfWeek,
+          );
+          hour.startTime = hour.startTime || <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+          hour.endTime = hour.endTime || <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+          if (hourData) {
+            hour.id = hourData.id;
+            return await this.updateLocationHour(hour);
+          } else {
+            return await this.createLocationHour(hour);
+          }
+        }),
+      );
+    } catch (error) {
+      throw error;
+    }
+    return new Promise&lt;LocationHour[]&gt;(resolve =&gt; resolve(hours));
+  }
+&nbsp;
+  validateLocationHours(locationHours: LocationHour[]) {
+    const DATE_FORMAT = 'YYYY-MM-DD';
+    try {
+      locationHours.forEach(hour =&gt; {
+        const nowStart = format(new Date(), DATE_FORMAT) + ' ' + hour.startTime;
+        const nowEnd = format(new Date(), DATE_FORMAT) + ' ' + hour.endTime;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (hour.startTime &amp;&amp; (!isValid(new Date(nowStart)) || !hour.endTime)) {
+<span class="cstat-no" title="statement not covered" >          GDExpectedException.throw(LocationExceptions.invalidTime);</span>
+        }
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (hour.endTime &amp;&amp; (!isValid(new Date(nowEnd)) || !hour.startTime)) {
+<span class="cstat-no" title="statement not covered" >          GDExpectedException.throw(LocationExceptions.invalidTime);</span>
+        }
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (hour.isOpen &amp;&amp; (!hour.startTime || !hour.endTime)) {
+<span class="cstat-no" title="statement not covered" >          GDExpectedException.throw(LocationExceptions.invalidTime);</span>
+        }
+        if (hour.startTime &amp;&amp; hour.endTime &amp;&amp; hour.startTime &gt;= hour.endTime) {
+          GDExpectedException.throw(LocationExceptions.invalidTimeRange);
+        }
+      });
+    } catch (error) {
+      throw error;
+    }
+  }
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >saveLocationDeliveryHours</span>(
+    deliveryHours: LocationDeliveryHour[],
+  ): Promise&lt;LocationDeliveryHour[]&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      this.validateLocationDeliveryHours(deliveryHours);</span>
+<span class="cstat-no" title="statement not covered" >      return Promise.all(</span>
+        deliveryHours.map(<span class="fstat-no" title="function not covered" >async h</span>our =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span>
+          const hourData = <span class="cstat-no" title="statement not covered" >await this.getLocationDeliveryHour(</span>
+            hour.location.id,
+            hour.dayOfWeek,
+          );
+<span class="cstat-no" title="statement not covered" >          hour.startTime = hour.startTime || null;</span>
+<span class="cstat-no" title="statement not covered" >          hour.endTime = hour.endTime || null;</span>
+<span class="cstat-no" title="statement not covered" >          if (hourData) {</span>
+<span class="cstat-no" title="statement not covered" >            hour.id = hourData.id;</span>
+<span class="cstat-no" title="statement not covered" >            return this.updateLocationDeliveryHour(hour);</span>
+          } else {
+<span class="cstat-no" title="statement not covered" >            return this.createLocationDeliveryHour(hour);</span>
+          }
+        }),
+      );
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  validateLocationDeliveryHours</span>(deliveryHours: LocationDeliveryHour[]) {
+    const DATE_FORMAT = <span class="cstat-no" title="statement not covered" >'YYYY-MM-DD';</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      deliveryHours.forEach(<span class="fstat-no" title="function not covered" >hour</span> =&gt; {</span>
+        const nowStart = <span class="cstat-no" title="statement not covered" >format(new Date(), DATE_FORMAT) + ' ' + hour.startTime;</span>
+        const nowEnd = <span class="cstat-no" title="statement not covered" >format(new Date(), DATE_FORMAT) + ' ' + hour.endTime;</span>
+<span class="cstat-no" title="statement not covered" >        if (hour.startTime &amp;&amp; (!isValid(new Date(nowStart)) || !hour.endTime)) {</span>
+<span class="cstat-no" title="statement not covered" >          GDExpectedException.throw(LocationExceptions.invalidTime);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (hour.endTime &amp;&amp; (!isValid(new Date(nowEnd)) || !hour.startTime)) {</span>
+<span class="cstat-no" title="statement not covered" >          GDExpectedException.throw(LocationExceptions.invalidTime);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (hour.isOpen &amp;&amp; (!hour.startTime || !hour.endTime)) {</span>
+<span class="cstat-no" title="statement not covered" >          GDExpectedException.throw(LocationExceptions.invalidTime);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (hour.startTime &amp;&amp; hour.endTime &amp;&amp; hour.startTime &gt;= hour.endTime) {</span>
+<span class="cstat-no" title="statement not covered" >          GDExpectedException.throw(LocationExceptions.invalidTimeRange);</span>
+        }
+      });
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  public getHoursToday(
+    location: Location,
+    opensAtFormat = 'ddd hh:mm A',
+    closesAtFormat = 'hh:mm A',
+  ): LocationHoursTodayDto {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!location) <span class="cstat-no" title="statement not covered" >return null;</span>
+    const { timezone, hours } = location;
+    if (!timezone || !hours || !hours.length) return null;
+    const localized = parse(
+      new Date().toLocaleString('en-US', { timeZone: timezone }),
+    );
+    const today = getDay(localized);
+    const dayNow = hours.find(h =&gt; h.dayOfWeek === today &amp;&amp; h.isOpen);
+    // predict next opening day, hours already ordered by day of week
+    const dayNext =
+      hours.find(h =&gt; h.dayOfWeek &gt; today &amp;&amp; h.isOpen) ||
+      hours.find(h =&gt; h.dayOfWeek &lt; today &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >h.isOpen)</span>;
+    const dayNowLocal = dayNow
+      ? this.convertHoursToHoursToday(
+          dayNow,
+          localized,
+          opensAtFormat,
+          closesAtFormat,
+        )
+      : null;
+    const dayNextLocal = dayNext
+      ? this.convertHoursToHoursToday(
+          dayNext,
+          localized,
+          opensAtFormat,
+          closesAtFormat,
+        )
+      : null;
+&nbsp;
+    // TODO add verification against location.holidays? (closed if holiday)
+    const timeNow = format(localized, 'HH:mm:ss');
+    const organization = location.organization || (<span class="branch-1 cbranch-no" title="branch not covered" >{} as Organization);</span>
+&nbsp;
+    const isOpenNow = dayNowLocal &amp;&amp; dayNowLocal.isOpen;
+    const isBeforeHours = !isOpenNow &amp;&amp; dayNow &amp;&amp; timeNow &lt; dayNow.startTime;
+    const isOpenToday = !!(dayNow &amp;&amp; dayNow.isOpen);
+&nbsp;
+    const hoursToday =
+      isOpenNow || isBeforeHours ? { ...dayNowLocal } : { ...dayNextLocal };
+    hoursToday.isOffHours =
+      !isOpenNow &amp;&amp;
+      isOpenToday &amp;&amp;
+      !!organization.allowOffHours &amp;&amp;
+<span class="branch-3 cbranch-no" title="branch not covered" >      location.allowOffHours;</span>
+&nbsp;
+    return hoursToday;
+  }
+&nbsp;
+  private convertHoursToHoursToday(
+    hours: HourDto,
+    dateToday: Date,
+    opensAtFormat: string,
+    closesAtFormat: string,
+  ): HoursTodayDto {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!hours) <span class="cstat-no" title="statement not covered" >return null; </span>// fallback for null to continue from crash.
+    const DATE_FORMAT = 'YYYY-MM-DD'; // for consistency, irrevelant when turned into Date obj
+    const today = getDay(dateToday);
+&nbsp;
+    // Today's applicable hours
+    let dateLocal = null;
+    if (hours.dayOfWeek === today) {
+      dateLocal = format(dateToday, DATE_FORMAT);
+    } else <span class="missing-if-branch" title="else path not taken" >E</span>if (hours.dayOfWeek &gt; today) {
+      dateLocal = addDays(dateToday, hours.dayOfWeek - today);
+    } else {
+<span class="cstat-no" title="statement not covered" >      dateLocal = addWeeks(subDays(dateToday, today - hours.dayOfWeek), 1);</span>
+    }
+    // use strings for comparison of local hours
+    const startDate = format(dateLocal, DATE_FORMAT) + ' ' + hours.startTime;
+    const endDate = format(dateLocal, DATE_FORMAT) + ' ' + hours.endTime;
+    const isOpen = hours.isOpen
+      ? isWithinRange(dateToday, startDate, endDate)
+      : <span class="branch-1 cbranch-no" title="branch not covered" >false;</span>
+    const hoursToday: HoursTodayDto = {
+      isOpen,
+      opensAt: format(startDate, opensAtFormat),
+      closesAt: format(endDate, closesAtFormat),
+    };
+    return hoursToday;
+  }
+&nbsp;
+  public async getLocationDeliveryHours(locationId: number) {
+    return await this.deliveryHourRepository.find({
+      where: { location: locationId },
+      order: { dayOfWeek: 'ASC' },
+    });
+  }
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >getLocationDeliveryHour</span>(
+    locationId: number,
+    dayOfWeek: number,
+  ): Promise&lt;LocationDeliveryHour&gt; {
+    let result = <span class="cstat-no" title="statement not covered" >null;</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      result = await this.deliveryHourRepository</span>
+        .createQueryBuilder('deliveryHour')
+        .where('deliveryHour.location_id = :locationId', { locationId })
+        .andWhere('deliveryHour.dayOfWeek = :dayOfWeek', {
+          dayOfWeek,
+        })
+        .getOne();
+<span class="cstat-no" title="statement not covered" >      return Promise.resolve(result);</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  /**
+   * Retrieves only today's hours without checking next open schedule.
+   * @param location
+   * @param opensAtFormat
+   * @param closesAtFormat
+   */
+  public getLocationDeliveryHoursToday(
+    location: any,
+    opensAtFormat = <span class="branch-0 cbranch-no" title="branch not covered" >'ddd hh:mm A',</span>
+    closesAtFormat = <span class="branch-0 cbranch-no" title="branch not covered" >'hh:mm A',</span>
+  ): LocationDeliveryHourTodayDto {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!location) <span class="cstat-no" title="statement not covered" >return null;</span>
+    const { timezone, deliveryHours } = location;
+    if (!timezone || !deliveryHours || !deliveryHours.length) return null;
+    const localized = parse(
+      new Date().toLocaleString('en-US', { timeZone: timezone }),
+    );
+    const today = getDay(localized);
+    const dayNow = deliveryHours.find(h =&gt; h.dayOfWeek === today);
+&nbsp;
+    const dayNowLocal = dayNow
+      ? this.convertHoursToHoursToday(
+          dayNow,
+          localized,
+          opensAtFormat,
+          closesAtFormat,
+        )
+      : null;
+&nbsp;
+    // TODO add verification against location.holidays? (closed if holiday)
+    return dayNowLocal;
+  }
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >createLocationDeliveryHour</span>(
+    deliveryHour: LocationDeliveryHour,
+  ): Promise&lt;LocationDeliveryHour&gt; {
+    let result = <span class="cstat-no" title="statement not covered" >null;</span>
+<span class="cstat-no" title="statement not covered" >    delete deliveryHour.id;</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      result = await this.deliveryHourRepository.save(deliveryHour);</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return Promise.resolve(result);</span>
+  }
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >updateLocationDeliveryHour</span>(
+    locationDeliveryHour: LocationDeliveryHour,
+  ) {
+    let result = <span class="cstat-no" title="statement not covered" >null;</span>
+<span class="cstat-no" title="statement not covered" >    delete locationDeliveryHour.createdBy;</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      result = await this.deliveryHourRepository.save(locationDeliveryHour);</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return Promise.resolve(result);</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

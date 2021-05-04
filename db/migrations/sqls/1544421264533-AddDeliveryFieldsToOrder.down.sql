@@ -1,0 +1,9 @@
+ALTER TABLE public.order
+ DROP COLUMN is_delivery,
+ DROP COLUMN delivery_address_line_1,
+ DROP COLUMN delivery_address_line_2,
+ DROP COLUMN delivery_city,
+ DROP COLUMN delivery_state_id,
+ DROP COLUMN delivery_postal_code,
+ DROP COLUMN delivery_instruction,
+ DROP COLUMN delivery_fee

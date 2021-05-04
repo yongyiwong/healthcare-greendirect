@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/deal/deal.exceptions.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/deal</a> deal.exceptions.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { HttpStatus } from '@nestjs/common';
+import { ExpectedExceptionMap } from '../app.interface';
+import { Deal } from '../entities/deal.entity';
+import { isPast, isValid, isFuture, parse, isAfter, endOfDay } from 'date-fns';
+import { UserDeal } from '../entities/user-deal.entity';
+import { User } from '../entities/user.entity';
+&nbsp;
+export const DealExceptions: ExpectedExceptionMap = {
+  dealNotFound: {
+    message: 'Error: Deal not found.',
+    httpStatus: HttpStatus.NOT_FOUND,
+    i18n: { 'es-PR': `Error: Trato no encontrado.` },
+    failCondition: (deal: Deal) =&gt; !deal || !deal.id,
+  },
+  dealHasExpired: {
+    message: 'Error: Deal has already expired.',
+    httpStatus: HttpStatus.GONE,
+    i18n: {
+      'es-PR': `Error: El trato ya ha expirado. Compruebe para más ofertas más tarde!`,
+    },
+    failCondition: (deal: Deal) =&gt;
+      !deal ||
+      !deal.expirationDate ||
+      (isValid(parse(deal.expirationDate)) &amp;&amp;
+        isAfter(
+          new Date(
+            new Date().toLocaleString('en-US', {
+              timeZone: deal.timezone,
+            }),
+          ),
+          new Date(endOfDay(deal.expirationDate)),
+        )),
+  },
+  dealAlreadyClaimedByUser: {
+    message: 'You have already claimed this deal.',
+    httpStatus: HttpStatus.GONE,
+    i18n: { 'es-PR': `Usted ya ha reclamado este acuerdo.` },
+    failCondition: <span class="fstat-no" title="function not covered" >(u</span>serDeal: UserDeal) =&gt;
+<span class="cstat-no" title="statement not covered" >      !!userDeal &amp;&amp;</span>
+      !userDeal.deleted &amp;&amp;
+      isValid(userDeal.dateClaimed) &amp;&amp;
+        isPast(userDeal.dateClaimed) &amp;&amp;
+        !userDeal.dateUsed,
+    /* TODO add another check if there will a limit on how many times to claim same deal? */
+  },
+  userHasNoMobileNumber: {
+    message:
+      'Error: A verified phone number is required before claiming a deal.',
+    httpStatus: HttpStatus.FORBIDDEN,
+    failCondition: <span class="fstat-no" title="function not covered" >(u</span>ser: User) =&gt; <span class="cstat-no" title="statement not covered" >!user.mobileNumber,</span>
+    i18n: {
+      'es-PR':
+        'Error: Se requiere un número de teléfono verificado antes de reclamar un trato.',
+    },
+  },
+  locationsReachedDealLimit: {
+    message: 'Error: Assigned company has reached active deals limit.',
+    httpStatus: HttpStatus.BAD_REQUEST,
+    failCondition: <span class="fstat-no" title="function not covered" >(h</span>asReachedLimit: boolean) =&gt; <span class="cstat-no" title="statement not covered" >hasReachedLimit,</span>
+  },
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

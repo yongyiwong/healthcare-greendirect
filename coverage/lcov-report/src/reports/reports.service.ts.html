@@ -1,0 +1,1158 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/reports/reports.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/reports</a> reports.service.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Readable } from 'stream';
+import { format, subMonths, lastDayOfMonth } from 'date-fns';
+import { Repository } from 'typeorm';
+import { range, isEmpty, orderBy } from 'lodash';
+&nbsp;
+import { OrderReportParams } from './params/order-params.interface';
+import { CsvService } from './csv.service';
+import { OrderService } from '../order/order.service';
+import {
+  OrderStatusDescription,
+  OrderStatus,
+} from '../order/order-status.enum';
+import { OrderHistory } from '../entities/order-history.entity';
+import { Order } from '../entities/order.entity';
+import { GDExpectedException } from '../gd-expected.exception';
+import { ReportsExceptions } from './reports.exceptions';
+&nbsp;
+interface MonthlySale {
+  date: string;
+  amount: number;
+}
+&nbsp;
+export interface OrdersStatsDto {
+  [date: string]: {
+    allOrdersCount: number;
+    completedOrdersCount?: number;
+    totalSales: number;
+    averageSales?: number;
+    monthlySales: MonthlySale[] | number[];
+  };
+}
+&nbsp;
+@Injectable()
+export class ReportsService {
+  constructor(
+    @InjectRepository(Order) protected orderRepository: Repository<span class="branch-1 cbranch-no" title="branch not covered" >&lt;Order&gt;,</span>
+    @InjectRepository(OrderHistory)
+    protected orderHistoryRepository: Repository<span class="branch-1 cbranch-no" title="branch not covered" >&lt;OrderHistory&gt;,</span>
+    private readonly csvService: CsvService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+    private readonly orderService: OrderService<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+  ) {}
+&nbsp;
+  public async <span class="fstat-no" title="function not covered" >generateOrdersReport</span>(
+    params: OrderReportParams,
+  ): Promise&lt;Readable&gt; {
+    let orders = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      orders = await this.orderService.getOrdersForCsv(params);</span>
+    } catch (error) {
+      // Capture the error from the data layer.
+<span class="cstat-no" title="statement not covered" >      GDExpectedException.throw(ReportsExceptions.ordersReportGenerationFailed);</span>
+    }
+&nbsp;
+    /* Keys must matched returned by SQL:
+      beware of SQL aliases, stick to the actual column names if possible
+     */
+    const orderColumns = <span class="cstat-no" title="statement not covered" >{</span>
+      id: 'Order Id',
+      locationName: 'Location',
+      patientNumber: 'Patient ID',
+      mobileNumber: 'Mobile Number',
+      subtotal: 'Subtotal',
+      couponTotal: 'Discount',
+      stateTax: 'State Tax',
+      muniTax: 'Municipal Tax',
+      deliveryDispensaryFee: 'Delivery Dispensary Fee',
+      deliveryPatientFee: 'Delivery Patient Fee',
+      total: 'Total',
+      fulfillmentMethod: 'Type',
+      orderStatus: 'Status',
+      // modified: 'Last Modified (UTC)',
+      dateOfLatestOrderStatus: 'Lastest Status Date',
+    };
+&nbsp;
+    const options = <span class="cstat-no" title="statement not covered" >{</span>
+      header: true,
+      quotedEmpty: true,
+      columns: orderColumns,
+      cast: {
+        date: <span class="fstat-no" title="function not covered" >value</span> =&gt; <span class="cstat-no" title="statement not covered" >format(value, 'YYYY-MM-DD hh:mm A'),</span>
+      },
+    };
+&nbsp;
+    // Use transformer function for types not supported by options.cast
+    const transformer = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(r</span>ecord: any) =&gt; {</span>
+      const order = <span class="cstat-no" title="statement not covered" >record as Order;</span>
+      // NOTE: some fields might be custom SELECT and not found in Order entity
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        ...order,
+        orderStatus: OrderStatusDescription[order.orderStatus].name,
+        fulfillmentMethod:
+          record.fulfillmentMethod[0].toUpperCase() +
+          record.fulfillmentMethod.slice(1),
+      } as any; // loose-type the columns
+    };
+&nbsp;
+    // Use case: Order status should show user friendly value from dictionary.
+<span class="cstat-no" title="statement not covered" >    return Promise.resolve(</span>
+      this.csvService.createCsvStream(orders, options, transformer),
+    );
+  }
+&nbsp;
+  // TODO: Add Unit Test
+  public async <span class="fstat-no" title="function not covered" >getOrdersStats</span>(
+    year: number,
+    month: number = <span class="branch-0 cbranch-no" title="branch not covered" >12,</span>
+    numberOfMonthsAgo: number = <span class="branch-0 cbranch-no" title="branch not covered" >12,</span>
+    yearly: boolean = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span>
+  ): Promise&lt;OrdersStatsDto&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      GDExpectedException.try(ReportsExceptions.reportYearInvalid, year);</span>
+<span class="cstat-no" title="statement not covered" >      GDExpectedException.try(ReportsExceptions.reportMonthInvalid, month);</span>
+<span class="cstat-no" title="statement not covered" >      GDExpectedException.try(</span>
+        ReportsExceptions.reportNumberOfMonthsAgoInvalid,
+        numberOfMonthsAgo,
+      );
+&nbsp;
+      const completedOrdersStatus = <span class="cstat-no" title="statement not covered" >[OrderStatus.COMPLETED];</span>
+&nbsp;
+      const promises: Promise&lt;MonthlySale[] | number[] | number&gt;[] = <span class="cstat-no" title="statement not covered" >[</span>
+        this.getOrdersCount(year, month, numberOfMonthsAgo),
+        this.getOrdersCount(
+          year,
+          month,
+          numberOfMonthsAgo,
+          completedOrdersStatus,
+        ),
+        this.getOrdersSales(
+          year,
+          month,
+          numberOfMonthsAgo,
+          completedOrdersStatus,
+        ),
+        this.getOrdersSales(
+          year,
+          month,
+          numberOfMonthsAgo,
+          completedOrdersStatus,
+          true,
+        ),
+        this.getMonthlyTotalSales(
+          year,
+          month,
+          numberOfMonthsAgo,
+          completedOrdersStatus,
+          yearly,
+        ),
+      ];
+&nbsp;
+      const [
+        allOrdersCount = <span class="branch-0 cbranch-no" title="branch not covered" >0,</span>
+        completedOrdersCount = <span class="branch-0 cbranch-no" title="branch not covered" >0,</span>
+        totalSales = <span class="branch-0 cbranch-no" title="branch not covered" >0,</span>
+        averageSales = <span class="branch-0 cbranch-no" title="branch not covered" >0,</span>
+        monthlySales = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span>
+      ] = <span class="cstat-no" title="statement not covered" >await Promise.all(promises);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        [year]: {
+          allOrdersCount,
+          completedOrdersCount,
+          totalSales,
+          averageSales,
+          monthlySales,
+        },
+      } as OrdersStatsDto;
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  /**
+   * Counts the orders submitted within the time range provided. Excludes carts (Open, Closed)
+   * and (Cancelled) statuses by default.
+   * @param year
+   * @param month
+   * @param numberOfMonthsAgo
+   * @param statuses
+   */
+  private async <span class="fstat-no" title="function not covered" >getOrdersCount</span>(
+    year: number,
+    month: number,
+    numberOfMonthsAgo: number,
+    statuses?: OrderStatus[],
+  ): Promise&lt;number&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const tableName = <span class="cstat-no" title="statement not covered" >'order';</span>
+&nbsp;
+      // `OPEN` and `CLOSED` statuses are only used for carts, NOT orders
+      // while Cancelled has no profits.
+      const excludeStatuses = <span class="cstat-no" title="statement not covered" >[</span>
+        OrderStatus.OPEN,
+        OrderStatus.CLOSED,
+        OrderStatus.CANCELLED,
+      ];
+      const dateFormat = <span class="cstat-no" title="statement not covered" >'YYYY-MM-DD';</span>
+      const mostRecentDate = <span class="cstat-no" title="statement not covered" >format(</span>
+        lastDayOfMonth(new Date(year, month, 1)),
+        dateFormat,
+      );
+&nbsp;
+      const pastMonth = <span class="cstat-no" title="statement not covered" >`BETWEEN</span>
+      (TO_DATE('${mostRecentDate}', '${dateFormat}')
+      - (INTERVAL '${numberOfMonthsAgo} months' - INTERVAL '1 day'))::DATE
+      AND TO_DATE('${mostRecentDate}', '${dateFormat}')`;
+&nbsp;
+      const submittedPastMonth = <span class="cstat-no" title="statement not covered" >`${tableName}.submittedDate ::DATE ${pastMonth}`;</span>
+&nbsp;
+      const query = <span class="cstat-no" title="statement not covered" >this.orderRepository</span>
+        .createQueryBuilder(tableName)
+        .select(`${tableName}.id, ${tableName}.submittedDate`)
+        .where(submittedPastMonth)
+        .andWhere(`${tableName}.orderStatus NOT IN (:...excludeStatuses)`, {
+          excludeStatuses,
+        })
+        .orderBy(`${tableName}.submittedDate`);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (!isEmpty(statuses)) {</span>
+<span class="cstat-no" title="statement not covered" >        query.andWhere(`${tableName}.orderStatus IN (:...statuses)`, {</span>
+          statuses,
+        });
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return query.getCount();</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  private async <span class="fstat-no" title="function not covered" >getOrdersSales</span>(
+    year: number,
+    month: number,
+    numberOfMonthsAgo: number = <span class="branch-0 cbranch-no" title="branch not covered" >1,</span>
+    statuses?: OrderStatus[],
+    isAverage: boolean = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span>
+  ): Promise&lt;number&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const tableName = <span class="cstat-no" title="statement not covered" >'orderHistory';</span>
+      const dateFormat = <span class="cstat-no" title="statement not covered" >'YYYY-MM-DD';</span>
+      const mostRecentDate = <span class="cstat-no" title="statement not covered" >format(</span>
+        lastDayOfMonth(new Date(year, month, 1)),
+        dateFormat,
+      );
+&nbsp;
+      const pastMonth = <span class="cstat-no" title="statement not covered" >`BETWEEN</span>
+      (TO_DATE('${mostRecentDate}', '${dateFormat}')
+      - (INTERVAL '${numberOfMonthsAgo} months' - INTERVAL '1 day'))::DATE
+      AND TO_DATE('${mostRecentDate}', '${dateFormat}')`;
+&nbsp;
+      const paymentPastMonth = <span class="cstat-no" title="statement not covered" >`${tableName}.created ::DATE ${pastMonth}`;</span>
+&nbsp;
+      const subQuery = <span class="cstat-no" title="statement not covered" >this.orderHistoryRepository</span>
+        .createQueryBuilder(tableName)
+        .select(`MAX(${tableName}.created)`, 'created')
+        .groupBy(`${tableName}.order`);
+&nbsp;
+      const query = <span class="cstat-no" title="statement not covered" >this.orderHistoryRepository</span>
+        .createQueryBuilder(tableName)
+        .select(`SUM(order.orderTotal)`)
+        .innerJoin(
+          `(${subQuery.getQuery()})`,
+          'deduped_order_history',
+          `${tableName}.created = deduped_order_history.created`,
+        )
+        .leftJoin(`${tableName}.order`, `order`)
+        .where(paymentPastMonth);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (!isEmpty(statuses)) {</span>
+<span class="cstat-no" title="statement not covered" >        query.andWhere(`${tableName}.orderStatus IN (:...statuses)`, {</span>
+          statuses,
+        });
+      }
+&nbsp;
+      let [{ sum }] = <span class="cstat-no" title="statement not covered" >await query.execute();</span>
+<span class="cstat-no" title="statement not covered" >      sum = sum || 0;</span>
+<span class="cstat-no" title="statement not covered" >      return isAverage ? sum / (numberOfMonthsAgo || 1) : sum;</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+&nbsp;
+  /**
+   * Computes total orders in the backwards past months
+   * @param year
+   * @param month 0-based count of month
+   * @param numberOfMonthsAgo
+   * @param statuses
+   * @param yearly
+   */
+  private async <span class="fstat-no" title="function not covered" >getMonthlyTotalSales</span>(
+    year: number,
+    month: number,
+    numberOfMonthsAgo: number,
+    statuses: OrderStatus[] = <span class="branch-0 cbranch-no" title="branch not covered" >[OrderStatus.COMPLETED],</span>
+    yearly: boolean = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span>
+  ): Promise&lt;MonthlySale[] | number[]&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const tableName = <span class="cstat-no" title="statement not covered" >'orderHistory';</span>
+&nbsp;
+      const dateFormat = <span class="cstat-no" title="statement not covered" >'YYYY-MM-DD';</span>
+      const mostRecentDate = <span class="cstat-no" title="statement not covered" >format(</span>
+        lastDayOfMonth(new Date(year, month, 1)),
+        dateFormat,
+      );
+&nbsp;
+      const pastMonth = <span class="cstat-no" title="statement not covered" >`BETWEEN</span>
+      (TO_DATE('${mostRecentDate}', '${dateFormat}')
+      - (INTERVAL '${numberOfMonthsAgo} months' - INTERVAL '1 day'))::DATE
+      AND TO_DATE('${mostRecentDate}', '${dateFormat}')`;
+&nbsp;
+      const paymentPastMonth = <span class="cstat-no" title="statement not covered" >`${tableName}.created ::DATE ${pastMonth}`;</span>
+      const dateColumn = <span class="cstat-no" title="statement not covered" >`TO_CHAR(${tableName}.created, 'YYYY-MM')`;</span>
+&nbsp;
+      const subQuery = <span class="cstat-no" title="statement not covered" >this.orderHistoryRepository</span>
+        .createQueryBuilder(tableName)
+        .select(`MAX(${tableName}.created)`, 'created')
+        .groupBy(`${tableName}.order`);
+&nbsp;
+      const query = <span class="cstat-no" title="statement not covered" >this.orderHistoryRepository</span>
+        .createQueryBuilder(tableName)
+        .select(dateColumn, 'date')
+        .addSelect(`SUM(order.orderTotal)`, 'amount')
+        .innerJoin(
+          `(${subQuery.getQuery()})`,
+          'deduped_order_history',
+          `${tableName}.created = deduped_order_history.created`,
+        )
+        .leftJoin(`${tableName}.order`, 'order')
+        .where(`${dateColumn} IS NOT NULL`)
+        .andWhere(paymentPastMonth)
+        .orderBy('date')
+        .groupBy('date');
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (!isEmpty(statuses)) {</span>
+<span class="cstat-no" title="statement not covered" >        query.andWhere(`${tableName}.orderStatus IN (:...statuses)`, {</span>
+          statuses,
+        });
+      }
+      const monthlySales: MonthlySale[] = <span class="cstat-no" title="statement not covered" >await query.getRawMany();</span>
+&nbsp;
+      // ? should we include a param to optionally exclude current month?
+      const startDate = <span class="cstat-no" title="statement not covered" >lastDayOfMonth(new Date(year, month, 1));</span>
+      const dates: string[] = <span class="cstat-no" title="statement not covered" >range(0, numberOfMonthsAgo, 1)</span>
+        .map(<span class="fstat-no" title="function not covered" >monthBack</span> =&gt; <span class="cstat-no" title="statement not covered" >format(subMonths(startDate, monthBack), 'YYYY-MM'))</span>
+        .reverse(); // 'YYYY-MM'[]
+&nbsp;
+      let populatedMonthlySale: MonthlySale[] | number[] = <span class="cstat-no" title="statement not covered" >dates.map(</span>
+<span class="fstat-no" title="function not covered" >        (d</span>ate: string) =&gt; {
+          const monthlySale = <span class="cstat-no" title="statement not covered" >monthlySales.find(<span class="fstat-no" title="function not covered" >sale</span> =&gt; <span class="cstat-no" title="statement not covered" >date === sale.date)</span>;</span>
+<span class="cstat-no" title="statement not covered" >          return {</span>
+            date,
+            amount: (monthlySale &amp;&amp; monthlySale.amount) || 0,
+          } as MonthlySale;
+        },
+      );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (yearly) {</span>
+<span class="cstat-no" title="statement not covered" >        populatedMonthlySale = orderBy(populatedMonthlySale, ['date']);</span>
+<span class="cstat-no" title="statement not covered" >        populatedMonthlySale = populatedMonthlySale.map(</span>
+<span class="fstat-no" title="function not covered" >          monthlySale</span> =&gt; <span class="cstat-no" title="statement not covered" >monthlySale.amount,</span>
+        );
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return populatedMonthlySale;</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
+    }
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

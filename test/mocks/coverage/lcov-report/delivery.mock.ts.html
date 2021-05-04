@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for delivery.mock.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> delivery.mock.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { TestingModule } from '@nestjs/testing';
+import faker from 'faker';
+import { Repository, getRepository, UpdateResult } from 'typeorm';
+&nbsp;
+import { DeliveryService } from '../../src/delivery/delivery.service';
+import { CreateDeliveryDto } from '../../src/delivery/dto/create-delivery.dto';
+import { OrderService } from '../../src/order/order.service';
+import {
+  OrderStatus,
+  FulfillmentMethod,
+} from '../../src/order/order-status.enum';
+import { UserService } from '../../src/user/user.service';
+import { User } from '../../src/entities/user.entity';
+import { DeliveryStatus } from '../../src/entities/delivery.entity';
+&nbsp;
+import { Order } from '../../src/entities/order.entity';
+import * as Fixtures from '../fixtures';
+import { LocationService } from '../../src/location/location.service';
+import { OrganizationPos } from '../../src/entities/organization.entity';
+&nbsp;
+export class DeliveryMock {
+  private deliveryService: DeliveryService;
+  private orderService: OrderService;
+  private userService: UserService;
+  private orderRepository: Repository&lt;Order&gt;;
+  private locationService: LocationService;
+&nbsp;
+  constructor(private readonly module: TestingModule) {
+    this.deliveryService = this.module.get&lt;DeliveryService&gt;(DeliveryService);
+    this.orderService = this.module.get&lt;OrderService&gt;(OrderService);
+    this.userService = this.module.get&lt;UserService&gt;(UserService);
+    this.orderRepository = getRepository&lt;Order&gt;(Order);
+    this.locationService = this.module.get&lt;LocationService&gt;(LocationService);
+  }
+&nbsp;
+  async generate() {
+    await this.addDelivery();
+  }
+&nbsp;
+  async updateOrder(id: number, update?: Order): Promise&lt;UpdateResult&gt; {
+    return await this.orderRepository.update(
+      { id },
+      {
+        ...new Fixtures.OrderDeliveryFixture(),
+        ...update,
+      },
+    );
+  }
+&nbsp;
+  async addDelivery() {
+    const orders = await this.orderService.getOrdersByStatus(
+      OrganizationPos.Mjfreeway,
+      OrderStatus.SUBMITTED,
+    );
+    const getAdmin = this.userService.findByEmail('admin_e2e@isbx.com');
+    const getDriver = this.userService.findByEmail('gd_driver@isbx.com');
+    const users = await Promise.all([getAdmin, getDriver]);
+    const admin = users[0] as User;
+    const driver = users[1] as User;
+    let inProgressOrderDelivery: any;
+&nbsp;
+    let limit = 0;
+    for (const order of orders) {
+      limit++;
+      if (limit &lt; 10) {
+        const orderData = await this.orderService.getOrder(
+          order.id,
+          admin.id,
+          true,
+        );
+        const deliveries = await this.deliveryService.createDelivery(
+          admin.id,
+          orderData as CreateDeliveryDto,
+        );
+&nbsp;
+        let updateOrder = {
+          delivery: deliveries,
+          fullfillmentMethod: FulfillmentMethod.DELIVERY,
+        } as Order;
+&nbsp;
+        if (limit &lt; 7) {
+          const orderWithDriver = await this.deliveryService.addDriverToDelivery(
+            admin.id,
+            deliveries.id,
+            driver.id,
+          );
+&nbsp;
+          orderWithDriver.deliveryStatus =
+            limit === 6
+              ? DeliveryStatus.CANCELLED
+              : limit &lt; 4
+              ? DeliveryStatus.IN_PROGRESS
+              : DeliveryStatus.DELIVERED;
+&nbsp;
+          const updatedDelivery = this.deliveryService.updateDeliveryStatus(
+            admin,
+            orderWithDriver,
+          );
+&nbsp;
+          if (orderWithDriver.deliveryStatus === DeliveryStatus.IN_PROGRESS) {
+            inProgressOrderDelivery = orderWithDriver;
+          }
+&nbsp;
+          const orderTotal = order.orderTotal;
+&nbsp;
+          if (orderWithDriver.deliveryStatus === DeliveryStatus.DELIVERED) {
+            updateOrder = {
+              isPaymentComplete: true,
+              orderStatus: OrderStatus.DELIVERED,
+              receivedAmount:
+                orderTotal + faker.random.number({ min: 0, max: orderTotal }),
+              paymentCompletedDate: new Date(),
+              note: faker.lorem.sentence(),
+              ...updateOrder,
+            };
+          }
+&nbsp;
+          if (orderWithDriver.deliveryStatus === DeliveryStatus.IN_PROGRESS) {
+            updateOrder = {
+              ...updateOrder,
+              orderStatus: OrderStatus.DELIVERY,
+            };
+          }
+&nbsp;
+          const updatedOrder = this.updateOrder(order.id, updateOrder);
+&nbsp;
+          await Promise.all([updatedDelivery, updatedOrder]);
+        }
+      }
+&nbsp;
+      if (limit &gt; 10 &amp;&amp; limit &lt; 16) {
+        const orderToDelivery = this.deliveryService.addOrderToDelivery(
+          admin.id,
+          inProgressOrderDelivery.id,
+          order.id,
+        );
+&nbsp;
+        const updateOrder = this.updateOrder(order.id);
+&nbsp;
+        await Promise.all([orderToDelivery, updateOrder]);
+      }
+    }
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:14:42 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>

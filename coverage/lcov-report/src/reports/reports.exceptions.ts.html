@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/reports/reports.exceptions.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/reports</a> reports.exceptions.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Client } from '@egodigital/appstore-connect';
+import { HttpStatus } from '@nestjs/common';
+import { isValid, isPast, addDays, startOfMonth } from 'date-fns';
+import { isEmpty, inRange } from 'lodash';
+import { AppStoreConnectConfig } from './appstore/appstore.service';
+import { GooglePlayConfig } from './google-play/google-play.service';
+import { GoogleAnalyticsConfig } from './google-analytics/google-analytics.service';
+import { OrderReportParams } from './params/order-params.interface';
+import { ExpectedExceptionMap } from '../app.interface';
+&nbsp;
+export const ReportsExceptions: ExpectedExceptionMap = {
+  locationRequired: {
+    message: 'Error: Please select a location.',
+    httpStatus: HttpStatus.BAD_REQUEST,
+    failCondition: <span class="fstat-no" title="function not covered" >(p</span>arams: OrderReportParams) =&gt;
+<span class="cstat-no" title="statement not covered" >      !params.locationId &amp;&amp; !params.allLocations,</span>
+  },
+  ordersReportGenerationFailed: {
+    message:
+      'Error: There was a problem retrieving the orders. Please contact Support.',
+    httpStatus: HttpStatus.INTERNAL_SERVER_ERROR,
+  },
+  reportYearInvalid: {
+    message: 'Please provide a valid year.',
+    httpStatus: HttpStatus.BAD_REQUEST,
+    failCondition: <span class="fstat-no" title="function not covered" >(y</span>ear: number) =&gt; <span class="cstat-no" title="statement not covered" >!year || !isValid(new Date(year, 1, 1)),</span>
+  },
+  reportMonthInvalid: {
+    message: 'Please provide a valid month.',
+    httpStatus: HttpStatus.BAD_REQUEST,
+    failCondition: <span class="fstat-no" title="function not covered" >(m</span>onth: number) =&gt; <span class="cstat-no" title="statement not covered" >!inRange(month, 0, 12),</span>
+  },
+  reportNumberOfMonthsAgoInvalid: {
+    message: 'Invalid months back. It should answer how many months back.',
+    httpStatus: HttpStatus.BAD_REQUEST,
+    failCondition: <span class="fstat-no" title="function not covered" >(m</span>onth: number) =&gt; <span class="cstat-no" title="statement not covered" >!inRange(month, 1, 13),</span>
+  },
+  reportGone: {
+    message:
+      'Report failed to download from the store or is no longer available.',
+    httpStatus: HttpStatus.GONE,
+    failCondition: <span class="fstat-no" title="function not covered" >error</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >      return /^Unexpected Response/.test(error.message);</span>
+    },
+  },
+  appstoreReportMisconfigured: {
+    message: 'AppStoreConnect service seems to be misconfigured.',
+    httpStatus: HttpStatus.NOT_FOUND,
+    failCondition: <span class="fstat-no" title="function not covered" >(a</span>rgs: {
+      client: Client;
+      config: AppStoreConnectConfig;
+      privateKey: string;
+    }) =&gt;
+<span class="cstat-no" title="statement not covered" >      isEmpty(args.config) ||</span>
+      !args.config.appSKU ||
+      !args.config.apiKey ||
+      !args.config.issuerId ||
+      !args.config.vendorNumber ||
+      !args.privateKey ||
+      !args.client,
+  },
+  appstoreTOSAgreementRequired: {
+    message: `App Store has updated their license agreement
+and is rejecting API requests while agreement is pending.
+Please contact your Apple account holder to review and accept the updated agreement.`,
+    httpStatus: HttpStatus.FORBIDDEN,
+    failCondition: <span class="fstat-no" title="function not covered" >error</span> =&gt;
+<span class="cstat-no" title="statement not covered" >      error.message &amp;&amp;</span>
+      JSON.stringify(error.message).includes(
+        'the Account Holder must agree to the latest Program License Agreement',
+      ),
+  },
+  /**
+   * Check whether the previous month's report is still not available.
+   * Monthly reports are available five days after the end of the month
+   * Ref: https://help.apple.com/app-store-connect/#/dev8a5831138
+   */
+  appstoreMonthlyReportNotReady: {
+    message: `AppStore report not yet ready. Retry later 5 days after end of the month.`,
+    httpStatus: HttpStatus.SERVICE_UNAVAILABLE,
+    failCondition: <span class="fstat-no" title="function not covered" >latestCurrentDateDiff</span> =&gt;
+<span class="cstat-no" title="statement not covered" >      latestCurrentDateDiff === 2 &amp;&amp;</span>
+      !isPast(addDays(startOfMonth(Date.now()), 5)),
+  },
+  googlePlayMisconfigured: {
+    message:
+      'Google Play service seems to be misconfigured. Please contact your GD server administrator.',
+    httpStatus: HttpStatus.NOT_FOUND,
+    failCondition: <span class="fstat-no" title="function not covered" >(c</span>onfig: GooglePlayConfig) =&gt;
+<span class="cstat-no" title="statement not covered" >      isEmpty(config) ||</span>
+      !config.clientEmail ||
+      !config.bucketId ||
+      !config.appPackageName,
+  },
+  googleAnalyticsMisconfigured: {
+    message:
+      'Google Analytics service seems to be misconfigured. Please contact your GD server administrator.',
+    httpStatus: HttpStatus.NOT_FOUND,
+    failCondition: <span class="fstat-no" title="function not covered" >(c</span>onfig: GoogleAnalyticsConfig) =&gt;
+<span class="cstat-no" title="statement not covered" >      isEmpty(config) || !config.clientEmail || !config.viewId,</span>
+  },
+  googlePlayUnauthorized: {
+    message:
+      'Error: Google Play API failed to authorize. Please contact your GD server administrator.',
+    httpStatus: HttpStatus.UNAUTHORIZED,
+    failCondition: <span class="fstat-no" title="function not covered" >jwt</span> =&gt; <span class="cstat-no" title="statement not covered" >!jwt,</span>
+  },
+  googlePlayReportParseFailed: {
+    message:
+      'Error: There was a problem parsing the report data from Google Play.',
+    httpStatus: HttpStatus.SERVICE_UNAVAILABLE,
+    failCondition: <span class="fstat-no" title="function not covered" >jwt</span> =&gt; <span class="cstat-no" title="statement not covered" >!jwt,</span>
+  },
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:51:52 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

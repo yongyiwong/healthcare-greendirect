@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for product-group.mock.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> product-group.mock.ts
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">588x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">504x</span>
+<span class="cline-any cline-yes">2016x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { TestingModule } from '@nestjs/testing';
+import { getRepository, Repository } from 'typeorm';
+import faker from 'faker';
+import { range } from 'lodash';
+&nbsp;
+import { FixtureService } from '../utils/fixture.service';
+import { Product } from '../../src/entities/product.entity';
+import { ProductGroup } from '../../src/entities/product-group.entity';
+import { BrandService } from '../../src/brand/brand.service';
+import { LocationService } from '../../src/location/location.service';
+import { Location } from '../../src/entities/location.entity';
+import { ProductService } from '../../src/product/product.service';
+&nbsp;
+export class ProductGroupMock {
+  private brandService: BrandService;
+  private locationService: LocationService;
+  private fixtureService: FixtureService;
+&nbsp;
+  constructor(private readonly module: TestingModule) {
+    this.brandService = this.module.get&lt;BrandService&gt;(BrandService);
+    this.locationService = this.module.get&lt;LocationService&gt;(LocationService);
+    this.fixtureService = this.module.get&lt;FixtureService&gt;(FixtureService);
+  }
+&nbsp;
+  async generate() {
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 200000; // 200 seconds
+    await this.setupProductGroup();
+  }
+&nbsp;
+  async createProductGroups(): Promise&lt;ProductGroup[]&gt; {
+    const brands = await this.brandService.findWithFilter({});
+&nbsp;
+    const productGroupPromises = [];
+    brands[0].forEach(brand =&gt; {
+      range(0, 4).forEach(() =&gt;
+        productGroupPromises.push(
+          this.fixtureService.saveEntityUsingValues(ProductGroup, {
+            brand,
+          }),
+        ),
+      );
+    });
+&nbsp;
+    // Product groups with no brand selected
+    const noBrands = range(0, 4).map(() =&gt;
+      this.fixtureService.saveEntityUsingValues(ProductGroup, {
+        name: 'NOBRAND-' + faker.commerce.productName(),
+      }),
+    );
+&nbsp;
+    return Promise.all([...productGroupPromises, ...noBrands]);
+  }
+&nbsp;
+  async setupProductGroup() {
+    const productGroups = await this.createProductGroups();
+    const locations = await this.locationService.findWithFilter({});
+&nbsp;
+    const productPromises = [];
+    locations[0].forEach(location =&gt; {
+      productGroups.forEach(productGroup =&gt; {
+        // Skip product group with no brand
+        if (!productGroup.brand) return;
+&nbsp;
+        range(0, 4).forEach(index =&gt; {
+          productPromises.push(
+            this.fixtureService.saveEntityUsingValues(Product, {
+              name: productGroup.name,
+              category: productGroup.category,
+              location: { id: location.id } as Location,
+              productGroup: { id: productGroup.id } as ProductGroup,
+              deleted: index === 0, // mark the first product as a deleted one, as a sample
+            }),
+          );
+        });
+      });
+    });
+    await Promise.all(productPromises);
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Sep 05 2021 12:14:42 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>
